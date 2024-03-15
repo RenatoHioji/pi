@@ -17,7 +17,7 @@ services:
     depends_on:
       - mongodb
     environment:
-      MONGODB_URI: mongodb://mongodb:27017/your_database_name
+      MONGODB_URI: mongodb://mongodb:27017/teste
 
 volumes:
   mongodb_data:
