@@ -31,7 +31,8 @@ class Pessoa extends BaseModel {
         }
       }, {
         sequelize,
-        tableName: 'pessoa' 
+        tableName: 'pessoa',
+        modelName: "Pessoa"
       });
     }
   }
