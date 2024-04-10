@@ -1,0 +1,90 @@
+Endpoint CRIAR NOVO USUÁRIO
+
+/api/register - POST
+
+Payload:
+{
+	CPF: "111.111.111-11",
+	nome: "Renato Hioji Okamoto Odake",
+	email: "teste@teste.com",
+	senha: "senha123",
+	dtNasc: "YYYY-MM-DD"
+}
+RETORNO 201 (CREATED) + USUÁRIO CRIADO
+
+Endpoint FAZER LOGIN:
+
+/api/login - POST 
+
+Payload:
+{
+	CPF: "111.111.111-11",
+	senha: "senha123"
+}
+RETORNO 200 (OK)
+
+
+DIA DA SEMANA SERÁ DE 0 A 6 (SEGUNDA (0), TERÇA (1), QUARTA (2), QUINTA (3), SEXTA (4), SÁBADO (5), DOMINGO (6))
+
+Endpoint CRIAR ALARME 
+
+/api/alarme - POST
+
+
+Payload:
+{
+	pessoa_id: 1
+	acao: "Dar boa noite",
+	horario: "21:56",
+	diaDaSemana: 0
+}
+
+RETORNO 201 (CREATED) + ALARME CRIADO
+
+
+Endpoint PUXAR TODOS OS ALARMES DO PESSOA_ID NO DIA DA SEMANA 0
+/api/alarme/de/:pessoa_id/dia/:dia - GET
+
+NÃO POSSUI PAYLOAD
+
+RETORNO 200 (OK) + Alarmes em formato
+[{	
+	alarme_id: 0,
+	pessoa_id: 1,
+	acao: "Dar boa noite",
+	horario: "21:56",
+	diaDaSemana: 0
+
+},
+{
+	alarme_id: 1,
+	pessoa_id: 1,
+	acao: "Fazer o almoço",
+	horario: "12:00",
+	diaDaSemana: 1
+}] 
+
+MOSTRA QUE A PESSOA COM ID 1 POSSUI OS ALARMES ACIMA NA TERÇA-FEIRA
+
+Endpoint DELETAR ALARME
+
+/api/alarme/:alarme_id - DELETE
+
+NÃO POSSUI PAYLOAD
+
+RETORNO 204 (NO CONTENT)
+
+
+Endpoint ATUALIZAR ALARME
+/api/alarme/:alarme_id - PUT
+
+PAYLOAD :{
+	acao: "Fazer o Almoço",
+	horario: "11:32",
+	diaDaSemana: 0
+}
+
+VAI ATUALIZAR O ALARME DE ID PASSADO NA URI (:alarme_id) PARA AÇÃO "Fazer o Almoço", HORÁRIO "11:32" E PRO DIA DA SEMANA 0 (SEGUNDA-FEIRA)
+RETORNO 200 (OK) + ALARME
+
+
