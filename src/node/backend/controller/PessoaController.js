@@ -20,3 +20,11 @@ router.post("/api/login", (req, res) => {
         req.body.senha
     )
 })
+
+router.get("/api/perfil", (req, res) => {
+    LoginService.Perfil();
+})
+
+
+
+export default router

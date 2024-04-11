@@ -23,6 +23,10 @@ Payload:
 }
 RETORNO 200 (OK)
 
+Endpoint PERFIL																	
+/api/perfil - GET
+
+RETORNO 200 (OK) + USUÁRIO
 
 DIA DA SEMANA SERÁ DE 0 A 6 (SEGUNDA (0), TERÇA (1), QUARTA (2), QUINTA (3), SEXTA (4), SÁBADO (5), DOMINGO (6))
 
@@ -33,7 +37,6 @@ Endpoint CRIAR ALARME
 
 Payload:
 {
-	pessoa_id: 1
 	acao: "Dar boa noite",
 	horario: "21:56",
 	diaDaSemana: 0
@@ -49,16 +52,12 @@ NÃO POSSUI PAYLOAD
 
 RETORNO 200 (OK) + Alarmes em formato
 [{	
-	alarme_id: 0,
-	pessoa_id: 1,
 	acao: "Dar boa noite",
 	horario: "21:56",
 	diaDaSemana: 0
 
 },
 {
-	alarme_id: 1,
-	pessoa_id: 1,
 	acao: "Fazer o almoço",
 	horario: "12:00",
 	diaDaSemana: 1
