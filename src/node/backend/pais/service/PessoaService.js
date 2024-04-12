@@ -1,7 +1,7 @@
 import PessoaRepository from "./../repository/PessoaRepository.js"
 import Pessoa from "./../model/Pessoa.js"
 class PessoaService{
-    Create(cpf, nome, email, senha, dtNasc){
+    async Create(cpf, nome, email, senha, dtNasc){
         const pessoa = new Pessoa({
             cpf: cpf,
             nome: nome,
@@ -9,7 +9,7 @@ class PessoaService{
             senha: senha,
             dtNasc: dtNasc
         })
-        const pessoaCriada = PessoaRepository.create(pessoa)
+        const pessoaCriada = await PessoaRepository.create(pessoa)
         console.log("SERVICE -----", pessoaCriada)
         return pessoaCriada
 

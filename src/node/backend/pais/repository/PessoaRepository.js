@@ -1,10 +1,8 @@
 
 class PessoaRepository{
-    create(pessoa){
-        pessoa.save().then(pessoaCriada =>{
-            console.log("REPOSITORY -------", pessoaCriada)
-            return pessoaCriada
-        })
+     async create(pessoa){
+        const pessoaCriada = await pessoa.save()
+        return pessoaCriada 
     } 
     
 }

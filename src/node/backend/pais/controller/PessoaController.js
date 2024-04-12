@@ -3,9 +3,9 @@ import PessoaService from "./../service/PessoaService.js"
 
 const router = express.Router()
 
-router.post("/api/register", (req, res) => {
+router.post("/api/register", async (req, res) => {
     console.log("CONTROLLER ----" ,req.body)
-    const pessoaCriada = PessoaService.Create(
+    const pessoaCriada = await PessoaService.Create(
         req.body.cpf,
         req.body.nome,
         req.body.email,
