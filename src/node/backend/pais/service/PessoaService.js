@@ -14,13 +14,15 @@ class PessoaService{
         return pessoaCriada
 
     }
-    Pessoa(cpf, senha){
-        const perfil = Pessoa.findByCpf(cpf)
+    async Login(cpf, senha){
+        const perfil = await PessoaRepository.findByCpf(cpf)
+        if(perfil.senha == senha){
+            console.log("AUTENTICADO")
+        }
 
-        return perfil
     }
     async Perfil(id){
-         const perfil = await PessoaRepository.findById(Pessoa, id)
+         const perfil = await PessoaRepository.findById(id)
          return perfil
     }
 }

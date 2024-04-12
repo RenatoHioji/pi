@@ -16,11 +16,12 @@ router.post("/api/register", async (req, res) => {
     res.status(201).send(pessoaCriada)
 })
 
-router.post("/api/login", (req, res) => {
-    PessoaService.Login(
+router.post("/api/login", async(req, res) => {
+    const perfil =  await PessoaService.Login(
         req.body.cpf,
         req.body.senha
-    )
+    )   
+    res.status(200).send()
 })
 
 router.post("/api/perfil", async (req, res) => {
