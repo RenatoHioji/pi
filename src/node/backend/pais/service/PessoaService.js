@@ -19,8 +19,9 @@ class PessoaService{
 
         return perfil
     }
-    Perfil(id){
-        return PessoaRepository.findById(id)
+    async Perfil(id){
+         const perfil = await PessoaRepository.findById(Pessoa, id)
+         return perfil
     }
 }
 

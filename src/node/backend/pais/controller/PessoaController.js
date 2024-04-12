@@ -23,8 +23,9 @@ router.post("/api/login", (req, res) => {
     )
 })
 
-router.get("/api/perfil", (req, res) => {
-    PessoaService.Perfil();
+router.post("/api/perfil", async (req, res) => {
+    const perfil = await PessoaService.Perfil(req.body.id)
+    res.status(200).send(perfil)
 })
 
 
