@@ -6,3 +6,7 @@ const alarme = new mongoose.Schema({
   diaDaSemana: Number
 
 })
+ 
+const Alarme = mongoose.model("Alarme", alarme)
+
+export default Alarme

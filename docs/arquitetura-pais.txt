@@ -52,6 +52,7 @@ NÃO POSSUI PAYLOAD
 
 RETORNO 200 (OK) + Alarmes em formato
 [{	
+	id: 
 	acao: "Dar boa noite",
 	horario: "21:56",
 	diaDaSemana: 0
