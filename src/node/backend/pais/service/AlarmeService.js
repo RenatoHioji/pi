@@ -1,6 +1,7 @@
 import AlarmeRepository from "./../repository/AlarmeRepository.js"
 import Alarme from "./../model/Alarme.js"
 import PessoaRepository from "./../repository/PessoaRepository.js"
+
     class AlarmeService{
 
     async Create(idPessoa, acao, horario, diaDaSemana){
@@ -22,9 +23,14 @@ import PessoaRepository from "./../repository/PessoaRepository.js"
 
         return perfil
     }
-    
-    async DeleteById(id){
-        await AlarmeRepository.findByIdAndDelete(id)
+
+    async DeleteById(idAlarme){
+        await AlarmeRepository.findByIdAndDelete(idAlarme)
+    }
+
+    async findAll(idPessoa){
+         const pessoa = await PessoaRepository.findById(idPessoa)
+         return pessoa.alarmes
     }
 }
 
