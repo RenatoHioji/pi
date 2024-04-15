@@ -1,16 +1,15 @@
 import AlarmeRepository from "./../repository/AlarmeRepository.js"
 import Alarme from "./../model/Alarme.js"
 import PessoaRepository from "./../repository/PessoaRepository.js"
-import Pessoa from "./../model/Pessoa.js"
-class AlarmeService{
+    class AlarmeService{
 
-    async Create(id, acao, horario, diaDaSemana){
+    async Create(idPessoa, acao, horario, diaDaSemana){
         const alarme = new Alarme({
             acao: acao,
             horario: horario,
             diaDaSemana: diaDaSemana            
         })
-        const perfil = await PessoaRepository.findById(id)
+        const perfil = await PessoaRepository.findById(idPessoa)
         
         const alarmeCriado = await AlarmeRepository.create(alarme)
         
@@ -23,7 +22,10 @@ class AlarmeService{
 
         return perfil
     }
-
+    
+    async DeleteById(id){
+        await AlarmeRepository.findByIdAndDelete(id)
+    }
 }
 
 export default new AlarmeService()
