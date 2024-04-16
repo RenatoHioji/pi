@@ -2,6 +2,7 @@ import express from "express"
 import moongoose from "mongoose"
 import LoginController from "./pais/controller/PessoaController.js"
 import AlarmeController from "./pais/controller/AlarmeController.js"
+import Notification from "./notification/notification.js"
 const app = express()
 moongoose.connect("mongodb://localhost:27017/pi-pais")
 app.use(express.json());
