@@ -28,9 +28,15 @@ import PessoaRepository from "./../repository/PessoaRepository.js"
         await AlarmeRepository.findByIdAndDelete(idAlarme)
     }
 
-    async findAll(idPessoa){
-         const pessoa = await PessoaRepository.findById(idPessoa)
+    async findAllByPessoaId(idPessoa){
+         const pessoa = await PessoaRepository.findByPessoaId(idPessoa)
          return pessoa.alarmes
+    }
+
+    async update(idAlarme, acao, horario, diaDaSemana){
+        const alarmeNovo = new Alarme({acao: acao, horario: horario, diaDaSemana: diaDaSemana})
+        const alarmeAtualizado = await AlarmeRepository.update(idAlarme, alarmeNovo)
+        return alarmeAtualizado
     }
 }
 

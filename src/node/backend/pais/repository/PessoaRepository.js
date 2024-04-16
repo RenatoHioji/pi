@@ -1,3 +1,4 @@
+import Alarme from "../model/Alarme.js"
 import Pessoa from "./../model/Pessoa.js"
 
 class PessoaRepository{
@@ -10,11 +11,14 @@ class PessoaRepository{
         const perfil = await Pessoa.findOne({cpf: cpf})
         return perfil
     }
-    async findById(id){
-        const perfil = await Pessoa.findById(id)
+    async findByPessoaId(idPessoa){
+        const perfil = await Pessoa.findById(idPessoa)
         return perfil
     }
-    
+    async findById(id){
+        const alarme = await Alarme.findById(id)
+        return alarme
+    }
 }
 
 export default new PessoaRepository()
