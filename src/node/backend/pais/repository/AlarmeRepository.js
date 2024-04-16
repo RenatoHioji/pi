@@ -4,9 +4,11 @@ class AlarmeRepository{
     async create(alarme){
         return await alarme.save()
     }
+    
     async findByIdAndDelete(idAlarme){
-        return await Alarme.findByIdAndDelete(id)
+        return await Alarme.findByIdAndDelete(idAlarme)
     }
+
     async update(idAlarme, alarmeNovo) {
         const alarmeAtualizado = await Alarme.updateOne(
             {_id: idAlarme},
@@ -14,7 +16,8 @@ class AlarmeRepository{
         );
         return alarmeAtualizado;
     }
-    
+
+
     
 }
 

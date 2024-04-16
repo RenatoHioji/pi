@@ -15,9 +15,27 @@ class PessoaRepository{
         const perfil = await Pessoa.findById(idPessoa)
         return perfil
     }
+  
+    async update(id, pessoa){
+        const pessoaAtualizada = await Pessoa.updateOne(
+            {_id: id},
+            {$set: {
+                    cpf: pessoa.cpf,
+                    nome: pessoa.nome,
+                    email: pessoa.email,
+                    senha: pessoa.senha,
+                    dtNasc: pessoa.dtNasc
+            }}
+        )
+        return pessoaAtualizada
+    }
+    async deleteById(id){
+        return await Pessoa.findByIdAndDelete(id)
+    }
+
     async findById(id){
-        const alarme = await Alarme.findById(id)
-        return alarme
+        const pessoa = await Pessoa.findById(id)
+        return pessoa
     }
 }
 

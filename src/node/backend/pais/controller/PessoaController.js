@@ -5,19 +5,19 @@ const router = express.Router()
 
 router.post("/api/register", async (req, res) => {
     console.log("CONTROLLER ----" ,req.body)
-    const pessoaCriada = await PessoaService.Create(
+    const response = await PessoaService.create(
         req.body.cpf,
         req.body.nome,
         req.body.email,
         req.body.senha,
         req.body.dtNasc
     )
-    console.log("CONTROLLER RETORNO -------" ,pessoaCriada)
-    res.status(201).send(pessoaCriada)
+    console.log("CONTROLLER RETORNO -------" , response)
+    res.status(201).send(response)
 })
 
 router.post("/api/login", async(req, res) => {
-    const perfil =  await PessoaService.Login(
+    const perfil =  await PessoaService.login(
         req.body.cpf,
         req.body.senha
     )   
@@ -25,10 +25,25 @@ router.post("/api/login", async(req, res) => {
 })
 
 router.get("/api/perfil/:id", async (req, res) => {
-    const perfil = await PessoaService.Perfil(req.params.id)
-    res.status(200).send(perfil)
+    const response = await PessoaService.findById(req.params.id)
+    res.status(200).send(response)
 })
 
+router.put("/api/perfil/:id", async (req, res)=>{
+    const response = await PessoaService.update(
+        req.params.id,
+        req.body.cpf,
+        req.body.nome,
+        req.body.email,
+        req.body.senha,
+        req.body.dtNasc
+    )
+    res.status(200).send(response)
+})
 
+router.delete("/api/perfil/:id", async (req, res)=>{
+    const response = await PessoaService.deleteById(req.params.id)
+    res.status(200).send()
+})
 
 export default router
