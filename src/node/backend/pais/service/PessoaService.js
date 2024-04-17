@@ -1,5 +1,6 @@
 import PessoaRepository from "./../repository/PessoaRepository.js"
 import Pessoa from "./../model/Pessoa.js"
+import session from "express-session"
 class PessoaService{
     async create(cpf, nome, email, senha, dtNasc){
         const pessoa = new Pessoa({
@@ -18,12 +19,17 @@ class PessoaService{
         const perfil = await PessoaRepository.findByCpf(cpf)
         if(perfil.senha == senha){
             console.log("AUTENTICADO")
+            session.id = perfil.id
+            console.log(session.id)
         }
 
+        return perfil
     }
     async findById(id){
-         const perfil = await PessoaRepository.findById(id)
-         return perfil
+        const perfil = await PessoaRepository.findById(id)
+        console.log(session.id)
+        return perfil
+        
     }
     async update(id, cpf, nome, email, senha, dtNasc){
         const pessoa = new Pessoa({

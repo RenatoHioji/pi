@@ -1,6 +1,7 @@
 import express from "express"
 import PessoaService from "./../service/PessoaService.js"
 
+
 const router = express.Router()
 
 router.post("/api/register", async (req, res) => {
@@ -20,7 +21,8 @@ router.post("/api/login", async(req, res) => {
     const perfil =  await PessoaService.login(
         req.body.cpf,
         req.body.senha
-    )   
+    )
+
     res.status(200).send()
 })
 
