@@ -1,5 +1,5 @@
 import './assets/css/App.css';
-
+import Cadastro from './components/pessoa/forms/Cadastro.jsx'
 function App() {
   return (
     <div className="App">
@@ -7,6 +7,8 @@ function App() {
         <p>
         </p>
       </header>
+      <Cadastro></Cadastro>
+
     </div>
   );
 }
