@@ -1,6 +1,10 @@
 import PessoaRepository from "./../repository/PessoaRepository.js"
 import Pessoa from "./../model/Pessoa.js"
 import session from "express-session"
+import jwt from "jsonwebtoken"
+
+const KEY = "pi-pais-api-backend"
+
 class PessoaService{
     async create(cpf, nome, email, senha, dtNasc){
         const pessoa = new Pessoa({
@@ -18,12 +22,9 @@ class PessoaService{
     async login(cpf, senha){
         const perfil = await PessoaRepository.findByCpf(cpf)
         if(perfil.senha == senha){
-            console.log("AUTENTICADO")
-            session.id = perfil.id
-            console.log(session.id)
+            const token= await jwt.sign(perfil, KEY, {expiresIn: "1h"})
+            return token
         }
-
-        return perfil
     }
     async findById(id){
         const perfil = await PessoaRepository.findById(id)

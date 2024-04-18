@@ -18,12 +18,16 @@ router.post("/api/register", async (req, res) => {
 })
 
 router.post("/api/login", async(req, res) => {
-    const perfil =  await PessoaService.login(
+    const token =  await PessoaService.login(
         req.body.cpf,
         req.body.senha
     )
-
-    res.status(200).send()
+    if(token){
+        res.status(200).send(token)
+    }
+    res.status(404).send({
+        error: "User Not Found"
+    })
 })
 
 router.get("/api/perfil/:id", async (req, res) => {
