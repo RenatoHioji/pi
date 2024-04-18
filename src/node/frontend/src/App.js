@@ -1,5 +1,5 @@
 import './assets/css/App.css';
-import Cadastro from './components/pessoa/forms/Cadastro.jsx'
+import Login from "./components/pessoa/forms/Login"
 function App() {
   return (
     <div className="App">
@@ -7,7 +7,7 @@ function App() {
         <p>
         </p>
       </header>
-      <Cadastro></Cadastro>
+      <Login></Login>
 
     </div>
   );
