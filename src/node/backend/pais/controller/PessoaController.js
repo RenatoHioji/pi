@@ -18,15 +18,20 @@ router.post("/api/register", async (req, res) => {
 })
 
 router.post("/api/login", async(req, res) => {
-    const token =  await PessoaService.login(
+    await PessoaService.login(
         req.body.cpf,
         req.body.senha
-    )
-    if(token){
-        res.status(200).send(token)
-    }
-    res.status(404).send({
-        error: "User Not Found"
+    ).then(token =>{
+        if(token){
+            console.log("TOKEN LOGIN")
+            res.status(200).send({
+                'token': token,
+            })
+        }else{
+            res.status(404).send({
+                error: "User Not Found"
+            })
+        }
     })
 })
 

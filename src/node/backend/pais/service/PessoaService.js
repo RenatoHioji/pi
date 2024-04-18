@@ -22,7 +22,9 @@ class PessoaService{
     async login(cpf, senha){
         const perfil = await PessoaRepository.findByCpf(cpf)
         if(perfil.senha == senha){
-            const token= await jwt.sign(perfil, KEY, {expiresIn: "1h"})
+            console.log("TOKEN CRIAÇÃO")
+
+            const token= await jwt.sign({"id": perfil._id}, KEY, {expiresIn: "1h"})
             return token
         }
     }
