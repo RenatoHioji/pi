@@ -18,10 +18,11 @@ function FormComponent() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3000/api/login', formData)
-      const {token} = response.jwt
-      localStorage.setItem("token", token)
-      console.log('Response:', response.data)
+      await axios.post('http://localhost:3000/api/login', formData).then(response =>{
+        const token = response.data.token
+        localStorage.setItem("token", token)
+        console.log('Response:', token)
+      })
     } catch (error) {
       console.error('Error:', error)
     }
