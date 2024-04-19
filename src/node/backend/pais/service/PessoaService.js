@@ -1,6 +1,5 @@
 import PessoaRepository from "./../repository/PessoaRepository.js"
 import Pessoa from "./../model/Pessoa.js"
-import session from "express-session"
 import jwt from "jsonwebtoken"
 
 const KEY = "pi-pais-api-backend"
@@ -15,26 +14,26 @@ class PessoaService{
             dtNasc: dtNasc
         })
         const pessoaCriada = await PessoaRepository.create(pessoa)
-        console.log("SERVICE -----", pessoaCriada)
         return pessoaCriada
 
     }
     async login(cpf, senha){
-        const perfil = await PessoaRepository.findByCpf(cpf)
+        const perfil = PessoaRepository.findByCpf(cpf)
         if(perfil.senha == senha){
             console.log("TOKEN CRIAÇÃO")
 
-            const token= await jwt.sign({"id": perfil._id}, KEY, {expiresIn: "1h"})
+            const token= jwt.sign({"id": perfil._id}, KEY, {expiresIn: "1h"})
             return token
         }
     }
     async findById(id){
-        const perfil = await PessoaRepository.findById(id)
-        console.log(session.id)
+        const idDecodificado =  this.decodeToken(id)
+        const perfil = await PessoaRepository.findById(idDecodificado)
         return perfil
         
     }
     async update(id, cpf, nome, email, senha, dtNasc){
+        const idDecodificado =  this.decodeToken(id)
         const pessoa = new Pessoa({
             cpf: cpf,
             nome: nome,
@@ -42,11 +41,15 @@ class PessoaService{
             senha: senha,
             dtNasc: dtNasc
         })
-        const pessoaAtualizada = await PessoaRepository.update(id, pessoa)
+        const pessoaAtualizada = await PessoaRepository.update(idDecodificado   , pessoa)
         return pessoaAtualizada
     }
     async deleteById(id){
         return await PessoaRepository.deleteById(id)
+    }
+    decodeToken(id){
+        const decode = jwt.verify(id, KEY)
+        return decode.id
     }
 }
 
