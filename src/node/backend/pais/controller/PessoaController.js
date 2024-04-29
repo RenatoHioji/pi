@@ -28,6 +28,7 @@ router.post("/api/login", async(req, res) => {
                 'token': token,
             })
         }else{
+            console.log("ERROR")
             res.status(404).send({
                 error: "User Not Found"
             })
@@ -37,6 +38,7 @@ router.post("/api/login", async(req, res) => {
 
 router.get("/api/perfil/:id", async (req, res) => {
     const response = await PessoaService.findById(req.params.id)
+    console.log(response)
     res.status(200).send(response)
 })
 
@@ -49,12 +51,16 @@ router.put("/api/perfil/:id", async (req, res)=>{
         req.body.senha,
         req.body.dtNasc
     )
+    console.log(response)
+
     res.status(200).send(response)
 })
 
 router.delete("/api/perfil/:id", async (req, res)=>{
     const response = await PessoaService.deleteById(req.params.id)
-    res.status(200).send()
+    res.status(204).send()
+    console.log(response)
+
 })
 
 export default router

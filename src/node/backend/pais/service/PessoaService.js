@@ -18,7 +18,7 @@ class PessoaService{
 
     }
     async login(cpf, senha){
-        const perfil = PessoaRepository.findByCpf(cpf)
+        const perfil = await PessoaRepository.findByCpf(cpf)
         if(perfil.senha == senha){
             console.log("TOKEN CRIAÇÃO")
 
@@ -45,7 +45,8 @@ class PessoaService{
         return pessoaAtualizada
     }
     async deleteById(id){
-        return await PessoaRepository.deleteById(id)
+        const idDecodificado = this.decodeToken(id)
+        return await PessoaRepository.deleteById(idDecodificado)
     }
     decodeToken(id){
         const decode = jwt.verify(id, KEY)

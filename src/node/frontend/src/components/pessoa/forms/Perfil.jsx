@@ -54,6 +54,17 @@ function FormComponent() {
     }
   };
 
+  const deletePerson = async (e) =>{
+    e.preventDefault();
+    try {
+        const token = localStorage.getItem("token")
+        await axios.delete(`http://localhost:3000/api/perfil/${token}`)
+        window.location.reload()
+    }catch(error){
+        console.error("Error ", error)
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="nome">Nome</label>
@@ -67,6 +78,7 @@ function FormComponent() {
       <label htmlFor="dtNasc">Data de Nascimento</label>
       <input type="date" name="dtNasc" id="dtNasc" value={handleDate(formData.dtNasc)} onChange={handleChange} />
       <button type="submit">Atualizar</button>
+      <button onClick={(deletePerson)}>Deletar</button>
     </form>
   );
 }

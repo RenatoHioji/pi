@@ -1,6 +1,5 @@
 import Alarme from "../model/Alarme.js"
 import Pessoa from "./../model/Pessoa.js"
-
 class PessoaRepository{
      async create(pessoa){
         const pessoaCriada = await pessoa.save()
@@ -28,6 +27,7 @@ class PessoaRepository{
         return pessoaAtualizada
     }
     async deleteById(id){
+        await Alarme.delete
         return await Pessoa.findByIdAndDelete(id)
     }
 
