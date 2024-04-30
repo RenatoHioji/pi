@@ -1,13 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom' //Configurando Router
+import Pagina from '../Pages/Pagina/Pagina.jsx'
+import Login from '../Pages/Login/Login.jsx'
+import Cadastro from '../Pages/Cadastro/Cadastro.jsx'
+import { Outlet } from 'react-router-dom';
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Pagina></Pagina>,
+//   },
+//   {
+//     path: "login",
+//     element: <Login></Login>,
+//   },
+//   {
+//     path: "cadastro",
+//     element: <Cadastro></Cadastro>,
+//   }
+// ])
+
+const router = createBrowserRouter([
+  {
+      path: "/",
+      element: <App></App>,
+      children:[
+  
+        {
+        path: "login",
+        element: <Login></Login>,
+        },
+        {
+        path: "cadastro",
+        element: <Cadastro></Cadastro>,
+        },
+      ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

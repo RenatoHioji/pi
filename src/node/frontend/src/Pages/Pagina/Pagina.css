@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    width: 1000;
+    height: 1000;
+    background-color: #D2F7FA;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ }
