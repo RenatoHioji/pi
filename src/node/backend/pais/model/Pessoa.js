@@ -1,31 +1,19 @@
 import mongoose from "mongoose"
+import Alarme from "./Alarme"
+import Crianca from "./../../criancas/model/Crianca"
+import Suporte from "./Suporte"
 
-const alarme = new mongoose.Schema({
-  acao: String,
-  horario: String,
-  diaDaSemana: Number
-
-})
 const pessoa = new mongoose.Schema({
     cpf: String,
     nome: String,
     email: String,
     senha: String,
     dtNasc: Date,
-    alarmes: [alarme]
+    alarmes: [Alarme],
+    criancas: [Crianca],
+    suporte: [Suporte]
 });
 
-pessoa.pre('findOneAndDelete', async function(next) {
-  try {
-    const doc = await this.model.findOne(this.getQuery());
-    if (doc && doc.alarmes.length > 0) {
-      await alarme.deleteMany({ _id: { $in: doc.alarmes } });
-    }
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
-const Pessoa = mongoose.model("Pessoa", pessoa)
+const Pessoa = mongoose.model("pessoa", pessoa)
 
 export default Pessoa
