@@ -1,7 +1,13 @@
-
+import SubCategoriaRepository from "./SubCategoriaRepository.js"
+import Item from "./../model/Item.js"
 class ItemRepository{
-    async Create(item){
-        const response = await item.Create()
+    async findItemBySubCategoriaId(subCategoriaId){
+        const response = await SubCategoriaRepository.findItemBySubCategoriaId(subCategoriaId)
+        return response
+    }
+    async findItemById(itemId){
+        const response = await Item.findById(itemId)
+        return response
     }
 }
 

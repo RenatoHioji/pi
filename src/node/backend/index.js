@@ -2,6 +2,8 @@ import express from "express"
 import moongoose from "mongoose"
 import session from "express-session"
 
+import multer from "multer"
+
 import LoginController from "./pais/controller/PessoaController.js"
 import AlarmeController from "./pais/controller/AlarmeController.js"
 import cors from "cors"
@@ -20,6 +22,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
   }));
+const upload = multer({dest:"public/uploads/"})
 
 
 //Rotas

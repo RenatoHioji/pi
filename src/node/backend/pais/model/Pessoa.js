@@ -1,7 +1,22 @@
 import mongoose from "mongoose"
-import Alarme from "./Alarme"
-import Crianca from "./../../criancas/model/Crianca"
-import Suporte from "./Suporte"
+
+const historico = new mongoose.Schema({
+    "message": String
+})
+const alarme = new mongoose.Schema({
+    acao: String,
+    horario: String,
+    diaDaSemana: Number
+  
+})
+const crianca = new mongoose.Schema({
+    "temResponsavel": Boolean
+})
+
+const suporte = new mongoose.Schema({
+    "estado": Number,
+    "historico": [historico]
+})
 
 const pessoa = new mongoose.Schema({
     cpf: String,
@@ -9,9 +24,9 @@ const pessoa = new mongoose.Schema({
     email: String,
     senha: String,
     dtNasc: Date,
-    alarmes: [Alarme],
-    criancas: [Crianca],
-    suporte: [Suporte]
+    alarmes: [alarme],
+    criancas: [crianca],
+    suporte: [suporte]
 });
 
 const Pessoa = mongoose.model("pessoa", pessoa)

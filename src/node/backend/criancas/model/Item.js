@@ -5,7 +5,7 @@ const item = new mongoose.Schema({
     "nome": String,
     "video": String,
     "classificacao": Number,
-    "categoria": Number,
+    "divisaoSilabica": String,
     "imagens": [Imagem]
 })
 

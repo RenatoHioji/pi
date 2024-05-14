@@ -1,4 +1,4 @@
-import Alarme from "../model/Alarme.js"
+import Alarme from "./../model/Alarme.js"
 import Pessoa from "./../model/Pessoa.js"
 class PessoaRepository{
      async create(pessoa){

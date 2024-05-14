@@ -1,9 +1,12 @@
 import mongoose from "mongoose"
-import Historico from "./Historico"
+
+const historico = new mongoose.Schema({
+    "message": String
+})
 
 const suporte = new mongoose.Schema({
     "estado": Number,
-    "historico": [Historico]
+    "historico": [historico]
 })
 
 const Suporte = mongoose.model("suporte", suporte)
