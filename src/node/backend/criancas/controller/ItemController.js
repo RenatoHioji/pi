@@ -4,6 +4,8 @@ import express from "express"
 
 const router = express.Router()
 
+// CRIAÇÃO DOS ITENS
+
 router.post("/api/item", async (req, res) => {
     const response = await ItemService.Create(
         req.body.nome,
@@ -16,6 +18,8 @@ router.post("/api/item", async (req, res) => {
     res.status(201).send(response) 
 })
 
+// TELA DOS ITEMS
+
 router.get("/api/item/:idCategoria", async(req, res) => {
     try{
         const response = await ItemService.findItemByCategoriaId(req.params.idCategoria)
@@ -25,12 +29,26 @@ router.get("/api/item/:idCategoria", async(req, res) => {
     }
 })
 
+
+// TELA DO ITEM
+
 router.get("/api/item/:idItem", async(req, res) =>{
     try{
         const response = await ItemService.findItemById(req.params.idItem)
         return res.status(200).send(response)
     }catch(err){
         console.log(`Não foi possível buscar o item de id: ${req.params.idItem}`)
+    }
+})
+
+
+//TELA FINAL
+router.get("/api/item/resultado/:performance", async(req, res) =>{
+    try{
+        const response = "Parabéns"
+        return res.status(200).send(response)
+    }catch(err){
+        console.log("Não foi possível gerar a tela de resultado")
     }
 })
 
