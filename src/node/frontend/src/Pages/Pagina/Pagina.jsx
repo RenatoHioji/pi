@@ -1,10 +1,14 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import './Pagina.css'
+import Note from "../../components/Note/Note";
 
 function Pagina(){
     return(
-        <h1>Página</h1>
+        <>
         
+            <Note />
+            
+        </>
     )
 }
 
