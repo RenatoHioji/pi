@@ -6,9 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // importar Paginas
 import reportWebVitals from './reportWebVitals';
-import Login from './Pages/Login/Login.jsx'
-import Cadastro from './Pages/Cadastro/Cadastro.jsx'
-import Pagina from './Pages/Pagina/Pagina.jsx'
+
 
 // importar css
 import App from './App.jsx';
