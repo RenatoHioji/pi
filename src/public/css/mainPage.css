@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: rgb(69, 45, 14);
+    width: 46.2vh;
+    height: 100vh;
+}
+
+.note{
+    width: 98,5%;
+    height: 206px;
+    background-image: url("../svg/png/sky.png");
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-radius: 0px 0px 0px 0px;
+}
+.title{
+    background-color: #45C1F4;
+    text-align: center;
+    max-width: 15vh;
+    padding:10px 65px;
+    margin: -15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
