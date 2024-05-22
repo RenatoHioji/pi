@@ -10,7 +10,7 @@ body{
 .container{
     display: flex;
     flex-direction: column;
-    background-color: #9ad4eb;
+    background-color: #a6f5ff;
     width: 100vw;
     height: 100vh;
     align-items: center;
@@ -31,11 +31,11 @@ body{
 main {
     width: 100vw;
     flex: 5;
-    background-color: #9ad4eb;
+    background-color: #a6f5ff;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding-top: 23%;
+    padding-top: 20%;
 }
 
 .title{
@@ -57,23 +57,54 @@ main {
 
 .card{
     background-color: #FFD73D;
+    color: #ffffff;
     border-radius: 10px;
-    padding: 10px 30%;
+    width: 80%;
+    height: 17%;
+    min-height: 5%;
     display: flex;
     flex-direction: row;
     text-decoration: none;
     margin-bottom: 7%;
     font-weight: bold;
-    font-size: large;
+    font-size: 25px;
+    justify-content: space-between;
+    
 }
 
-main > a {
-    padding-left: 20px;
-    
+.img-card1{
+    padding: 19px;
+    margin-left: 5%
+}
+
+main > .card> p{
+    color: #ffffff;
+    margin-right: 30%;
+    margin-top: 10%;
+    margin-left: 55px;
+    margin-bottom: 10%;
 }
 
 main > a:nth-child(2) {
-    background-color: azure;
+    background-color: #F15562;
     color: #000000;
     
+}
+
+main > a:nth-child(3) {
+    background-color: #8ABC2D;
+    color: #000000;
+    
+}
+
+main > a:nth-child(4    ) {
+    background-color: #41A6D0;
+    color: #000000;
+    
+}
+
+.footer{
+    width: 100%;
+    background-color: #ffffff;
+    height: 10%;
 }
