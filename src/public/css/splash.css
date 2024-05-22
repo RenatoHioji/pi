@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    image-rendering: optimizeQuality;
+}
+
+body {
+    background: radial-gradient(circle, #CBF0FF 25%, #8CDDFF 100%);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+main > section:nth-child(1) {
+    display: inherit;
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+
+main > section:nth-child(2) {
+    display: inherit;
+    justify-content: flex-start;
+    padding-left: 10%;
+}
+
+main > section:nth-child(3) {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+}
