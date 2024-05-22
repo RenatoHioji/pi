@@ -1,3 +1,18 @@
+@keyframes bounce {
+    0% {
+        margin-bottom: 5%;
+    }
+    25% {
+        margin-bottom: 0%;
+    }
+    50% {
+        margin-bottom: 5%;
+    }
+    100% {
+        margin-bottom: 0%;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0%;
@@ -26,6 +41,8 @@ main > section:nth-child(2) {
     display: inherit;
     justify-content: flex-start;
     padding-left: 10%;
+    margin-bottom: 0%;
+    animation: bounce 2s infinite ease;
 }
 
 main > section:nth-child(3) {
