@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
     res.render("splash")
 })
 
+app.get("/main", (req, res) => {
+    res.render("main")
+})
+
 app.listen(PORT, err => {
     try {
         console.log(`Server litening on http://localhost:${PORT}`)
