@@ -20,12 +20,12 @@ router.post("/api/item", async (req, res) => {
 
 // TELA DOS ITEMS
 
-router.get("/api/item/:idCategoria", async(req, res) => {
+router.get("/api/item/:idSubcategoria", async(req, res) => {
     try{
-        const response = await ItemService.findItemByCategoriaId(req.params.idCategoria)
+        const response = await ItemService.findItemByCategoriaId(req.params.idSubcategoria)
         res.status(200).send(response)
     }catch(err){
-        console.log(`Não foi possível buscar os items da categoria: ${req.params.idCategoria}`)
+        console.log(`Não foi possível buscar os items da categoria: ${req.params.idSubcategoria}`)
     }
 })
 

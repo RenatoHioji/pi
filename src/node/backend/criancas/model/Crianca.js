@@ -1,10 +1,14 @@
 import mongoose from "mongoose"
+const jogo = new mongoose.Schema({
+    "tipo": Number,
+    "item": [Item]
+})
 const crianca = new mongoose.Schema({
     "temResponsavel": Boolean,
     "nome": String,
-    "progresso": {
-       "desempenho": [Number],
-       "nome": String,
+    "performance": {
+        "jogo": jogo,
+        "resultado": Number,
     }
 })
 
