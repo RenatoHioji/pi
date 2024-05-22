@@ -17,6 +17,10 @@ app.set("view engine", "ejs")
 moongoose.connect(MONGO_DB_URL + process.env.DB)
 
 app.get("/", (req, res) => {
+    res.render("splash")
+})
+
+app.get("/main", (req, res) => {
     res.render("main")
 })
 
