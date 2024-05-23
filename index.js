@@ -2,7 +2,6 @@ import 'dotenv/config'
 import express from "express"
 import moongoose from "mongoose"
 import cors from "cors"
-import multer from "multer"
 
 import LoginController from "./pais/controller/PessoaController.js"
 import AlarmeController from "./pais/controller/AlarmeController.js"
