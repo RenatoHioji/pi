@@ -1,5 +1,5 @@
 
-import CategoriaService from "./../service/CategoriaService"
+import CategoriaService from "../node/backend/criancas/service/CategoriaService"
 import express from "express"
 
 const router = express.Router()

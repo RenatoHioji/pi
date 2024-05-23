@@ -1,4 +1,4 @@
-import Imagem from "./../model/Imagem"
+import Imagem from "../models/Imagem"
 
 class ImagemRepository{
     async Create(imagem){

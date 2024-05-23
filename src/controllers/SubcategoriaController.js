@@ -1,4 +1,4 @@
-import SubCategoriaService from "../service/SubcategoriaService"
+import SubCategoriaService from "../node/backend/criancas/service/SubcategoriaService"
 import express from "express"
 
 const router = express.Router()

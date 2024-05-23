@@ -1,5 +1,5 @@
 import express from "express"
-import PessoaRepository from "./../pais/repository/PessoaRepository"
+import PessoaRepository from "../repository/PessoaRepository"
 const router = express.Router()
 
 router.post("/api/notification/:idPessoa", async (req, res) => {

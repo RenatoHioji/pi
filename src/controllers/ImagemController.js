@@ -1,5 +1,5 @@
 import express from "express"
-import ImagemService from "./../service/ImagemService"
+import ImagemService from "../service/ImagemService"
 const router = express.Router()
 
 router.post("/api/imagem", upload.single("file"), async (req, res) => {

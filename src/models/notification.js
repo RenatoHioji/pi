@@ -1,4 +1,4 @@
-import Alarme from "./../pais/model/Alarme.js";
+import Alarme from "./Alarme.js";
 
 class Notification {
     async checkAlarmsAndTriggerNotifications() {

@@ -1,4 +1,4 @@
-import ImagemRepository from "./../repository/ImagemRepository"
+import ImagemRepository from "../repository/ImagemRepository"
 
 
 class ImagemService{

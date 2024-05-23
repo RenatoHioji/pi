@@ -1,5 +1,5 @@
-import Alarme from "./../model/Alarme.js"
-import Pessoa from "./../model/Pessoa.js"
+import Alarme from "../models/Alarme.js"
+import Pessoa from "../models/Pessoa.js"
 class PessoaRepository{
      async create(pessoa){
         const pessoaCriada = await pessoa.save()

@@ -1,5 +1,5 @@
 import express from "express"
-import AlarmeService from "./../service/AlarmeService.js"
+import AlarmeService from "../service/AlarmeService.js"
 
 
 const router = express.Router()
