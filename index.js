@@ -2,19 +2,31 @@ import 'dotenv/config'
 import express from "express"
 import moongoose from "mongoose"
 import cors from "cors"
+import multer from "multer"
+
+import LoginController from "./pais/controller/PessoaController.js"
+import AlarmeController from "./pais/controller/AlarmeController.js"
 
 const PORT = process.env.PORT || 3001
-const MONGO_DB_URL = process.env.LOCAL_MONGO_DB_URL || process.env.DOCKER_MONGO_DB_URL
 
 const app = express()
 app.use(express.json());
 app.use(cors({ origin: `http://localhost:${PORT}` }))
 app.use(express.static('src/public'))
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+}));
 
 app.set("views", "./src/views/")
 app.set("view engine", "ejs")
 
-moongoose.connect(MONGO_DB_URL + process.env.DB)
+moongoose.connect(process.env.MONGODB_URI + process.env.DB)
+
+//Rotas
+app.use("/", LoginController)
+app.use("/", AlarmeController)
 
 app.get("/", (req, res) => {
     res.render("splash")
