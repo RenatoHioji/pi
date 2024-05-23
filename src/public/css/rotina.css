@@ -5,6 +5,7 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-y: scroll;
 }
 
 .container{
@@ -12,7 +13,7 @@ body{
     flex-direction: column;
     background-color: #a6f5ff;
     width: 100vw;
-    height: 100vh;
+    height: 2000px;
     align-items: center;
 }
 
@@ -25,6 +26,7 @@ body{
     display: flex;
     border-radius: 0px 0px 40px 40px;
     flex-flow: column nowrap;
+    position: fixed;
     align-items: center;
 }
 
@@ -52,15 +54,15 @@ main {
 }
 
 .sun{
-    align-self: flex-end;
+    align-self: center;
 }
 
 .card{
     background-color: #FFD73D;
-    color: #ffffff;
+    color: #F15562;
     border-radius: 10px;
     width: 80%;
-    height: 17%;
+    height: 70%;
     min-height: 5%;
     display: flex;
     flex-direction: row;
@@ -69,12 +71,32 @@ main {
     font-weight: bold;
     font-size: 25px;
     justify-content: space-between;
+    margin-top: 10%;
     
 }
-
-.img-card1{
-    padding: 19px;
-    margin-left: 5%
+.card-1{
+    background-color: #FFD73D;
+    color: #F15562;
+    border-radius: 10px;
+    width: 80%;
+    height: 70%;
+    min-height: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 7%;
+    font-weight: bold;
+    font-size: 45px;
+    justify-content: space-between;
+    margin-top: 50%;
+    
+}
+.card-1 > p{
+    justify-self: center;
+}
+.card-1>img{
+    margin-top: 10%;
 }
 
 main > .card> p{
@@ -110,6 +132,8 @@ main > a:nth-child(4    ) {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    position: relative;
+    align-self: flex-end;
 }
 
 .menu{

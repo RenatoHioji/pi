@@ -24,6 +24,10 @@ app.get("/main", (req, res) => {
     res.render("main")
 })
 
+app.get("/rotina", (req, res) => {
+    res.render("rotina")
+})
+
 app.listen(PORT, err => {
     try {
         console.log(`Server litening on http://localhost:${PORT}`)
