@@ -1,0 +1,3 @@
+NOTE: the a.txt files are safe to remove,
+his only purpose is for include the mvc directories
+as long git do not track empty directories
