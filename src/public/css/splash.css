@@ -1,15 +1,19 @@
 @keyframes bounce {
     0% {
-        margin-bottom: 5%;
+        margin-top: 5%;
+        rotate: 5deg;
     }
     25% {
-        margin-bottom: 0%;
+        margin-top: -5%;
+        rotate: -5deg;
     }
     50% {
-        margin-bottom: 5%;
+        margin-top: 5%;
+        rotate: 5deg;
     }
     100% {
-        margin-bottom: 0%;
+        margin-top: -5%;
+        rotate: -5deg;
     }
 }
 
@@ -42,11 +46,11 @@ main > section:nth-child(2) {
     justify-content: flex-start;
     padding-left: 10%;
     margin-bottom: 0%;
-    animation: bounce 2s infinite ease;
 }
 
 main > section:nth-child(3) {
     display: inherit;
     justify-content: center;
     align-items: center;
+    animation: bounce 2s infinite ease;
 }
