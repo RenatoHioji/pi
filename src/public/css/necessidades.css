@@ -8,11 +8,11 @@ body{
 }
 
 .container{
-    background-color: #C5EEFF;
     display: flex;
     flex-direction: column;
+    background-color: #a6f5ff;
     width: 100vw;
-    height: 100vh;
+    height: 1500px;
     align-items: center;
 }
 
@@ -38,13 +38,13 @@ main {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 10%;
+    padding-top: 4%;
 }
 
 .title{
     background-color: #8ECE16;
     text-align: center;
-    width: 45%;
+    width: 60%;
     padding: 10px;
     position: relative;
     border-radius: 80px;
@@ -54,52 +54,32 @@ main {
     margin-top:-30px;
 }
 
-.sun{
-    align-self: flex-end;
-}
-
-.card{
-    background-color: #FFD73D;
-    color: #ffffff;
+.card-1{
+    background: radial-gradient(circle, #FFF065, #FFD73D);
+    color: #F15562;
     border-radius: 18px;
-    width: 74%;
-    height: 13%;
-    min-height: 5%;
+    width: 76%;
+    height: 27%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
-    margin-bottom: 7%;
     font-weight: bold;
-    font-size: 22px;  
+    font-size: 40px;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
-.img-card1{
-    padding: 3%;
-    margin-left: 4%;
+#last-card{
+    margin-bottom: 30%;
+}
+.card-1 > p{
+    justify-self: center;
 }
 
-main > .card> p{
-    color: #ffffff;
-    margin-left: 7%;
-    margin-top: 8%;
-}
-
-main > a:nth-child(2) {
-    background-color: #8ECE16;
-    color: #000000;
-    
-}
-
-main > a:nth-child(3) {
-    background-color: #3DC3FA;
-    color: #000000;
-    
-}
-
-main > a:nth-child(4    ) {
-    background-color: #F15562;
-    color: #000000;
-    
+.card-1 > img{
+    margin-top: 10%;
 }
 
 .footer{
@@ -109,6 +89,10 @@ main > a:nth-child(4    ) {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    position: fixed;
+    align-self: flex-end;
+    bottom: 0;
+
 }
 
 .menu{
