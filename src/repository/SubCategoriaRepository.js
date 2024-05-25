@@ -1,5 +1,5 @@
-import CategoriaRepository from "./CategoriaRepository"
-import Subcategoria from "./../model/Subcategoria"
+import {CategoriaRepository} from "./CategoriaRepository.js"
+import {Subcategoria} from "./../model/Subcategoria.js"
 class SubCategoriaRepository{
     async findSubCategoriaByCategoriaId(categoriaId){
         const response = await CategoriaRepository.findSubCategoriaByCategoriaId(categoriaId)

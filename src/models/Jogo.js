@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-import Item from "./Item";
+import {item} from "./Item.js";
 
 const jogo = new mongoose.Schema({
     "tipo": Number,
-    "item": [Item]
+    "item": [item]
 })
 
 const Jogo = mongoose.model("jogo", jogo)
 
-export default Jogo
+export {jogo, Jogo}

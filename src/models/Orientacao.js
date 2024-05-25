@@ -7,4 +7,4 @@ const orientacao = new mongoose.Schema({
 
 const Orientacao = mongoose.model("orientacao", orientacao)
 
-export default Orientacao
+export  {orientacao, Orientacao}

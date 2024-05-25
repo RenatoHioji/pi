@@ -1,4 +1,4 @@
-import Alarme from "../models/Alarme.js"
+import {Alarme} from "./../models/Alarme.js"
 
 class AlarmeRepository{
     async create(alarme){

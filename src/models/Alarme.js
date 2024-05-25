@@ -8,4 +8,4 @@ const alarme = new mongoose.Schema({
  
 const Alarme = mongoose.model("Alarme", alarme)
 
-export default Alarme
+export  {alarme, Alarme}

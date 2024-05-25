@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
-import Imagem from "./../../imagens/model/Imagem";
-import Item from "./Item";
+import {imagem} from "./Imagem.js";
+import {item} from "./Item.js";
 const subcategoria = new mongoose.Schema({
     "nome": String,
-    "Imagem": Imagem,
-    "items": [Item]
+    "Imagem": imagem,
+    "items": [item]
 })
 
 const Subcategoria = mongoose.model("subcategoria", subcategoria)
 
-export default Subcategoria
+export {subcategoria, Subcategoria}

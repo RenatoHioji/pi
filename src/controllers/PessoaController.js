@@ -1,5 +1,5 @@
 import express from "express"
-import PessoaService from "../node/backend/pais/service/PessoaService.js"
+import PessoaService from "./../service/PessoaService.js"
 
 
 const router = express.Router()

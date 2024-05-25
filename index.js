@@ -2,9 +2,9 @@ import 'dotenv/config'
 import express from "express"
 import moongoose from "mongoose"
 import cors from "cors"
-
-import LoginController from "./pais/controller/PessoaController.js"
-import AlarmeController from "./pais/controller/AlarmeController.js"
+import session from 'express-session'
+import AlarmeController from "./src/controllers/AlarmeController.js"
+import PessoaController from './src/controllers/PessoaController.js'
 
 const PORT = process.env.PORT || 3001
 
@@ -24,7 +24,7 @@ app.set("view engine", "ejs")
 moongoose.connect(process.env.MONGODB_URI + process.env.DB)
 
 //Rotas
-app.use("/", LoginController)
+app.use("/", PessoaController)
 app.use("/", AlarmeController)
 
 app.get("/", (req, res) => {

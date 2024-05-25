@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
-import Imagem from "./Imagem";
+import {imagem} from "./Imagem.js";
 
 const item = new mongoose.Schema({
     "nome": String,
     "video": String,
     "classificacao": Number,
     "divisaoSilabica": String,
-    "imagens": [Imagem]
+    "imagens": [imagem]
 })
 
 const Item = new mongoose.model("item", item)
 
-export default Item
+export {item, Item}

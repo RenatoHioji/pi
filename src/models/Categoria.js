@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
-import Imagem from "./../../imagens/model/Imagem";
-import Subcategoria from "./Subcategoria";
+import {imagem} from "./Imagem.js";
+import {subcategoria} from "./Subcategoria.js";
 const categoria = new mongoose.Schema({
     "nome": String,
-    "Imagem": Imagem,
-    "subcategoria": [Subcategoria]
+    "Imagem": imagem,
+    "subcategoria": [subcategoria]
 })
 
 const Categoria = mongoose.model("categoria", categoria)
 
-export default Categoria
+export {categoria, Categoria}

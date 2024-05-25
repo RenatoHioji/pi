@@ -1,8 +1,5 @@
 import mongoose from "mongoose"
-const jogo = new mongoose.Schema({
-    "tipo": Number,
-    "item": [Item]
-})
+import {jogo} from "./Jogo.js"
 const crianca = new mongoose.Schema({
     "temResponsavel": Boolean,
     "nome": String,
@@ -14,4 +11,4 @@ const crianca = new mongoose.Schema({
 
 const Crianca = mongoose.model("crianca", crianca)
 
-export default Crianca
+export {crianca, Crianca}

@@ -1,5 +1,5 @@
 import ItemRepository from "./../repository/ItemRepository"
-import Item from "./../model/Item"
+import {Item} from "./../model/Item"
 
 class ItemService{
     async Create(nome, video, classificacao, divisaoSilabica,imagem){

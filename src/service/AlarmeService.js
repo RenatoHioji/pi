@@ -1,5 +1,5 @@
 import AlarmeRepository from "../repository/AlarmeRepository.js"
-import Alarme from "../models/Alarme.js"
+import {Alarme} from "./../models/Alarme.js"
 import PessoaRepository from "../repository/PessoaRepository.js"
 
     class AlarmeService{

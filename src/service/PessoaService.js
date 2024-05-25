@@ -1,5 +1,5 @@
 import PessoaRepository from "../repository/PessoaRepository.js"
-import Pessoa from "../models/Pessoa.js"
+import {Pessoa} from "../models/Pessoa.js"
 import jwt from "jsonwebtoken"
 
 const KEY = "pi-pais-api-backend"

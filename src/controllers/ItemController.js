@@ -1,5 +1,5 @@
 
-import ItemService from "../node/backend/criancas/service/ItemService"
+import ItemService from "./../service/ItemService.js"
 import express from "express"
 
 const router = express.Router()

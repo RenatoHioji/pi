@@ -5,4 +5,4 @@ const imagem = new mongoose.Schema({
 
 const Imagem = new mongoose.model("imagem", imagem)
 
-export default Imagem
+export {imagem, Imagem}
