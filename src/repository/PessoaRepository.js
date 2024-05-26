@@ -1,5 +1,4 @@
-import {Alarme} from "./../models/Alarme.js"
-import {Pessoa} from "./../models/Pessoa.js"
+import {Pessoa, pessoa} from "./../models/Pessoa.js"
 class PessoaRepository{
      async create(pessoa){
         const pessoaCriada = await pessoa.save()
@@ -27,7 +26,6 @@ class PessoaRepository{
         return pessoaAtualizada
     }
     async deleteById(id){
-        await Alarme.delete
         return await Pessoa.findByIdAndDelete(id)
     }
 
@@ -35,9 +33,18 @@ class PessoaRepository{
         const pessoa = await Pessoa.findById(id)
         return pessoa
     }
-    async findAlarmeByPessoaIdAndDate(pessoaId, horario, diaDaSemana){
-        const alarme = await Pessoa.find({_id: pessoaId, horario: horario, diaDaSemana: diaDaSemana})
-        return alarme
+    // async findAlarmeByPessoaIdAndDate(pessoaId, horario, diaDaSemana){
+    //     const alarme = await Pessoa.find({_id: pessoaId, horario: horario, diaDaSemana: diaDaSemana})
+    //     return alarme
+    // }
+    async findListaByPessoaId(pessoaId){
+        const pessoa = await Pessoa.findById(pessoaId)
+        return pessoa.lista
+    }
+
+    async updateLista(pessoaId){
+        return await Pessoa.findById(pessoaId)
+
     }
 
 }

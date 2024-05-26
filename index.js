@@ -2,10 +2,11 @@ import 'dotenv/config'
 import express from "express"
 import moongoose from "mongoose"
 import cors from "cors"
+import multer from 'multer'
 import session from 'express-session'
 import AlarmeController from "./src/controllers/AlarmeController.js"
 import PessoaController from './src/controllers/PessoaController.js'
-
+import ListaController from "./src/controllers/ListaController.js"
 const PORT = process.env.PORT || 3001
 
 const app = express()
@@ -18,6 +19,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
+const upload = multer({dest:"public/uploads/"})
 app.set("views", "./src/views/")
 app.set("view engine", "ejs")
 
@@ -26,7 +28,7 @@ moongoose.connect(process.env.MONGODB_URI + process.env.DB)
 //Rotas
 app.use("/", PessoaController)
 app.use("/", AlarmeController)
-
+app.use("/", ListaController)
 app.get("/", (req, res) => {
     res.render("splash")
 })

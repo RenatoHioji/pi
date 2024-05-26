@@ -16,6 +16,9 @@ class AlarmeRepository{
         );
         return alarmeAtualizado;
     }
+    async findById(idAlarme){
+        return await Alarme.findById(idAlarme)
+    }
 
 
     

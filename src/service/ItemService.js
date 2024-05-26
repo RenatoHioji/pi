@@ -1,17 +1,22 @@
 import ItemRepository from "./../repository/ItemRepository"
 import {Item} from "./../model/Item"
+import SubCategoriaRepository from "../repository/SubCategoriaRepository"
 
 class ItemService{
-    async Create(nome, video, classificacao, divisaoSilabica,imagem){
+    async Create(subCategoriaId, nome, video, classificacao, divisaoSilabica){
         const item = new Item({
             "nome": nome,
             "video": video,
             "classificacao": classificacao,
             "divisaoSilabica": divisaoSilabica,
-            "imagem": imagem
+            "imagem": req.file.imagem
         })
         const response = await ItemRepository.Create(item)
+
+        const subCategoria = await SubCategoriaRepository.findByid(subCategoriaId)
+        subCategoria.items.push(response)
         return response
+        
     }
 
     async findItemByCategoriaId(subCategoriaId){

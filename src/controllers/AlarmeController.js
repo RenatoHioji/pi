@@ -4,33 +4,42 @@ import AlarmeService from "./../service/AlarmeService.js"
 
 const router = express.Router()
 
-router.post("/api/alarme/:idPessoa", async (req, res) => {
+router.post("/pessoa/:pessoaId/lista/:idLista/alarme", async (req, res) => {
     const response = await AlarmeService.Create(
-        req.params.idPessoa,
+        req.params.pessoaId,
+        req.params.idLista,
         req.body.acao,
         req.body.horario,
-        req.body.diaDaSemana
+        req.body.diaDaSemana,
+        req.body.som
     )
-    console.log("CONTROLLER RETORNO -------", response)
     res.status(201).send(response) 
 })
 
-router.delete("/api/alarme/:idAlarme", async(req, res) =>{
-    AlarmeService.DeleteById(req.params.idAlarme)
+router.delete("/pessoa/:idPessoa/lista/:idLista/alarme/:idAlarme", async(req, res) =>{
+    AlarmeService.DeleteById(req.params.idPessoa, req.params.idLista, req.params.idAlarme)
     res.status(204).send()
 })
 
-router.get("/api/alarme/:idPessoa", async(req, res) => {
-    const response = await AlarmeService.findAllByPessoaId(req.params.idPessoa)
+router.get("/lista/:idLista/alarme", async(req, res) => {
+    const response = await AlarmeService.findAllByListaId(req.params.idLista)
     res.status(200).send(response)
 })
 
-router.put("/api/alarme/:idAlarme", async(req, res) =>{
+router.get("/lista/:idLista/alarme/:idAlarme", async(req, res) =>{
+    const response = await AlarmeService.findById(req.params.idAlarme)
+    res.status(200).send(response)
+})
+
+router.put("/pessoa/:idPessoa/lista/:idLista/alarme/:idAlarme", async(req, res) =>{
     const response = await AlarmeService.update(
+        req.params.idPessoa,
+        req.params.idLista,
         req.params.idAlarme,
         req.body.acao,
         req.body.horario,
-        req.body.diaDaSemana
+        req.body.diaDaSemana,
+        req.body.som
     )
     res.status(200).send(response)
 })

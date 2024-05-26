@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
-import {alarme} from "./Alarme.js"
+import {lista, Lista} from "./Lista.js"
 import {crianca} from "./Crianca.js"
+import { alarme } from "./Alarme.js";
 
 const pessoa = new mongoose.Schema({
     cpf: String,
@@ -8,10 +9,11 @@ const pessoa = new mongoose.Schema({
     email: String,
     senha: String,
     dtNasc: Date,
-    alarmes: [alarme],
+    lista: [lista],
     criancas: [crianca],
 });
 
 const Pessoa = mongoose.model("pessoa", pessoa)
+
 
 export  {pessoa, Pessoa}

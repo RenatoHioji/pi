@@ -6,8 +6,9 @@ const router = express.Router()
 
 // CRIAÇÃO DOS ITENS
 
-router.post("/api/item", async (req, res) => {
+router.post("/item/:subCategoriaId",upload.single("file"), async (req, res) => {
     const response = await ItemService.Create(
+        req.params.subCategoriaId,
         req.body.nome,
         req.body.video,
         req.body.classificacao,
@@ -20,7 +21,7 @@ router.post("/api/item", async (req, res) => {
 
 // TELA DOS ITEMS
 
-router.get("/api/item/:idSubcategoria", async(req, res) => {
+router.get("/item/:idSubcategoria", async(req, res) => {
     try{
         const response = await ItemService.findItemByCategoriaId(req.params.idSubcategoria)
         res.status(200).send(response)
@@ -32,7 +33,7 @@ router.get("/api/item/:idSubcategoria", async(req, res) => {
 
 // TELA DO ITEM
 
-router.get("/api/item/:idItem", async(req, res) =>{
+router.get("/item/:idItem", async(req, res) =>{
     try{
         const response = await ItemService.findItemById(req.params.idItem)
         return res.status(200).send(response)
