@@ -5,9 +5,8 @@ class CategoriaRepository{
         return response
     }
 
-    async findSubCategoriaByCategoriaId(categoriaId){
-        const response = await Categoria.findById({_id: categoriaId})
-        return response
+    async findById(idCategoria){
+        return await Categoria.findById(idCategoria)
     }
 }
 

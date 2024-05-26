@@ -1,7 +1,7 @@
 import {Imagem} from "./../models/Imagem.js"
 
 class ImagemRepository{
-    async Create(imagem){
+    async save(imagem){
         const response = await Imagem.save(imagem)
         return response
     }

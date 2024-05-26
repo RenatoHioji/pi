@@ -9,6 +9,11 @@ class ItemRepository{
         const response = await Item.findById(itemId)
         return response
     }
+    async findAll(){
+        const response = await Item.find()
+        return response
+    }
 }
 
 export default new ItemRepository()
+

@@ -6,22 +6,22 @@ const router = express.Router()
 
 // CRIAÇÃO DOS ITENS
 
-router.post("/item/:subCategoriaId",upload.single("file"), async (req, res) => {
+router.post("/categoria/:idCategoria/subcategoria/:idSubcategoria/item",upload.single("file"), async (req, res) => {
     const response = await ItemService.Create(
-        req.params.subCategoriaId,
+        req.params.idCategoria,
+        req.params.idSubcategoria,
         req.body.nome,
         req.body.video,
         req.body.classificacao,
         req.body.divisaoSilabica,
-        req.body.imagem
+        req.file.imagem
     )
-    console.log("CONTROLLER RETORNO -------", response)
     res.status(201).send(response) 
 })
 
 // TELA DOS ITEMS
 
-router.get("/item/:idSubcategoria", async(req, res) => {
+router.get("/categoria/subcategoria/:idSubcategoria/item", async(req, res) => {
     try{
         const response = await ItemService.findItemByCategoriaId(req.params.idSubcategoria)
         res.status(200).send(response)
@@ -33,7 +33,7 @@ router.get("/item/:idSubcategoria", async(req, res) => {
 
 // TELA DO ITEM
 
-router.get("/item/:idItem", async(req, res) =>{
+router.get("/categoria/subcategoria/item/:idItem", async(req, res) =>{
     try{
         const response = await ItemService.findItemById(req.params.idItem)
         return res.status(200).send(response)
@@ -44,7 +44,7 @@ router.get("/item/:idItem", async(req, res) =>{
 
 
 //TELA FINAL
-router.get("/api/item/resultado/:performance", async(req, res) =>{
+router.get("/categoria/subcategoria/item/resultado/:performance", async(req, res) =>{
     try{
         const response = "Parabéns"
         return res.status(200).send(response)
