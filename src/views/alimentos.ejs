@@ -4,45 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/emocoes.css">
-  <title>Aliementos</title>
+  <link rel="stylesheet" href="/css/alimentos.css">
+  <title>Basicas</title>
 </head>
 
 <body>
   <div class="container">
     <section class="note">
-      <img class="sun" src="/svg/sun 2.svg" alt="">
-      <h1 class="title">ALIMENTOS</h1>
+      <img src="/svg/tagarela.svg" alt="" class="img-tagarela">
     </section>
+    <h1 class="title">ALIMENTOS</h1>
     <main>
-      <a class="card-1" href="/basicas">
-        <img src="/svg/happy.svg" alt="">
-        <p>ALEGRIA</p>
+      <a class="card-1" onclick="showVideo()" id="first-card">
+        <img src="/svg/png/banana.png" alt="">
+        <p>BANANA</p>
       </a>
       <a class="card-1" href="/">
-        <img src="/svg/love.svg" alt="">
-        <p>AMOR</p>
+        <img src="/svg/png/carrot.png" alt="">
+        <p>CENOURA</p>
       </a>
       <a class="card-1" href="/">
-        <img src="/svg/sad.svg" alt="">
-        <p>TRISTEZA</p>
+        <img src="/svg/png/sandwich.png" alt="">
+        <p>SANDUÍCHE</p>
+      </a><a class="card-1" href="/">
+        <img src="/svg/png/red-apple.png" alt="">
+        <p>MAÇÃ</p>
+      </a><a class="card-1" href="/">
+        <img src="/svg/png/watermelon.png" alt="">
+        <p>MELANCIA</p>
+      </a><a class="card-1" href="/">
+        <img src="/svg/png/egg.png" alt="">
+        <p>OVO</p>
       </a>
-      <a class="card-1" href="/">
-        <img src="/svg/angry.svg" alt="">
-        <p>RAIVA</p>
-      </a>
-      <a class="card-1" href="/">
-        <img src="/svg/surprise.svg" alt="">
-        <p>SURPRESA</p>
+      <a class="card-1" href="/" id="last-card">
+        <img src="/svg/png/bread.png" alt="">
+        <p>PÃO</p>
       </a>
     </main>
+    
+    <div id="modal-container" onclick="hideVideo()">
+      <div id="modal"> olá mundo</div>
+    </div>
+    
     <section class="footer">
       <button class="menu"><img src="/svg/cards.svg" alt="" class="img-menu"></button>
-      <button class="menu"><img src="/svg/communication.svg" alt="" class="img-menu"></button>
-      <button class="menu"><img src="/svg/profile.svg" alt="" class="img-menu"></button>
+      <button class="menu"><img src="/svg/create-cards.svg" alt="" class="img-menu"></button>
+      <button class="menu"><img src="/svg/alarms.svg" alt="" class="img-menu"></button>
     </section>
   </div>
-  <script src="/js/main.js"></script>
+  <script src="/js/alimentos.js"></script>
 </body>
 
 </html>

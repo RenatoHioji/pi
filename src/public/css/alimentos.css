@@ -12,18 +12,20 @@ body{
     flex-direction: column;
     background-color: #a6f5ff;
     width: 100vw;
-    height: 2500px;
+    height: 1500px;
     align-items: center;
 }
 
 .note{
     width: 100%;
+    height: 15%;
     background-color: #ffffff;
     flex: 1;
     display: flex;
     border-radius: 0px 0px 40px 40px;
     flex-flow: column nowrap;
     align-items: center;
+    position: fixed;
 }
 
 .img-tagarela {
@@ -46,12 +48,12 @@ main {
     text-align: center;
     width: 60%;
     padding: 10px;
-    position: relative;
+    position: fixed;
     border-radius: 80px;
     color: white;
     font-weight: bold;
     font-size: 28px;
-    margin-top:-30px;
+    margin-top:26%;
 }
 
 .card-1{
@@ -71,10 +73,13 @@ main {
     margin-bottom: 10%;
 }
 
+#first-card{
+    margin-top: 50%;
+}
+
 #last-card{
     margin-bottom: 30%;
 }
-
 .card-1 > p{
     justify-self: center;
 }
@@ -83,7 +88,7 @@ main {
     margin-top: 10%;
 }
 
-.footer{
+.footer {
     width: 100%;
     background-color: #ffffff;
     height: 10%;
@@ -96,7 +101,34 @@ main {
 
 }
 
-.menu{
+.menu {
     border: none;
     background: none;
+}
+
+#modal-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: flex-end;
+    justify-content: center;
+    display: none;
+
+}
+
+#modal-container.ativo {
+    display: flex;
+
+}
+
+#modal {
+    width: 100vw;
+    height: 600px;
+    background-color: #ffffff;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+}
+#modal.ativo{
+    transform: translateY(0);
 }

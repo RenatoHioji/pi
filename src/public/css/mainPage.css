@@ -18,9 +18,11 @@ body{
 
 .note{
     width: 100%;
+    height: 15%;
     background-color: #ffffff;
     flex: 1;
     display: flex;
+    position: fixed;
     border-radius: 0px 0px 40px 40px;
     flex-flow: column nowrap;
     align-items: center;
@@ -46,16 +48,12 @@ main {
     text-align: center;
     width: 45%;
     padding: 10px;
-    position: relative;
+    position: fixed;
     border-radius: 80px;
     color: white;
     font-weight: bold;
     font-size: 28px;
-    margin-top:-30px;
-}
-
-.sun{
-    align-self: flex-end;
+    margin-top: 25%;
 }
 
 .card{
@@ -70,18 +68,23 @@ main {
     text-decoration: none;
     margin-bottom: 7%;
     font-weight: bold;
-    font-size: 22px;  
+    font-size: 22px;
+    align-items: center;
 }
 
-.img-card1{
-    padding: 3%;
-    margin-left: 4%;
-}
-
-main > .card> p{
-    color: #ffffff;
+.img-card {
+    width: 50px;
+    height: 50px;
     margin-left: 7%;
-    margin-top: 8%;
+}
+
+#first-card {
+    margin-top: 38%;
+}
+
+main > .card> p {
+    color: #ffffff;
+    margin-left: 10%;
 }
 
 main > a:nth-child(2) {
@@ -96,8 +99,20 @@ main > a:nth-child(3) {
     
 }
 
-main > a:nth-child(4    ) {
+main > a:nth-child(4) {
     background-color: #F15562;
+    color: #000000;
+    
+}
+
+main > a:nth-child(5) {
+    background-color: #FFD73D;
+    color: #000000;
+    
+}
+
+main > a:nth-child(6) {
+    background-color: #8ECE16;
     color: #000000;
     
 }
