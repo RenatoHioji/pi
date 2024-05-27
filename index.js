@@ -40,6 +40,14 @@ app.get("/meusCards", (req, res) => {
     res.render("meusCards")
 })
 
+app.get("/addCards", (req, res) => {
+    res.render("addCards")
+})
+
+app.get("/listas", (req, res) => {
+    res.render("listas")
+})
+
 app.listen(PORT, err => {
     try {
         console.log(`Server litening on http://localhost:${PORT}`)

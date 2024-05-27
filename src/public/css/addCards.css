@@ -56,10 +56,10 @@ main {
     margin-top:26%;
 }
 
-.card-1{
-    background: radial-gradient(circle, #C3FF4F, #ABE936);
-    color: #F15562;
+.newCard{
+    background-color: #beeafc;
     border-radius: 18px;
+    border: 10px dashed #8ECE16;
     width: 76%;
     height: 27%;
     display: flex;
@@ -71,6 +71,37 @@ main {
     justify-content: space-evenly;
     margin-top: 10%;
     margin-bottom: 10%;
+}
+
+#title {
+    width: 65%;
+    height: 3%;
+    border: 3px solid #8ECE16;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #beeafc;
+}
+#title::placeholder {
+    color: #8ECE16;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#silabas {
+    width: 65%;
+    height: 3%;
+    margin-top: 8%;
+    border: 3px solid #8ECE16;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #beeafc;
+}
+#silabas::placeholder {
+    color: #8ECE16;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 #first-card{
@@ -89,7 +120,8 @@ main {
 }
 
 .addCard {
-    padding: 10px 40px;
+    margin-top: 10%;
+    padding: 10px 60px;
     justify-content: center;
     align-items: center;
     background-color: #3DC3FA;
@@ -99,7 +131,6 @@ main {
     align-items: center;
     font-weight: bold;
     font-size: 20px;
-    text-decoration: none;
 }
 
 .addCard > img {
