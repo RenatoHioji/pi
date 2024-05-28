@@ -76,10 +76,9 @@ main {
 #title {
     width: 65%;
     height: 3%;
-    border: 3px solid #8ECE16;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border-width: 0px 0px 3px 0px;
+    border-style: none none solid none;
+    border-color: #8ECE16;
     background-color: #beeafc;
 }
 #title::placeholder {
@@ -92,10 +91,9 @@ main {
     width: 65%;
     height: 3%;
     margin-top: 8%;
-    border: 3px solid #8ECE16;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border-width: 0px 0px 3px 0px;
+    border-style: none none solid none;
+    border-color: #8ECE16;
     background-color: #beeafc;
 }
 #silabas::placeholder {
