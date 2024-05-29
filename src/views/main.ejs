@@ -1,61 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/mainPage.css">
-  <title>Main Page</title>
-</head>
-
-<body>
-  <div class="container">
-    <section class="note">
-      <img src="/svg/tagarela.svg" alt="" class="img-tagarela">
-      </section>
-    <h1 class="title">ÍNICIO</h1>
-    <main>
-      <a class="card" href="/necessidades" id="first-card">
-        <img src="/svg/png/plate.png" alt="" class="img-card">
-        <p>NECESSIDADE</p>
-      </a>
-      <a class="card" href="/">
-        <img src="/svg/png/shower.png" alt="" class="img-card">
-        <p>ATIVIDADE</p>
-      </a>
-      <a class="card" href="/rotina">
-        <img src="/svg/png/emotion.png" alt="" class="img-card">
-        <p>EMOÇÃO</p>
-      </a>
-      <a class="card" href="/emocoes">
-        <img src="/svg/png/communication.png" alt="" class="img-card">
-        <p>COMUNICAÇÃO</p>
-      </a>
-      <a class="card" href="/emocoes">
-        <img src="/svg/png/house.png" alt="" class="img-card">
-        <p>AMBIENTE</p>
-      </a>
-      <a class="card" href="/meusCards">
-        <img src="/svg/png/frame.png" alt="" class="img-card">
-        <p>MEU CARD</p>
-      </a>
-    </main>
-    <section class="footer">
-      
-        <button class="menu"><img src="/svg/cards.svg" alt="" class="img-menu"></button>
-    
-     
-        <button class="menu"><img src="/svg/create-cards.svg" alt="" class="img-menu"></button>
-      
-     
-        <button class="menu"><img src="/svg/alarms.svg" alt="" class="img-menu"></button>
-      
-      
-      
-      
-    </section>
-  </div>
-  <script src="/js/main.js"></script>
-</body>
-
-</html>
+<%- include('partials/header', { cssList: ["style", "mainPage" ], title: "ÍNICIO" }) -%>
+  <main>
+    <%- include('components/link', { links: [
+      { routeTo: "necessidades", icon: "plate", text: "NECESSIDADE" },
+      { routeTo: "", icon: "shower", text: "ATIVIDADE" },
+      { routeTo: "rotina", icon: "emotion", text: "EMOÇÃO" },
+      { routeTo: "emocoes", icon: "communication", text: "COMUNICAÇÃO" },
+      { routeTo: "meusCards", icon: "frame", text: "MEUS CARTÕES" }
+    ]}) %>
+  </main>
+<%- include('partials/footer') -%>

@@ -1,61 +1,3 @@
-*{
-    box-sizing: border-box;
-}
-
-body{
-    margin: 0;
-    padding: 0;
-}
-
-.container{
-    background-color: #C5EEFF;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-}
-
-.note{
-    width: 100%;
-    height: 15%;
-    background-color: #ffffff;
-    flex: 1;
-    display: flex;
-    position: fixed;
-    border-radius: 0px 0px 40px 40px;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.img-tagarela {
-    margin-top: 14%;
-}
-
-main {
-    width: 100vw;
-    flex: 4;
-    background-image: url("../svg/background-main.svg");
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 10%;
-}
-
-.title{
-    background-color: #8ECE16;
-    text-align: center;
-    width: 45%;
-    padding: 10px;
-    position: fixed;
-    border-radius: 80px;
-    color: white;
-    font-weight: bold;
-    font-size: 28px;
-    margin-top: 25%;
-}
-
 .card{
     background-color: #FFD73D;
     color: #ffffff;
@@ -66,7 +8,7 @@ main {
     display: flex;
     flex-direction: row;
     text-decoration: none;
-    margin-bottom: 7%;
+    margin-top: 7%;
     font-weight: bold;
     font-size: 22px;
     align-items: center;
@@ -76,10 +18,6 @@ main {
     width: 50px;
     height: 50px;
     margin-left: 7%;
-}
-
-#first-card {
-    margin-top: 38%;
 }
 
 main > .card> p {
@@ -115,18 +53,4 @@ main > a:nth-child(6) {
     background-color: #8ECE16;
     color: #000000;
     
-}
-
-.footer{
-    width: 100%;
-    background-color: #ffffff;
-    height: 10%;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.menu{
-    border: none;
-    background: none;
 }

@@ -4,14 +4,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('../links', { cssList: ["style", "addCards"] }) -%>
-    <title>Add Cards</title>
+    <%- include('../cssLinks', { cssList: cssList }) -%>
+    <title><%- title.toLowerCase() -%></title>
   </head>
 
   <body>
     <div class="container">
-      <section class="note">
+      <header class="note">
         <img src="/svg/tagarela.svg" alt="" class="img-tagarela">
-      </section>
-      <h1 class="title">ADICIONAR</h1>
+        <h1 class="title"><%- title -%></h1>
+      </header>
   
