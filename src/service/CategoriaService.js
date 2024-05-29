@@ -1,5 +1,5 @@
-import CategoriaRepository from "./../repository/CategoriaRepository"
-import ImagemRepository from "./../repository/ImagemRepository"
+import CategoriaRepository from "./../repository/CategoriaRepository.js"
+import ImagemRepository from "./../repository/ImagemRepository.js"
 class CategoriaService{
     async findAll(){
         const response = await CategoriaRepository.findAll()

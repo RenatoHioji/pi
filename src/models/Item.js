@@ -3,11 +3,13 @@ import {imagem} from "./Imagem.js";
 
 const item = new mongoose.Schema({
     "nome": String,
-    "video": String,
     "classificacao": Number,
     "divisaoSilabica": String,
-    "imagens": [imagem]
+    "imagens": [imagem],
+    audio: String,
+    video: String,
 })
+
 
 const Item = new mongoose.model("item", item)
 

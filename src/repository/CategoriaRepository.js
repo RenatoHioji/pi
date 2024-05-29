@@ -1,4 +1,4 @@
-import {Categoria} from "./../model/Categoria.js"
+import {Categoria} from "./../models/Categoria.js"
 class CategoriaRepository{
     async findAll(){
         const response = await Categoria.find()

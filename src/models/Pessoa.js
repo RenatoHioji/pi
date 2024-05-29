@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
-import {lista, Lista} from "./Lista.js"
+import {lista} from "./Lista.js"
 import {crianca} from "./Crianca.js"
-import { alarme } from "./Alarme.js";
+import { item } from "./Item.js";
 
 const pessoa = new mongoose.Schema({
     cpf: String,
@@ -11,6 +11,7 @@ const pessoa = new mongoose.Schema({
     dtNasc: Date,
     lista: [lista],
     criancas: [crianca],
+    items: [item]
 });
 
 const Pessoa = mongoose.model("pessoa", pessoa)

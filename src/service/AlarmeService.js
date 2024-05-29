@@ -23,6 +23,7 @@ import PessoaRepository from "../repository/PessoaRepository.js"
         const pessoa = await PessoaRepository.findById(idPessoa)
         
         const listaAntiga = pessoa.lista.id(idLista)
+        
         listaAntiga.alarmes = listaAtualizada.alarmes
 
         await pessoa.save()

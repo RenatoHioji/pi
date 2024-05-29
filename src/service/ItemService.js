@@ -1,17 +1,10 @@
-import ItemRepository from "./../repository/ItemRepository"
-import {Item} from "./../model/Item"
-import SubCategoriaRepository from "../repository/SubCategoriaRepository"
-import CategoriaRepository from "../repository/CategoriaRepository"
+import ItemRepository from "./../repository/ItemRepository.js"
+import SubCategoriaRepository from "../repository/SubCategoriaRepository.js"
+import CategoriaRepository from "../repository/CategoriaRepository.js"
+import PessoaRepository from "../repository/PessoaRepository.js"
 
 class ItemService{
-    async Create(idCategoria, idSubcategoria, nome, video, classificacao, divisaoSilabica){
-        const item = new Item({
-            "nome": nome,
-            "video": video,
-            "classificacao": classificacao,
-            "divisaoSilabica": divisaoSilabica,
-            "imagem": req.file.imagem
-        })
+    async Create(idCategoria, idSubcategoria,item){
         const response = await ItemRepository.Create(item)
 
         const subCategoria = await SubCategoriaRepository.findByid(idSubcategoria)
@@ -38,6 +31,19 @@ class ItemService{
     async findItemById(itemId){
         const response = await ItemRepository.findItemById(itemId)
         return response
+    }
+    async findByPessoaId(pessoaId){
+        const response = await PessoaRepository.findItemByPessoaId(pessoaId)
+        return response
+    }
+
+    async createItemToPessoa(idPessoa, item){
+            const itemCriado = await ItemService.Create(item)
+            const pessoa = await PessoaRepository.findById(idPessoa)
+            pessoa.items.push(itemCriado)
+            await pessoa.save()
+            return itemCriado
+        
     }
 }
 

@@ -1,9 +1,9 @@
-import SubcategoriaService from "./../service/SubcategoriaService"
-import SubCategoriaService from "./../service/SubcategoriaService"
+import SubcategoriaService from "./../service/SubcategoriaService.js"
 import express from "express"
+import multer from 'multer'
 
 const router = express.Router()
-
+const upload = multer({dest:"public/uploads/"})
 
 //TELA DE SUBCATEGORIAS DA CATEGORIA
 router.get("/categoria/:idCategoria/subcategoria", async(req, res) => {

@@ -1,9 +1,10 @@
 
-import CategoriaService from "./../service//CategoriaService"
+import CategoriaService from "./../service//CategoriaService.js"
 import express from "express"
+import multer from 'multer'
 
 const router = express.Router()
-
+const upload = multer({dest:"public/uploads/"})
 
 //TELA DAS CATEGORIAS
 router.get("/categoria", async(req, res) => {

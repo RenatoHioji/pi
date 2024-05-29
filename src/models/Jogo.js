@@ -3,6 +3,7 @@ import {item} from "./Item.js";
 
 const jogo = new mongoose.Schema({
     "tipo": Number,
+    "dificuldade": Number,
     "item": [item]
 })
 

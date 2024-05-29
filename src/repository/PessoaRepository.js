@@ -47,6 +47,11 @@ class PessoaRepository{
 
     }
 
+    async findItemByPessoaId(pessoaId){
+        const response = await Pessoa.findById(pessoaId)
+        return response.items
+    }
+
 }
 
 export default new PessoaRepository()

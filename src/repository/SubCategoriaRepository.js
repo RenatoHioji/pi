@@ -1,5 +1,5 @@
-import {CategoriaRepository} from "./CategoriaRepository.js"
-import {Subcategoria} from "./../model/Subcategoria.js"
+import CategoriaRepository from "./CategoriaRepository.js"
+import {Subcategoria} from "./../models/Subcategoria.js"
 
 class SubCategoriaRepository{
     async findSubCategoriaByCategoriaId(categoriaId){
@@ -8,7 +8,7 @@ class SubCategoriaRepository{
     }
     async findItemBySubCategoriaId(subCategoriaId){
         const response = await Subcategoria.findById(subCategoriaId)
-        return response
+        return response.items
     }
     async save(nome){
         const sub = new Subcategoria({nome: nome})
