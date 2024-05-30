@@ -5,16 +5,36 @@ import {Item} from "./../models/Item.js"
 import multer from 'multer'
 
 const router = express.Router()
-const upload = multer({dest:"public/uploads/"})
 
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        let uploadPath
+        if (file.fieldname === 'imagem') {
+            uploadPath = path.join('public', 'uploads', 'images')
+        } else if (file.fieldname === 'audio') {
+            uploadPath = path.join('public', 'uploads', 'audios')
+        } else if (file.fieldname === 'video') {
+            uploadPath = path.join('public', 'uploads', 'videos')
+        }
+        cb(null, uploadPath)
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+const upload = multer({ storage: storage })
 router.post("/categoria/:idCategoria/subcategoria/:idSubcategoria/item", upload.fields([{name: "imagem"}, {name: "audio"}, {name:"video"}]), async (req, res) => {
+    const imagens = req.files.imagem ? req.files.imagem.map(file => path.join('images', file.originalname)) : []
+    const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname) : null
+    const video = req.files.video ? path.join('videos', req.files.video[0].originalname) : null
     const item = new Item({
         nome,
         classificacao,
         divisaoSilabica,
-        imagens: req.files.imagens,
-        audio: req.files.audio,
-        video: req.files.video
+        imagens,
+        audio,
+        video
       })
   
     const response = await ItemService.Create(
@@ -58,13 +78,16 @@ router.get("/pessoa/:idPessoa/item", async(req, res) => {
 })
 
 router.post("/pessoa/:idPessoa/item",upload.fields([{name: "imagem"}, {name: "audio"}, {name:"video"}]), async (req, res) => {
+    const imagens = req.files.imagem ? req.files.imagem.map(file => path.join('images', file.originalname)) : []
+    const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname) : null
+    const video = req.files.video ? path.join('videos', req.files.video[0].originalname) : null
     const item = new Item({
         nome,
         classificacao,
         divisaoSilabica,
-        imagens: req.file.imagem,
-        audio: req.files.audio,
-        video: req.files.video,
+        imagens,
+        audio,
+        video
       })
       const response = await ItemService.createItemToPessoa(req.params.idPessoa, item)
 })
