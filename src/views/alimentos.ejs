@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/alimentos.css">
+  <title>Alimentos</title>
+</head>
+
+<body>
+  <div class="container">
+    <section class="note">
+      <img src="/svg/tagarela.svg" alt="" class="img-tagarela">
+    </section>
+    <h1 class="title">ALIMENTOS</h1>
+    <main>
+      <a class="card-1" onclick="showVideo('BANANA', 'BA-NA-NA')" id="first-card">
+        <img src="/svg/png/banana.png" alt="">
+        <p>BANANA</p>
+      </a>
+      <a class="card-1" onclick="showVideo('CENOURA', 'CE-NOU-RA')">
+        <img src="/svg/png/carrot.png" alt="">
+        <p>CENOURA</p>
+      </a>
+      <a class="card-1" onclick="showVideo('SANDUÍCHE', 'SAN-DUÍ-CHE')">
+        <img src="/svg/png/sandwich.png" alt="">
+        <p>SANDUÍCHE</p>
+      </a><a class="card-1" onclick="showVideo('MAÇÃ', 'MA-ÇÃ')">
+        <img src="/svg/png/red-apple.png" alt="">
+        <p>MAÇÃ</p>
+      </a><a class="card-1" onclick="showVideo('MELANCIA', 'ME-LAN-CIA')">
+        <img src="/svg/png/watermelon.png" alt="">
+        <p>MELANCIA</p>
+      </a><a class="card-1" onclick="showVideo('OVO', 'OVO')">
+        <img src="/svg/png/egg.png" alt="">
+        <p>OVO</p>
+      </a>
+      <a class="card-1" onclick="showVideo('PÃO', 'PÃO')"id="last-card">
+        <img src="/svg/png/bread.png" alt="">
+        <p>PÃO</p>
+      </a>
+    </main>
+    
+    <div id="modal-container" onclick="hideVideo()">
+      <div id="modal"></div>
+    </div>
+    
+    <section class="footer">
+      <button class="menu"><img src="/svg/cards.svg" href="" alt="" class="img-menu"></button>
+      <button class="menu"><img src="/svg/create-cards.svg" alt="" class="img-menu"></button>
+      <button class="menu"><img src="/svg/alarms.svg" alt="" class="img-menu"></button>
+    </section>
+  </div>
+  <script src="/js/alimentos.js"></script>
+</body>
+
+</html>
