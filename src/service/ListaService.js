@@ -9,7 +9,7 @@ class ListaService{
         const lista = await ListaRepository.save(nome)
         const pessoa = await PessoaRepository.updateLista(pessoaId, lista)
         pessoa.lista.push(lista)
-        await pessoaAtualizada.save()
+        await pessoa.save()
         return lista
     }
     async update(pessoaId, listaId, nome) {
@@ -27,6 +27,7 @@ class ListaService{
         const listaAntiga = pessoa.lista.id(listaId)
 
         await listaAntiga.deleteOne()
+        
         await pessoa.save()
         return await ListaRepository.delete(listaId)
     }

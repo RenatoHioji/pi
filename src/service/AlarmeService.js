@@ -37,6 +37,7 @@ import PessoaRepository from "../repository/PessoaRepository.js"
         const lista = await ListaRepository.findById(idLista)
 
         const alarmeLista = lista.alarmes.id(idAlarme)
+        console.log(alarmeLista)
 
         await alarmeLista.deleteOne()
 
