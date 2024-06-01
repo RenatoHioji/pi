@@ -48,6 +48,30 @@ app.get("/listas", (req, res) => {
     res.render("listas")
 })
 
+app.get("/listas_fimDeSemana", (req, res) => {
+    res.render("listas_fim")
+})
+
+app.get("/addList", (req, res) => {
+    res.render("addList")
+})
+
+app.get("/dias_da_semana", (req, res) => {
+    res.render("dias_da_semana")
+})
+
+app.get("/praticar", (req, res) => {
+    res.render("praticar")
+})
+
+app.get("/quiz", (req, res) => {
+    res.render("quiz")
+})
+
+app.get("/parabens", (req, res) => {
+    res.render("parabens")
+})
+
 app.listen(PORT, err => {
     try {
         console.log(`Server litening on http://localhost:${PORT}`)

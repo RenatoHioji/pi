@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #C5EEFF;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+
+.note {
+    width: 100%;
+    height: 15%;
+    background-color: #ffffff;
+    flex: 1;
+    display: flex;
+    position: fixed;
+    border-radius: 0px 0px 40px 40px;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.img-tagarela {
+    margin-top: 14%;
+}
+
+main {
+    width: 100vw;
+    flex: 4;
+    background-image: url("../svg/background-main.svg");
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10%;
+}
+
+.title {
+    background-color: #F15562;
+    text-align: center;
+    width: 45%;
+    padding: 10px;
+    position: fixed;
+    border-radius: 80px;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 25%;
+}
+
+#tarefa {
+    width: 65%;
+    height: 7%;
+    border-width: 0px 0px 3px 0px;
+    border-style: none none solid none;
+    border-color: #5E890F;
+    background-color: #beeafc;
+    margin-top: 20%;
+}
+
+#tarefa::placeholder {
+    color: #5E890F;
+    font-size: 24px;
+}
+
+.img-card {
+    width: 50px;
+    height: 50px;
+}
+
+.btns-horario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mais {
+    margin-top: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.horario {
+    margin-top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #5E890F;
+}
+
+.horario > h1 {
+    margin: 0% 5%;
+}
+
+.dias_da_semana {
+    width: 65%;
+    height: 7%;
+    border-width: 0px 0px 3px 0px;
+    border-style: none none solid none;
+    border-color: #5E890F;
+    background-color: #beeafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.dias_da_semana > P {
+    color: #5E890F;
+    font-size: 24px;
+    margin: 0;
+}
+
+.dias_da_semana > img {
+    width: 13%;
+    height:65%;
+}
+
+#pronto {
+    width: 30%;
+    height: 5%;
+    background-color: #FFD73D;
+    margin-top: 10%;
+    display: flex;
+    border-radius: 60px;
+    color: #ffffff;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.addList {
+    background-color: #8ECE16;
+    color: #ffffff;
+    border-radius: 18px;
+    width: 15%;
+    height: 8%;
+    min-height: 5%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 7%;
+    font-size: 22px;
+    align-items: center;
+}
+
+.list {
+    width: 100%;
+    height: 6%;
+    background-color: #8ECE16;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: flex-end;
+    color: #ffffff;
+}
+
+.list > p {
+    margin: 0% 4%;
+}
+
+.lists {
+    width: 100%;
+    height: 10%;
+    background-color: #b5ff70;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+#first-card {
+    margin-top: 40%;
+    margin-left: 70%;
+}
+
+.lists > p {
+    margin: 0% 4%;
+    color: #5E890F;
+}
+.img-card {
+    width: 50px;
+    height: 50px;
+}
+
+.footer{
+    width: 100%;
+    background-color: #ffffff;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.menu{
+    border: none;
+    background: none;
+}
