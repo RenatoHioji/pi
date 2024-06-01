@@ -24,12 +24,10 @@ app.use(session({
 }));
 
 
-
-
 app.set("views", "./src/views/")
 app.set("view engine", "ejs")
 
-moongoose.connect(process.env.MONGODB_URI + process.env.DB)
+moongoose.connect("mongodb://localhost:27017/pi-pais")
 
 //Rotas
 app.use("/", PessoaController)

@@ -2,6 +2,7 @@ import ItemRepository from "./../repository/ItemRepository.js"
 import SubCategoriaRepository from "../repository/SubCategoriaRepository.js"
 import CategoriaRepository from "../repository/CategoriaRepository.js"
 import PessoaRepository from "../repository/PessoaRepository.js"
+import ImagemRepository from "../repository/ImagemRepository.js"
 
 class ItemService{
     async Create(idCategoria, idSubcategoria,item){
@@ -33,15 +34,25 @@ class ItemService{
         return response
     }
     async findByPessoaId(pessoaId){
-        const response = await PessoaRepository.findItemByPessoaId(pessoaId)
-        return response
+        console.log(pessoaId)
+        const pessoa = await PessoaRepository.findById(pessoaId)
+        console.log(pessoa)
+        if(pessoa){
+            return pessoa.items
+        }
+        return 
     }
 
-    async createItemToPessoa(idPessoa, item){
-            const itemCriado = await ItemService.Create(item)
+    async createItemToPessoa(idPessoa, item, imagem){
+            const itemCriado = await ItemRepository.save(item)
             const pessoa = await PessoaRepository.findById(idPessoa)
-            pessoa.items.push(itemCriado)
-            await pessoa.save()
+            const imagemCriada = await ImagemRepository.save(imagem)
+            itemCriado.imagens.push(imagemCriada)
+            await itemCriado.save()
+            if(pessoa){
+                pessoa.items.push(itemCriado)
+                await pessoa.save()
+            }
             return itemCriado
         
     }

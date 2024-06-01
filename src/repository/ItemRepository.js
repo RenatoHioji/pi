@@ -13,6 +13,10 @@ class ItemRepository{
         const response = await Item.find()
         return response
     }
+    async save(item){
+        const response= await item.save()
+        return response
+    }
 }
 
 export default new ItemRepository()

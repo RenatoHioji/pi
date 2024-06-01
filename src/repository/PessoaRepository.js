@@ -28,15 +28,12 @@ class PessoaRepository{
     async deleteById(id){
         return await Pessoa.findByIdAndDelete(id)
     }
-
     async findById(id){
         const pessoa = await Pessoa.findById(id)
+        console.log(id)
         return pessoa
     }
-    // async findAlarmeByPessoaIdAndDate(pessoaId, horario, diaDaSemana){
-    //     const alarme = await Pessoa.find({_id: pessoaId, horario: horario, diaDaSemana: diaDaSemana})
-    //     return alarme
-    // }
+
     async findListaByPessoaId(pessoaId){
         const pessoa = await Pessoa.findById(pessoaId)
         return pessoa.lista
@@ -48,8 +45,8 @@ class PessoaRepository{
     }
 
     async findItemByPessoaId(pessoaId){
-        const response = await Pessoa.findById(pessoaId)
-        return response.items
+        const pessoa = await Pessoa.findById(pessoaId)
+        return pessoa.items
     }
 
 }
