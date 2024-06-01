@@ -1,4 +1,3 @@
-import { lista } from "../models/Lista.js"
 import ListaRepository from "./../repository/ListaRepository.js"
 import PessoaRepository from "./../repository/PessoaRepository.js"
 class ListaService{

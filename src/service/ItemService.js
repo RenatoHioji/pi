@@ -33,15 +33,22 @@ class ItemService{
         return response
     }
     async findByPessoaId(pessoaId){
-        const response = await PessoaRepository.findItemByPessoaId(pessoaId)
-        return response
+        console.log(pessoaId)
+        const pessoa = await PessoaRepository.findById(pessoaId)
+        console.log(pessoa)
+        if(pessoa){
+            return pessoa.items
+        }
+        return 
     }
 
     async createItemToPessoa(idPessoa, item){
-            const itemCriado = await ItemService.Create(item)
+            const itemCriado = await ItemRepository.save(item)
             const pessoa = await PessoaRepository.findById(idPessoa)
-            pessoa.items.push(itemCriado)
-            await pessoa.save()
+            if(pessoa){
+                pessoa.items.push(itemCriado)
+                await pessoa.save()
+            }
             return itemCriado
         
     }

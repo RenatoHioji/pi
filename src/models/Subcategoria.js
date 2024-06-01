@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
-import {imagem} from "./Imagem.js";
 import {item} from "./Item.js";
 const subcategoria = new mongoose.Schema({
     "nome": String,
-    "Imagem": imagem,
+    "Imagem": String,
     "items": [item]
 })
 

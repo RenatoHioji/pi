@@ -25,6 +25,14 @@ app.use(session({
     resave: false,
     saveUninitialized: true 
 }));
+
+
+app.set("views", "./src/views/")
+app.set("view engine", "ejs")
+
+moongoose.connect("mongodb://localhost:27017/pi-pais")
+
+//Rotas
 app.use("/", PessoaController)
 app.use("/", AlarmeController)
 app.use("/", ListaController)
@@ -36,7 +44,6 @@ app.use("/", ItemController)
 app.set("views", "./src/views/")
 app.set("view engine", "ejs")
 
-moongoose.connect(MONGO_DB_URL + process.env.DB)
 
 app.get("/", (req, res) => {
     res.render("splash")
@@ -63,13 +70,15 @@ app.get("/meusCards", (req, res) => {
 })
 
 app.get("/addCards", (req, res) => {
-    res.render("addCards")
+    res.render("addCards", {id: 10})
 })
 
 app.get("/listas", (req, res) => {
     res.render("listas")
 })
-
+app.get("/jogoDificuldade", (req, res) =>{
+    res.render("jogoDificuldade")
+})
 app.listen(PORT, err => {
     try {
         console.log(`Server litening on http://localhost:${PORT}`)

@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
-import {imagem} from "./Imagem.js";
 
 const item = new mongoose.Schema({
     "nome": String,
     "classificacao": Number,
     "divisaoSilabica": String,
-    "imagens": [imagem],
+    "imagem": String,
     audio: String,
     video: String,
 })

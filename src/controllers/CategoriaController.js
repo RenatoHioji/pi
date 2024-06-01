@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         let uploadPath
         if (file.fieldname === 'imagem') {
-            uploadPath = path.join('public', 'uploads', 'images')
+            uploadPath = path.join('public', 'uploads', 'imagens')
         } else if (file.fieldname === 'audio') {
             uploadPath = path.join('public', 'uploads', 'audios')
         } else if (file.fieldname === 'video') {
@@ -28,7 +28,8 @@ router.get("/categoria", async(req, res) => {
 })
 
 router.post("/categoria", upload.single("file"), async(req, res) =>{
-    const imagens = req.files.imagem ? req.files.imagem.map(file => path.join('images', file.originalname)) : []
+    const imagens = req.file.imagem ? path.join('imagens', req.file.imagem[0].originalname) : null
+
     const response = await CategoriaService.save(req.body.nome, imagens)
     res.status(201).send(response)
 })

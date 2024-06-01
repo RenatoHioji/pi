@@ -1,5 +1,5 @@
 import express from "express"
-import CriancaService from "./../service//CriancaService"
+import Crianca from "./../models/Crianca.js"
 const router = express.Router()
 
 router.get("/api/crianca/perfil/:idCrianca", async (req, res) =>{
