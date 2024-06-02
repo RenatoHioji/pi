@@ -49,7 +49,7 @@ app.get("/listas", (req, res) => {
 })
 
 app.get("/listas_fimDeSemana", (req, res) => {
-    res.render("listas_fim")
+    res.render("listas_fimDeSemana")
 })
 
 app.get("/addList", (req, res) => {
