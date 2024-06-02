@@ -2,6 +2,27 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserrat-black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: montserrat-semiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+@font-face {
+    font-family: montserrat-regular;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -51,7 +72,7 @@ main {
     position: fixed;
     border-radius: 80px;
     color: white;
-    font-weight: bold;
+    font-family: montserrat-black;
     font-size: 28px;
     margin-top: 25%;
 }
@@ -94,7 +115,7 @@ main {
     background-color: #8ECE16;
     text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
+    font-family: montserrat-semiBold;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -113,7 +134,7 @@ main {
     background-color: #34B9CC;
     text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
+    font-family: montserrat-semiBold;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -132,7 +153,7 @@ main {
     background-color: #F15562;
     text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
+    font-family: montserrat-semiBold;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
