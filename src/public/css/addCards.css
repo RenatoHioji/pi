@@ -1,0 +1,239 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #a6f5ff;
+    width: 100vw;
+    height: 1500px;
+    align-items: center;
+}
+
+.note{
+    width: 100%;
+    height: 15%;
+    background-color: #ffffff;
+    flex: 1;
+    display: flex;
+    border-radius: 0px 0px 40px 40px;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: fixed;
+}
+
+.img-tagarela {
+    margin-top: 0%;
+}
+
+main {
+    width: 100vw;
+    flex: 4;
+    background-image: url("../svg/background-main.svg");
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 4%;
+}
+
+.title{
+    background-color: #8ECE16;
+    text-align: center;
+    width: 79%;
+    padding: 10px;
+    position: fixed;
+    border-radius: 80px;
+    color: white;
+    font-weight: bold;
+    font-family: montserrat-black;
+    font-size: 26px;
+    margin-top:35%;
+}
+
+.newCard{
+    background-color: #beeafc;
+    border-radius: 18px;
+    border: 4px dashed #8ECE16;
+    width: 76%;
+    height: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.newCard2{
+    background-color: #beeafc;
+    border-radius: 18px;
+    border: 4px dashed #8ECE16;
+    width: 76%;
+    height: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+    justify-content: space-evenly;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+
+#title {
+    width: 65%;
+    height: 3%;
+    border-width: 0px 0px 3px 0px;
+    border-style: none none solid none;
+    border-color: #8ECE16;
+    font-family: montserrat-medium;
+    background-color: #beeafc;
+}
+#title::placeholder {
+    color: #8ECE16;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#silabas {
+    width: 65%;
+    height: 3%;
+    margin-top: 8%;
+    border-width: 0px 0px 3px 0px;
+    border-style: none none solid none;
+    border-color: #8ECE16;
+    background-color: #beeafc;
+}
+#silabas::placeholder {
+    color: #8ECE16;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#first-card{
+    margin-top: 50%;
+}
+
+#last-card{
+    margin-bottom: 30%;
+}
+.card-1 > p{
+    justify-self: center;
+}
+
+.card-1 > img{
+    margin-top: 10%;
+}
+
+.foto {
+    margin-top: 0%;
+    margin-bottom: 25%;
+    padding: 10px 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #3DC3FA;
+    color: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    font-family: montserrat-bold;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.foto > img {
+    margin-right: 20px;
+}
+
+.addCard {
+    margin-bottom: 25%;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #8ECE16;
+    color: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    font-family: montserrat-bold;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.addCard > img {
+    margin-right: 20px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #ffffff;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    position: fixed;
+    align-self: flex-end;
+    bottom: 0;
+}
+
+.menu {
+    border: none;
+    background: none;
+}
+
+#modal-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: flex-end;
+    justify-content: center;
+    display: none;
+}
+
+#modal-container.ativo {
+    display: flex;
+}
+
+#modal {
+    width: 100vw;
+    height: 580px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #ffffff;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+#modal.ativo{
+    transform: translateY(0);
+}
+
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserrat-black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: montserrat-semiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
