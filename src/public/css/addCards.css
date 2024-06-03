@@ -29,7 +29,7 @@ body{
 }
 
 .img-tagarela {
-    margin-top: 14%;
+    margin-top: 0%;
 }
 
 main {
@@ -46,20 +46,21 @@ main {
 .title{
     background-color: #8ECE16;
     text-align: center;
-    width: 60%;
+    width: 79%;
     padding: 10px;
     position: fixed;
     border-radius: 80px;
     color: white;
     font-weight: bold;
-    font-size: 28px;
-    margin-top:26%;
+    font-family: montserrat-black;
+    font-size: 26px;
+    margin-top:35%;
 }
 
 .newCard{
     background-color: #beeafc;
     border-radius: 18px;
-    border: 10px dashed #8ECE16;
+    border: 4px dashed #8ECE16;
     width: 76%;
     height: 24%;
     display: flex;
@@ -76,7 +77,7 @@ main {
 .newCard2{
     background-color: #beeafc;
     border-radius: 18px;
-    border: 10px dashed #8ECE16;
+    border: 4px dashed #8ECE16;
     width: 76%;
     height: 24%;
     display: flex;
@@ -96,6 +97,7 @@ main {
     border-width: 0px 0px 3px 0px;
     border-style: none none solid none;
     border-color: #8ECE16;
+    font-family: montserrat-medium;
     background-color: #beeafc;
 }
 #title::placeholder {
@@ -144,6 +146,7 @@ main {
     color: #FFFFFF;
     border-radius: 20px;
     display: flex;
+    font-family: montserrat-bold;
     align-items: center;
     font-weight: bold;
     font-size: 20px;
@@ -162,9 +165,10 @@ main {
     color: #FFFFFF;
     border-radius: 20px;
     display: flex;
+    font-family: montserrat-bold;
     align-items: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .addCard > img {
@@ -217,3 +221,19 @@ main {
     transform: translateY(0);
 }
 
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserrat-black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: montserrat-semiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}

@@ -1,3 +1,21 @@
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserrat-black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: montserrat-semiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+
 main > .card {
     border-radius: 18px;
     width: 75%;
@@ -5,8 +23,8 @@ main > .card {
     margin-bottom: 5%;
     padding: 10%;
     display: flex;
+    gap: 7px;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     text-decoration: none;
 }
@@ -22,6 +40,7 @@ main > .card {
     font-size: 22px;
     color: #ffffff;
     text-align: right;
+    font-family: montserrat-medium;
 }
 
 main > .card:nth-child(1) {

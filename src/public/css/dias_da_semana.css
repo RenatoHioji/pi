@@ -72,7 +72,7 @@ main {
     position: fixed;
     border-radius: 80px;
     color: white;
-    font-family: monserrat-black;
+    font-family: montserrat-medium;
     font-size: 28px;
     margin-top: 25%;
 }
@@ -88,6 +88,7 @@ main {
     justify-content: center;
     text-decoration: none;
     margin-bottom: 7%;
+    font-family: montserrat-medium;
     font-size: 22px;
     align-items: center;
 }
@@ -98,7 +99,7 @@ main {
     margin-top: 50%;
     text-decoration: none;
     font-size: 25px;
-    font-family: monserrat-bold;
+    font-family: montserrat-bold;
     display: flex;
     justify-content: center;
     align-items: center;

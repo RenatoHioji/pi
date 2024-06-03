@@ -2,6 +2,23 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserrat-black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: montserrat-semiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -49,6 +66,7 @@ main {
     margin-top: 10px;
     color: white;
     font-weight: bold;
+    font-family: montserrat-black;
     font-size: 30px;
 }
 

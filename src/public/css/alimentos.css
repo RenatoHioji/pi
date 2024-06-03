@@ -52,6 +52,7 @@ main {
     border-radius: 80px;
     color: white;
     font-weight: bold;
+    font-family: montserrat-black;
     font-size: 28px;
     margin-top:26%;
 }
@@ -65,6 +66,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: montserrat-medium;
     text-decoration: none;
     font-weight: bold;
     font-size: 40px;
@@ -135,4 +137,21 @@ main {
 }
 #modal.ativo{
     transform: translateY(0);
+}
+
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserrat-black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: montserrat-semiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
 }

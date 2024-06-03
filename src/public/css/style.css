@@ -32,8 +32,9 @@ html {
     position: fixed;
     width: 60%;
     padding: 8px;
-    margin-top: 20%;
+    margin-top: 27%;
     border-radius: 50px;
+    font-family: montserrat-black;
     font-size: 28px;
     font-weight: bold;
     color: white;
