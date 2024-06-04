@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/meusCards.css">
-  <title>Meus Cards</title>
-</head>
-
-<body>
-  <div class="container">
-    <section class="note">
-      <img src="/svg/tagarela.svg" alt="" class="img-tagarela">
-    </section>
-    <h1 class="title">MEUS CARTÕES</h1>
+<%- include("partials/header", { cssList: ["style", "meusCards", "modal"], title: "MEUS CARDS" }) -%>
     <main>
-      <a class="card-1" onclick="showVideo('SOLZI', 'SOL-ZI')" id="first-card">
+      <a class="card" onclick="showVideo('SOLZI', 'SOL-ZI')" id="first-card">
         <img src="/svg/png/solzi.png" alt="">
         <p>SOLZI</p>
       </a>
@@ -27,16 +12,5 @@
     <div id="modal-container" onclick="hideVideo()">
       <div id="modal"></div>
     </div>
-    
-    <section class="footer">
-      <button class="menu"><img src="/svg/cards.svg" href="" alt="" class="img-menu"></button>
-      <button class="menu"><img src="/svg/create-cards.svg" alt="" class="img-menu"></button>
-      <button class="menu"><img src="/svg/alarms.svg" alt="" class="img-menu"></button>
-    </section>
-  </div>
-  <script src="/js/alimentos.js"></script>
-</body>
 
-</html>
-
-<%- include('partials/footer') -%>
+<%- include('partials/footer', { jsList: ["alimentos"]}) -%>
