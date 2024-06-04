@@ -1,23 +1,31 @@
-<%- include('partials/header', { cssList: ['style','addCards'], title: "Adicionar Cartões"}) -%>
+<%- include('partials/header',{cssList: ['style','addCards'], title: "Adicionar Cartões" }) -%>
 
-    <main>
+  <main>
+    <form action="">
       <div class="newCard" id="first-card">
         <img src="/svg/png/upload.png" alt="">
         <img src="" alt="">
+        <input type="file" accept="image/*" id="img_card" title="formato incorreto" required hidden>
       </div>
       <a class="foto">ESCOLHER FOTO</a>
 
-      <input type="text" id="title" placeholder="TÍTULO">
-      <input type="text" id="silabas" placeholder="SÍLABAS">
+      <input type="text" id="title" pattern="[a-zA-Z]+" title="Somente letras" required placeholder="TÍTULO">
+      <input type="text" id="silabas" pattern="[a-zA-Z]+" title="Somente letras" required placeholder="SÍLABAS">
 
       <div class="newCard2">
         <img src="/svg/png/upload.png" alt="">
+        <input type="file" id="video_card" accept="image/*" title="formato incorreto" required hidden>
         <img src="" alt="">
       </div>
       <a class="foto">ESCOLHER VÍDEO</a>
 
-      <a class="addCard"><img src="/svg/png/add.png" alt="">ADICIONAR CARD</a>
-        
-    </main>
-    
-<%- include('partials/footer') -%>
+      <a class="addCard">
+        <img src="/svg/png/add.png" alt="">ADICIONAR CARD
+        <input type="submit" hidden id="enviar">
+      </a>
+    </form>
+
+
+  </main>
+  <script src="/js/addCards.js"></script>
+  <%- include('partials/footer') -%>
