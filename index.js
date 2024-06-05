@@ -67,6 +67,16 @@ app.get("/praticar", (req, res) => {
 app.get("/quiz", (req, res) => {
     res.render("quiz")
 })
+app.get("/quiz1", (req, res) => {
+    res.render("quiz1")
+})
+app.get("/quiz2", (req, res) => {
+    res.render("quiz2")
+})
+
+app.get("/quiz3", (req, res) => {
+    res.render("quiz3")
+})
 
 app.get("/parabens", (req, res) => {
     res.render("parabens")
