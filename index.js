@@ -4,7 +4,7 @@ import moongoose from "mongoose"
 import cors from "cors"
 
 const PORT = process.env.PORT || 3001
-const MONGO_DB_URL = process.env.LOCAL_MONGO_DB_URL || process.env.DOCKER_MONGO_DB_URL
+const MONGO_DB_URL = process.env.MONGO_DB_URL
 
 const app = express()
 app.use(express.json());
