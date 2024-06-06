@@ -14,3 +14,11 @@ correto.addEventListener('click', () => {
         window.location.href= '/parabens'
      }, 2500)
    })
+
+
+let audio = document.querySelector('#audio-ovo')
+let div_audio = document.querySelector('.audio')
+   
+div_audio.addEventListener('click', () => {
+     audio.play()
+})

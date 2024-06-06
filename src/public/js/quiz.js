@@ -14,3 +14,10 @@ correto.addEventListener('click', () => {
         window.location.href = '/quiz1'
      }, 2500)
 })
+
+let audio = document.querySelector('#audio-pao')
+let div_audio = document.querySelector('.audio')
+
+div_audio.addEventListener('click', () => {
+    audio.play()
+})
