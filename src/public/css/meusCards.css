@@ -10,53 +10,42 @@
     font-family: montserrat-semiBold;
     src: url(../fonts/Montserrat-SemiBold.ttf);
 }
+
 @font-face {
     font-family: montserrat-medium;
     src: url(../fonts/Montserrat-Medium.ttf);
 }
 
+main {
+    padding-top: 20%;
+}
+
 .card{
-    background: radial-gradient(circle, #C3FF4F, #ABE936);
-    color: #F15562;
-    border-radius: 18px;
-    width: 66%;
-    height: 23%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 40px;
-    justify-content: space-evenly;
-    font-family: montserrat-medium;
-    margin-top: 10%;
+    padding: 32px;
     margin-bottom: 10%;
+    border-radius: 5%;
+    background: radial-gradient(circle, #C3FF4F, #ABE936);
 }
 
-#first-card{
-    margin-top: 50%;
-}
-
-#last-card{
-    margin-bottom: 30%;
-}
-.card-1 > p{
-    justify-self: center;
-}
-
-.card-1 > img{
-    margin-top: 15%;
+.card > p {
+    margin-top: 16px;
+    font-family: montserrat-bold;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .addCard {
-    padding: 10px 40px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 40px;
+    border-radius: 20px;
     background-color: #3DC3FA;
     color: #FFFFFF;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
     font-weight: bold;
     font-family: montserrat-bold;
     font-size: 20px;
