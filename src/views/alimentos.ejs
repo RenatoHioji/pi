@@ -1,4 +1,4 @@
-<%- include("patials/header", { cssList: ["style", "alimentos" ], title: "ALIMENTOS" }) -%>
+<%- include("partials/header", { cssList: ["style", "alimentos" ], title: "ALIMENTOS" }) -%>
   <main>
     <a class="card-1" onclick="showVideo('BANANA', 'BA-NA-NA')" id="first-card">
       <img src="/svg/png/banana.png" alt="">
@@ -25,10 +25,11 @@
       <img src="/svg/png/bread.png" alt="">
       <p>PÃO</p>
     </a>
+    <script src="/js/alimentos.js"></script>
   </main>
 
   <div id="modal-container" onclick="hideVideo()">
     <div id="modal"></div>
   </div>
 
-  <%- include("partials/footer.ejs") -%>
+  <%- include('partials/footer', { jsList: undefined }) -%>

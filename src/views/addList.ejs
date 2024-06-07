@@ -1,22 +1,19 @@
-<%- include("partials/header.ejs", { cssList: ["style.css", "addList" ], title: "ADICIONAR LISTA" }) -%>
-  <main>
+<%- include("partials/header.ejs", { cssList: ["style.css", "addList" ], title: "ADICIONAR" }) -%>
+    <form action="">
+    <div class="container">
     <div class="btns-horario">
-      <img src="/svg/png/plus.png" alt="" id="mais">
       <div class="horario">
-        <h1>12</h1>:<h1>00</h1>
+         <input type="time" name="" id="tempo">
       </div>
-      <img src="/svg/png/plus.png" alt="" id="mais">
+      
     </div>
-
     <input type="text" id="tarefa" placeholder="TAREFA">
     <div class="dias_da_semana">
       <p>DIAS DA SEMANA</p>
       <img src="/svg/png/arrowGreen.png" alt="" id="img-card">
     </div>
-    <div class="dias_da_semana">
-      <p>SOM DO ALARME</p>
-      <img src="/svg/png/arrowGreen.png" alt="" id="img-card">
-    </div>
-    <a id="pronto">PRONTO</a>
-  </main>
-  <%- include("partials/footer.ejs") -%>
+    <input type="submit" id="pronto"></input>
+  </div>
+</form>
+<script src="/js/addList.js"></script>
+  <%- include('partials/footer', { jsList: undefined }) -%>
