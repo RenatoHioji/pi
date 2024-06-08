@@ -1,4 +1,4 @@
-<%- include("partials/header.ejs", { cssList: ["style", "listas_fimDeSemana"], title: "ROTINA DE FIM DE SEMANA"}) -%>
+<%- include("partials/header.ejs", { cssList: ["style", "listas_fimDeSemana"], title: "ROTINA"}) -%>
     <main>
       <a class="addList" href="/addList" id="first-card">
         <img src="/svg/png/plus.png" alt="" class="img-card">
@@ -24,4 +24,4 @@
       </a>
     
     </main>
-    <%- include("partials/footer.ejs") -%>
+    <%- include('partials/footer', { jsList: undefined }) -%>
