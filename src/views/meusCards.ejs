@@ -1,10 +1,12 @@
 <%- include("partials/header", { cssList: ["style", "meusCards", "modal"], title: "MEUS CARDS" }) -%>
     <main>
-      <a class="card" onclick="showVideo('SOLZI', 'SOL-ZI')">
-        <img src="/svg/png/solzi.png" alt="">
-        <p>SOLZI</p>
-      </a>
-
+      
+      <%- include("components/cards", { cardList: [{
+        nome : 'SOLZI',
+        divisaoSilabica: 'SOL-ZI',
+        imagens: '/svg/png/solzi.png'
+      }]}) -%>
+    
       <a class="addCard" href="addCards"><img src="/svg/png/add.png" alt="">ADICIONAR CARD</a>
         
     </main>
