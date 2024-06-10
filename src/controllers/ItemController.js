@@ -25,6 +25,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage })
 router.post("/categoria/:idCategoria/subcategoria/:idSubcategoria/item", upload.fields([{name: "imagem"}, {name: "audio"}, {name:"video"}]), async (req, res) => {
+
     const imagens = req.files.imagem ? req.files.imagem.map(file => path.join('imagens', file.originalname)) : []
     const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname) : null
     const video = req.files.video ? path.join('videos', req.files.video[0].originalname) : null
@@ -78,10 +79,12 @@ router.get("/pessoa/:idPessoa/item", async (req, res) => {
 
 
 router.post("/pessoa/:idPessoa/item",upload.fields([{name: "imagem"}, {name: "audio"}, {name:"video"}]), async (req, res) => {
+    console.log(req.files)
+    console.log(req.body)
     const nome = req.body.nome
     const classificacao = req.body.classificacao
-    const divisaoSilabica = req.body.divisaoSilabicax
-    const imagens = req.files.imagem ? path.join('imagens', req.files.imagem[0].originalname) : null
+    const divisaoSilabica = req.body.divisaoSilabica
+    const imagens = req.files ? path.join('imagens', req.files.imagem[0].originalname) : null
     const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname) : null
     const video = req.files.video ? path.join('videos', req.files.video[0].originalname) : null
     console.log(imagens)
