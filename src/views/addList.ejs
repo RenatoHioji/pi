@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs", { cssList: ["style.css", "addList" ], title: "ADICIONAR" }) -%>
+    <form action="">
+    <div class="container">
+    <div class="btns-horario">
+      <div class="horario">
+         <input type="time" name="" id="tempo" value=12:30>
+      </div>
+      
+    </div>
+    <input type="text" id="tarefa" placeholder="TAREFA">
+    <div class="dias_da_semana">
+      <select id="dias_semana">
+        <option value="domingo">DOMINGO</option>
+        <option value="segunda">SEGUNDA</option>
+        <option value="terca">TERÇA</option>
+        <option value="quarta">QUARTA</option>
+        <option value="quinta">QUINTA</option>
+        <option value="sexta">SEXTA</option>
+        <option value="segunda">SÁBADO</option>
+      </select>
+    </div>
+    <input type="submit" id="pronto"></input>
+  </div>
+</form>
+<script src="/js/addList.js"></script>
+  <%- include('partials/footer', { jsList: undefined }) -%>

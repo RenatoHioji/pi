@@ -1,0 +1,6 @@
+<% links.forEach(function(link) { %>
+<a class="card" href="/<%- link.routeTo -%>" id="first-card">
+    <img src="/svg/png/<%- link.icon -%>.png" alt="" class="img-card">
+    <p><%- link.text -%></p>
+</a>
+<% }) %>

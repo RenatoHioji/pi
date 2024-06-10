@@ -1,0 +1,18 @@
+<%- include("partials/header", { cssList: ["style", "meusCards", "modal"], title: "MEUS CARDS" }) -%>
+    <main>
+      
+      <%- include("components/cards", { cardList: [{
+        nome : 'SOLZI',
+        divisaoSilabica: 'SOL-ZI',
+        imagens: '/svg/png/solzi.png'
+      }]}) -%>
+    
+      <a class="addCard" href="addCards"><img src="/svg/png/add.png" alt="">ADICIONAR CARD</a>
+        
+    </main>
+    
+    <div id="modal-container" onclick="hideVideo()">
+      <div id="modal"></div>
+    </div>
+
+<%- include('partials/footer', { jsList: undefined }) -%>

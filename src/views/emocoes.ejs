@@ -1,0 +1,28 @@
+<%- include("partials/header", { cssList: ["style", "alimentos" ], title: "EMOÇÕES" }) -%>
+  <main>
+    <a class="card-1" onclick="showVideo('FELIZ', 'FE-LIZ')" id="first-card">
+      <img src="/svg/png/happy.png" alt="">
+      <p>FELIZ</p>
+    </a>
+    <a class="card-1" onclick="showVideo('TRISTE', 'TRIS-TE')">
+      <img src="/svg/png/sad.png" alt="">
+      <p>TRISTE</p>
+    </a>
+    <a class="card-1" onclick="showVideo('AMOR', 'A-MOR')">
+      <img src="/svg/png/love.png" alt="">
+      <p>AMOR</p>
+    </a><a class="card-1" onclick="showVideo('SURPRESO', 'SUR-PRE-SO')">
+      <img src="/svg/png/surprised.png" alt="">
+      <p>SURPRESO</p>
+    </a><a class="card-1" onclick="showVideo('ENTEDIADO', 'EN-TE-DIA-DO')" id="last-card">
+      <img src="/svg/png/bored.png" alt="">
+      <p>ENTEDIADO</p>
+    </a>
+    <script src="/js/alimentos.js"></script>
+  </main>
+
+  <div id="modal-container" onclick="hideVideo()">
+    <div id="modal"></div>
+  </div>
+
+  <%- include('partials/footer', { jsList: undefined }) -%>

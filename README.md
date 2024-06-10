@@ -46,3 +46,9 @@ execute o commando abaixo para iniciar o containêr docker
 ```bash
 docker compose up
 ```
+
+**Nota:** use o comando abaixo para parar o container docker
+
+```bash
+docker compose down
+```
