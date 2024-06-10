@@ -4,7 +4,7 @@ import moongoose from "mongoose"
 import cors from "cors"
 
 const PORT = process.env.PORT || 3001
-const MONGO_DB_URL = process.env.LOCAL_MONGO_DB_URL || process.env.DOCKER_MONGO_DB_URL
+const MONGO_DB_URL = process.env.MONGO_DB_URL
 
 const app = express()
 app.use(express.json());
@@ -67,9 +67,23 @@ app.get("/praticar", (req, res) => {
 app.get("/quiz", (req, res) => {
     res.render("quiz")
 })
+app.get("/quiz1", (req, res) => {
+    res.render("quiz1")
+})
+app.get("/quiz2", (req, res) => {
+    res.render("quiz2")
+})
+
+app.get("/quiz3", (req, res) => {
+    res.render("quiz3")
+})
 
 app.get("/parabens", (req, res) => {
     res.render("parabens")
+})
+
+app.get("/emocoes", (req, res) => {
+    res.render("emocoes")
 })
 
 app.listen(PORT, err => {

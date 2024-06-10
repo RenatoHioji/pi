@@ -1,0 +1,6 @@
+<% cardList.forEach(function({nome, divisaoSilabica, imagens}) { %>
+    <a class="card" onclick="showVideo('<%- nome -%>', '<%- divisaoSilabica -%>')">
+        <img src="<%- imagens -%>" alt="">
+        <p><%- nome -%></p>
+      </a>
+<% }) %>

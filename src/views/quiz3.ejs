@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/Quiz.css">
-    <script src="/js/quiz.js" defer></script>
+    <script src="/js/quiz3.js" defer></script>
     <title>Quiz</title>
 </head>
 <body>
     <img src="/svg/png/tagarela-branco2.png" alt="" id="tagarela">
     <div class="levels">
-        <div class="nivel">1</div>
-        <div class="nivel">2</div>
-        <div class="nivel">3</div>
+        <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
+        <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
+        <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
         <div class="nivel">4</div>
     </div>
     <div class="audio">
         <img src="/svg/png/img-audio.png" alt="">
-        <audio id="audio-pao">
-            <source src="/audios/pao.mp3" type="audio/mpeg">
+        <audio id="audio-ovo">
+            <source src="/audios/ovo.mp3" type="audio/mpeg">
         </audio>
     </div>
     <div class="cards">
-        <div class="card" id="correto">
+        <div class="card" id="err">
             <button class="button">
                 <img src="/svg/png/bread.png" alt="">
             </button>
         </div>
-        <div class="card" id="err">
+        <div class="card" id="correto">
             <button id="err" class="button">
                 <img src="/svg/png/egg.png" alt="">
             </button>
@@ -42,7 +42,6 @@
                 <img src="/svg/png/banana.png" alt="">
             </button>
         </div>
-    </div>
     </div>
 </body>
 </html>
