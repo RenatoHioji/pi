@@ -82,6 +82,10 @@ app.get("/parabens", (req, res) => {
     res.render("parabens")
 })
 
+app.get("/emocoes", (req, res) => {
+    res.render("emocoes")
+})
+
 app.listen(PORT, err => {
     try {
         console.log(`Server litening on http://localhost:${PORT}`)
