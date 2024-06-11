@@ -89,3 +89,8 @@ body {
     font-family: montserrat-regular;
     color: #292F33;
 }
+
+#bold {
+    color: #000000;
+    font-weight: bold;
+}
