@@ -1,6 +1,6 @@
 <%- include("partials/header.ejs", {cssList: ["style", "listas" ], title: "LISTAS" }) -%>
   <main>
-    <a class="addList" href="/necessidades" id="first-card">
+    <a class="addList" id="first-card">
       <img src="/svg/png/plus.png" alt="" class="img-card">
       <p>ADICIONAR LISTA</p>
     </a>
@@ -16,6 +16,15 @@
       <img src="/svg/png/arrowBlue.png" alt="" class="img-card">
       <p>CASA DA VOVÓ GI</p>
     </a>
-
   </main>
+  <dialog id="modal-listas">
+    <form action="" method="POST">
+      <h1>Adicionar Lista</h1>
+      <input type="text" required id="nome_lista" placeholder="Nome da Lista">
+      <div class="enc">
+      <input type="submit" id="enviar"><button id="fechar">Fechar</button>
+    </div>
+    </form>
+  </dialog>
+  <script src="/js/listas.js"></script>
   <%- include('partials/footer', { jsList: ["main"] }) -%>
