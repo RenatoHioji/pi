@@ -94,6 +94,10 @@ app.get("/emocoes", (req, res) => {
     res.render("emocoes")
 })
 
+app.get("/editar_alarme", (req, res) => {
+    res.render("editar_alarme")
+})
+
 
 app.use("/", PessoaController)
 app.use("/", AlarmeController)

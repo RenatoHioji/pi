@@ -160,7 +160,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 .op{
@@ -191,9 +191,23 @@ main {
 }
 
 #pronto {
-    width: 40%;
-    height: 10%;
+    width: 50%;
+    height: 50%;
     background-color: #FFD73D;
+    margin-top: 10%;
+    display: flex;
+    border-radius: 60px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: montserrat-semiBold;
+    justify-content: center;
+    align-items: center;
+}
+
+#deletar {
+    width: 40%;
+    height: 50%;
+    background-color: #F15562;
     margin-top: 10%;
     display: flex;
     border-radius: 60px;
@@ -278,4 +292,11 @@ main {
 .menu{
     border: none;
     background: none;
+}
+
+.btns {
+    width: 70%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
 }

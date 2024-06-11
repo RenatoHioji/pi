@@ -1,4 +1,4 @@
-<%- include("partials/header.ejs", { cssList: ["style.css", "addList" ], title: "ADICIONAR" }) -%>
+<%- include("partials/header.ejs", { cssList: ["style.css", "editar_alarme" ], title: "EDITAR" }) -%>
     <form action="">
     <div class="container">
     <div class="btns-horario">
@@ -38,8 +38,12 @@
      <input type="checkbox" value="domingo" id="domingo" placeholder="Domingo">
     </div>
     </div>
-    <input type="submit" id="pronto"></input>
+    <div class="btns">
+    <input type="submit" id="pronto" value="Editar"></input>
+    <input type="submit" id="deletar" value="Deletar"></input>
+    </div>
   </div>
 </form>
 <script src="/js/addList.js"></script>
   <%- include('partials/footer', { jsList: undefined }) -%>
+
