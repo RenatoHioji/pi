@@ -1,42 +1,19 @@
-* {
-    box-sizing: border-box;
-}
 
-@font-face {
-    font-family: montserrat-bold;
-    src: url(../fonts/Montserrat-Bold.ttf);
-}
-@font-face {
-    font-family: montserrat-black;
-    src: url(../fonts/Montserrat-Black.ttf);
-}
-@font-face {
-    font-family: montserrat-semiBold;
-    src: url(../fonts/Montserrat-SemiBold.ttf);
-}
-@font-face {
-    font-family: montserrat-medium;
-    src: url(../fonts/Montserrat-Medium.ttf);
-}
-@font-face {
-    font-family: montserrat-regular;
-    src: url(../fonts/Montserrat-Regular.ttf);
-}
-
-body {
-    margin: 0;
-    padding: 0;
+main{
+    background-image: none;
     background-color: #A2D443;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    height: 100%;
+    width: 100%;
 
-#tagarela {
+}
+.tagarela {
     width: 40%;
     height: 40%;
-    margin-top: 10%;
+    margin-top: 3%;
+    font-size: 40px;
+    font-family: ribeye;
+    color: #fafafa;
+    text-align: center;
 }
 
 .levels {
@@ -44,7 +21,7 @@ body {
     height: 10vh;
     display: flex;
     justify-content: center;
-    margin-top: 7%;
+    margin-top: 3%;
 }
 
 .nivel {
@@ -65,7 +42,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 10%;
 }
 
 .cards {
@@ -78,7 +54,7 @@ body {
 
 .card {
     width: 40%;
-    height: 42%;
+    height: 60%;
     background-color: #FFD73D;
     margin: 0% 3%;
     border-radius: 10px;
@@ -86,18 +62,6 @@ body {
     justify-content: center;
     align-items: center;
     animation: wrong 2s paused infinite;
-}
-
-.card:has(#err):has(:focus) {
-    animation-play-state: initial;
-}
-
-#correto {
-    animation: correct 2s paused infinite;
-}
-
-#correto:has(:not(#err)):has(:focus) {
-    animation-play-state: initial;
 }
 
 .button {
@@ -111,8 +75,21 @@ body {
 }
 
 .button > img {
-    width: 75%;
-    height: 75%;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.card:has(#err):has(:focus) {
+    animation-play-state: initial;
+}
+
+#correto {
+    animation: correct 2s paused infinite;
+}
+
+#correto:has(:not(#err)):has(:focus) {
+    animation-play-state: initial;
 }
 
 
