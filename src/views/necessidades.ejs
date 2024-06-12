@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/header', { cssList: ["style" ], title: "Necessidades" }) -%>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/necessidades.css">
-  <title>Basicas</title>
-</head>
-
-<body>
-  <div class="container">
-    <section class="note">
-      <img src="/svg/tagarela.svg" alt="" class="img-tagarela">
-    </section>
-    <h1 class="title">NECESSIDADES</h1>
-    <main>
+  <main>
+    <div class="cards">
       <a class="card-1" href="/alimentos" id="first-card">
         <img src="/svg/png/red-apple.png" alt="">
         <p>ALIMENTOS</p>
@@ -27,10 +14,16 @@
         <img src="/svg/png/t-shirt.png" alt="">
         <p>ROUPAS</p>
       </a>
-    </main>
-    <%- include('partials/footer', { jsList: ["alimentos"] }) -%>
-  </div>
-  <script src="/js/main.js"></script>
-</body>
+    </div>
+  </body>
 
-</html>
+
+  </main>
+  <%- include('partials/footer', { jsList: ["alimentos"] }) -%>
+
+</div>
+
+
+  <script src="/js/main.js"></script>
+
+    </html>

@@ -1,36 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/praticar.css">
-  <title>Listas</title>
-</head>
-
-<body>
-  <div class="container">
-    <section class="note">
-      <img src="/svg/tagarela.svg" alt="" class="img-tagarela">
-      </section>
-    <h1 class="title">PRATICAR</h1>
+<%- include('partials/header', { cssList: ["style", "praticar"], title: "Praticar" }) -%>
     <main>
-      <a class="modo-facil" id="firstList" href="/quiz">
+      <div class="escolha-jogos">
+      <a class="modo modo-facil" href="/quiz">
         <img src="/svg/png/smile-emoji.png" alt="">
         <p>MODO FÁCIL</p>
         <img src="/svg/png/arrowGreen.png" alt="" class="img-card">
       </a>
-      <a class="modo-medio" href="/quiz">
+      <a class="modo modo-medio" href="/quiz">
         <img src="/svg/png/ok-emoji.png" alt="">
         <p>MODO MÉDIO</p>
         <img src="/svg/png/arrowBlue.png" alt="" class="img-card">
       </a>
-      <a class="modo-dificil" href="/quiz">
+      <a class="modo modo-dificil" href="/quiz">
         <img src="/svg/png/sad-emoji.png" alt="">
         <p>MODO DIFÍCIL</p>
         <img src="/svg/png/arrowRed.png" alt="" class="img-card">
       </a>
-    
+    </div>
     </main>
     <%- include('partials/footer', { jsList: ["alimentos"] }) -%>
   </div>

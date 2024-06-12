@@ -23,173 +23,54 @@
     src: url(../fonts/Montserrat-Regular.ttf);
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    background-color: #C5EEFF;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-}
-
-.note {
-    width: 100%;
-    height: 15%;
-    background-color: #ffffff;
-    flex: 1;
-    display: flex;
-    position: fixed;
-    border-radius: 0px 0px 40px 40px;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.img-tagarela {
-    margin-top: 14%;
-}
-
-main {
-    width: 100vw;
-    flex: 4;
-    background-image: url("../svg/background-main.svg");
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 10%;
-}
 
 .title {
     background-color: #FFD73D;
-    text-align: center;
-    width: 45%;
-    padding: 10px;
-    position: fixed;
-    border-radius: 80px;
-    color: white;
-    font-family: montserrat-black;
-    font-size: 28px;
-    margin-top: 25%;
 }
 
-.addList {
-    background-color: #8ECE16;
-    color: #ffffff;
-    border-radius: 18px;
-    width: 80%;
-    height: 10%;
-    min-height: 5%;
+.escolha-jogos{
+    gap: 3%;
+    padding-top: 20%;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    text-decoration: none;
-    margin-bottom: 7%;
-    font-weight: light;
-    font-size: 22px;
-    align-items: center;
+    flex-direction: column;
 }
-
-.lists {
+.modo {
     width: 100%;
     height: 8%;
-    background-color: #B7F248;
     text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
+    font-family: montserrat-semiBold;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
+    flex-direction: row;
     align-items: center;
-    color: #5E890F;
+    color: #fafafa;
 }
-
 .modo-facil {
-    margin-top: 50%;
-    width: 100%;
-    height: 8%;
     background-color: #8ECE16;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: montserrat-semiBold;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    color: #5E890F;
-}
 
-.modo-facil > p {
-    color: #ffffff;
 }
-
 .modo-medio {
-    margin-top: 3%;
-    width: 100%;
-    height: 8%;
     background-color: #34B9CC;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: montserrat-semiBold;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    color: #5E890F;
-}
-
-.modo-medio > p {
-    color: #ffffff;
 }
 
 .modo-dificil {
-    margin-top: 3%;
-    width: 100%;
-    height: 8%;
     background-color: #F15562;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: montserrat-semiBold;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.modo-dificil > p {
-    color: #ffffff;
 }
 
 
-
-#first-card {
-    margin-top: 48%;
-}
-
-.lists > p {
-    margin-left: 0%;
-}
 .img-card {
     width: 50px;
     height: 50px;
-    margin-left: 20%;
-    color:#B7F248
-}
+    color:#B7F248;
+    justify-self: flex-end;
+} 
 
-.footer{
-    width: 100%;
-    background-color: #ffffff;
-    height: 10%;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
+.modo > p{
+    margin-left: 15px;
 }
+.modo > img {
+    margin-left: 40px;
 
-.menu{
-    border: none;
-    background: none;
 }

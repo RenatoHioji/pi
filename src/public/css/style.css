@@ -1,3 +1,22 @@
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserrat-black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: montserrat-semiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+
+
 * {
     box-sizing: border-box;
     margin: 0%;
@@ -7,7 +26,81 @@
 html {
     scroll-behavior: smooth;
 }
+body{
+    width: 100%;
+    height: 100%;
+}
 
+main {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url("../svg/background-main.svg");
+    overflow-y: scroll;
+}
+.note {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 0px 0px 40px 40px;
+}
+.header-image{
+    margin-top:2vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+
+.cards{
+    gap:40px;
+    padding: 4% 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.card-1{
+    background: radial-gradient(circle, #FFF065, #FFD73D);
+    color: #F15562;
+    border-radius: 18px;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    max-width: 600px;
+    min-width: 300px;
+    min-height: 205px;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+    justify-content: space-evenly;
+    font-family: montserrat-medium;
+}
+
+.card-1 > img{
+    width: 30%;
+    height:40%;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -17,22 +110,9 @@ html {
     background-color: #BFECFF;
 }
 
-.note {
-    width: 100%;
-    height: 10%;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0px 0px 40px 40px;
-    flex-direction: column;
-}
-
 .title {
-    position: fixed;
-    width: 60%;
+    width: 30%;
     padding: 8px;
-    margin-top: 27%;
     border-radius: 50px;
     font-family: montserrat-black;
     font-size: 28px;
@@ -42,25 +122,9 @@ html {
     background-color: #8ECE16;
 }
 
-/* .img-tagarela {
-    margin-top: 14%;
-} */
-
-main {
-    width: 100vw;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 4%;
-    overflow-y: scroll;
-    background-image: url("../svg/background-main.svg");
-}
 
 
 .footer {
-    position: fixed;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -75,4 +139,64 @@ main {
 .menu {
     border: none;
     background: none;
+}
+
+
+@media(max-width:799px){
+    .note {
+        position: relative;
+        width: 100%;
+        height: 15%;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        border-radius: 0px 0px 40px 40px;
+    }
+    .header-image{
+        margin-top:2vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header-title{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2vh;
+    }
+    
+    
+    .title {
+        position: fixed;
+        width: 60%;
+        padding: 8px;
+        color: white;
+        text-align: center;
+        background-color: #8ECE16;
+    }
+    .card-1{
+        background: radial-gradient(circle, #FFF065, #FFD73D);
+        color: #F15562;
+        border-radius: 18px;
+        width: 50%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 40px;
+        justify-content: space-evenly;
+        font-family: montserrat-medium;
+    }
+    
+    .menu {
+        border: none;
+        background: none;
+    }
+    
 }

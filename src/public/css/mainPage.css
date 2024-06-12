@@ -16,25 +16,27 @@
 }
 
 
-main > .card {
+
+.cards > .card {
     border-radius: 18px;
-    width: 75%;
+    min-width: 400px;
+    max-width: 600px;
+    width: 40%;
     height: 12%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    padding: 10%;
     display: flex;
     flex-direction: row;
     align-items: center;
     text-decoration: none;
+    justify-content: flex-start;
     text-wrap: nowrap;
 }
 
 
 .card > .img-card {
+    margin-left: 25%;
+    margin-right: 25px;
     width: 50px;
     height: 50px;
-    margin-right: 10%;
 }
 
 .card > p {
@@ -45,27 +47,46 @@ main > .card {
     font-family: montserrat-medium;
 }
 
-main > .card:nth-child(1) {
-    margin-top: 12%;
+.cards > .card:nth-child(1) {
     background-color: #FFD73D;
 }
 
-main > a:nth-child(2) {
+.cards > a:nth-child(2) {
     background-color: #8ECE16;
 }
 
-main > a:nth-child(3) {
+.cards > a:nth-child(3) {
     background-color: #3DC3FA;
 }
 
-main > a:nth-child(4) {
+.cards > a:nth-child(4) {
     background-color: #F15562;
 }
 
-main > a:nth-child(5) {
+.cards > a:nth-child(5) {
     background-color: #FFD73D;
 }
 
-main > a:nth-child(6) {
+.cards > a:nth-child(6) {
     background-color: #8ECE16;
+}
+
+
+@media(max-width: 799px){
+    
+.cards > .card {
+    border-radius: 18px;
+    width: 75%;
+    height: 12%;
+    min-width: unset;
+}
+
+
+.card > .img-card {
+    width: 50px;
+    height: 50px;
+    margin-left: 10%;
+    margin-right: 25px;
+}
+
 }
