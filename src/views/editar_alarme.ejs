@@ -1,11 +1,10 @@
 <%- include("partials/header.ejs", { cssList: ["style", "editar_alarme" ], title: "EDITAR" }) -%>
+  <main>
     <form action="">
-    <div class="container">
     <div class="btns-horario">
       <div class="horario">
-         <input type="time" name="" id="tempo" value=12:30>
-      </div>
-      
+          <input type="time" name="" id="tempo" value=12:30>
+        </div>
     </div>
     <input type="text" id="tarefa" placeholder="TAREFA">
     <div class="dias_da_semana">
@@ -33,7 +32,7 @@
      <label for="sabado">SÁBADO</label>
      <input type="checkbox" value="sabado" id="sabado" placeholder="Sábado">
     </div>
-    <div class="op">
+    <div class="op" id="op-ultimo">
      <label for="domingo">DOMINGO</label>
      <input type="checkbox" value="domingo" id="domingo" placeholder="Domingo">
     </div>
@@ -44,6 +43,7 @@
     </div>
   </div>
 </form>
+</main>
 <script src="/js/addList.js"></script>
   <%- include('partials/footer', { jsList: undefined }) -%>
 
