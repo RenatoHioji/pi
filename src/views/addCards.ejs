@@ -7,16 +7,23 @@
         <img src="" alt="">
         <input type="file" accept="image/*" id="img_card" title="formato incorreto" name="imagem" required hidden>
       </div>
+      <input 
+        type="file" 
+        accept="image/*" 
+        id="img_card" 
+        title="Por favor utilize apenas formatos de Imagens" 
+        required hidden
+      />
       <a class="foto">ESCOLHER FOTO</a>
 
       <input type="text" name= "nome" id="title" pattern="[a-zA-Z]+" title="Somente letras" required placeholder="TÍTULO">
       <input type="text" name="divisaoSilabica" id="silabas" title="Somente letras" required placeholder="SÍLABAS">
 
-      <div class="newCard2">
+      <div class="card">
         <img src="/svg/png/upload.png" alt="">
-        <input type="file" name= "video" id="video_card" accept="image/*" title="formato incorreto" required hidden>
-        <img src="" alt="">
-      </div>
+        </div>
+        <input type="file" id="video_card" accept="image/*" title="formato incorreto" required hidden>
+        <a class="foto">ESCOLHER VÍDEO</a>
 
       <a class="foto">ESCOLHER VÍDEO</a>
       <input type="file" name="audio" id="audio">
