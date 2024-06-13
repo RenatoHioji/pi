@@ -1,10 +1,17 @@
 
-function showVideo(nome, divSilabica){
+function showVideo(nome, divSilabica, caminhoVideo){
     
     let container = document.querySelector('#modal-container')
     let modal = document.querySelector('#modal')
-    let video = document.createElement('img')
-    video.src = '../svg/png/video.png'
+    let video = document.createElement('video')
+    video.controls = true
+    //fonte do vídeo
+    let sourceVideo = document.createElement('source')
+    sourceVideo.src = caminhoVideo
+    sourceVideo.type = 'video/mp4'
+    video.appendChild(sourceVideo)
+    container.appendChild(video)
+
     let titulo = document.createElement('p')
     let silabas = document.createElement('p')
     titulo.textContent = nome
@@ -13,8 +20,9 @@ function showVideo(nome, divSilabica){
     sound.src = '../svg/png/sound.png'
     let done = document.createElement('button')
     done.textContent = 'PRONTO'
-    video.style.marginTop = '5%'
-    video.style.width = '70%'
+    video.style.marginTop = '18%'
+    video.style.width = '80%'
+    video.style.borderRadius = '7%'
     titulo.style.color = '#F15562'
     titulo.style.fontWeight = 'bold'
     titulo.style.fontSize = '30px'
