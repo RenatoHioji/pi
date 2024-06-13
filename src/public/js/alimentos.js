@@ -1,8 +1,6 @@
-//função para a vídeo educacional
 
 function showVideo(nome, divSilabica){
     
-    //colentando querys e criando os elementos do modal
     let container = document.querySelector('#modal-container')
     let modal = document.querySelector('#modal')
     let video = document.createElement('img')
@@ -15,10 +13,8 @@ function showVideo(nome, divSilabica){
     sound.src = '../svg/png/sound.png'
     let done = document.createElement('button')
     done.textContent = 'PRONTO'
-    //css do video
-    video.style.marginTop = '10%'
+    video.style.marginTop = '5%'
     video.style.width = '70%'
-    //css do titulo e silabas
     titulo.style.color = '#F15562'
     titulo.style.fontWeight = 'bold'
     titulo.style.fontSize = '30px'
@@ -27,9 +23,7 @@ function showVideo(nome, divSilabica){
     silabas.style.color = '#F15562'
     silabas.style.marginTop = '0px'
     silabas.style.fontSize = '28px'
-    //css do sound
     sound.style.marginBottom = '18px'
-    //css do botão
     done.style.padding = '10px 30px'
     done.style.backgroundColor = '#8ECE16'
     done.style.color ='#FFFFFF'

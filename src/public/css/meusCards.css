@@ -1,31 +1,16 @@
-@font-face {
-    font-family: montserrat-bold;
-    src: url(../fonts/Montserrat-Bold.ttf);
+*{
+    box-sizing: unset;
 }
-@font-face {
-    font-family: montserrat-black;
-    src: url(../fonts/Montserrat-Black.ttf);
-}
-@font-face {
-    font-family: montserrat-semiBold;
-    src: url(../fonts/Montserrat-SemiBold.ttf);
-}
-@font-face {
-    font-family: montserrat-medium;
-    src: url(../fonts/Montserrat-Medium.ttf);
-}
+main{
+        box-sizing: border-box;
 
-main {
-    padding-top: 20%;
 }
-
 .card{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 32px;
-    margin-bottom: 10%;
     border-radius: 5%;
     background: radial-gradient(circle, #C3FF4F, #ABE936);
 }
@@ -42,7 +27,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 40px;
     border-radius: 20px;
     background-color: #3DC3FA;
     color: #FFFFFF;
@@ -50,8 +34,6 @@ main {
     font-family: montserrat-bold;
     font-size: 20px;
     text-decoration: none;
+    padding: 10px 40px;
 }
 
-.addCard > img {
-    margin-right: 20px;
-}

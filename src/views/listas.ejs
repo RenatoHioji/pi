@@ -1,22 +1,28 @@
-<%- include("partials/header.ejs", {cssList: ["style", "listas" ], title: "LISTAS" }) -%>
+<%- include("partials/header.ejs", {cssList: ["style", "listas" ], title: "Listas" }) -%>
   <main>
-    <a class="addList" id="first-card">
-      <img src="/svg/png/plus.png" alt="" class="img-card">
-      <p>ADICIONAR LISTA</p>
-    </a>
-    <a class="lists" href="/listas_fimDeSemana" id="firstList">
-      <img src="/svg/png/arrowGreen.png" alt="" class="img-card">
-      <p>FINAL DE SEMANA</p>
-    </a>
-    <a class="lists" href="/necessidades">
-      <img src="/svg/png/arrowRed.png" alt="" class="img-card">
-      <p>MEIO DE SEMANA</p>
-    </a>
-    <a class="lists" href="/necessidades">
-      <img src="/svg/png/arrowBlue.png" alt="" class="img-card">
-      <p>CASA DA VOVÓ GI</p>
-    </a>
+    <div class="listas">
+      <a class="addList" id="first-card">
+        <img src="/svg/png/plus.png" alt="" class="img-card">
+        <p>ADICIONAR LISTA</p>
+      </a>
+      <a class="lists" href="/listas_fimDeSemana" id="firstList">
+        <img src="/svg/png/arrowGreen.png" alt="" class="img-card">
+        <p>FINAL DE SEMANA</p>
+      </a>
+      <a class="lists" href="/necessidades">
+        <img src="/svg/png/arrowRed.png" alt="" class="img-card">
+        <p>MEIO DE SEMANA</p>
+      </a>
+      <a class="lists" href="/necessidades">
+        <img src="/svg/png/arrowBlue.png" alt="" class="img-card">
+        <p>CASA DA VOVÓ GI</p>
+      </a>
+    </div>
+
   </main>
+  <%- include('partials/footer', { jsList: ["main"] }) -%>
+  
+
   <dialog id="modal-listas">
     <form action="" method="POST">
       <h1>Adicionar Lista</h1>
@@ -27,4 +33,3 @@
     </form>
   </dialog>
   <script src="/js/listas.js"></script>
-  <%- include('partials/footer', { jsList: ["main"] }) -%>
