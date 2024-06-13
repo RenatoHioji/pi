@@ -15,14 +15,11 @@
     src: url(../fonts/Montserrat-Medium.ttf);
 }
 
-<<<<<<< Updated upstream
-=======
 @font-face {
     font-family: ribeye;
     src: url(../fonts/Ribeye-Regular.ttf);
 }
 
->>>>>>> Stashed changes
 * {
     box-sizing: border-box;
     margin: 0%;

@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/parabens.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/parabens.css">
+
+    <link rel="stylesheet" href="/css/quiz.css">
 
     <script src="/js/parabens.js" defer></script>
     <title>Quiz</title>
 </head>
 <body>
-    <img src="/svg/png/tagarela-branco2.png" alt="" id="tagarela">
+    <main>
+    <p class="tagarela">Tagarela</p>
     <div class="levels">
         <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
         <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
         <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
         <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
     </div>
-    <div class="parabens">
-        <img src="/svg/png/party-emoji.png" alt="">
+    <div class="parabens-container">
+        <div class="parabens">
+            <img src="/svg/png/party-emoji.png" alt="">
+        </div>
+        <div class="pontuacao">
+            <h1>PARABÉNS</h1>
+            <p>Sua pontuação foi de <span id="bold">4/4</span></p>
+        </div>
     </div>
-    <div class="pontuacao">
-        <h1>PARABÉNS</h1>
-        <p>Sua pontuação foi de <span id="bold">4/4</span></p>
-    </div>
+
+</main>
     <%- include('partials/footer', { jsList: ["alimentos"] }) -%>
 </body>
 </html>

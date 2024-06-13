@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/quiz.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/quiz.css">
+
     <script src="/js/quiz1.js" defer></script>
     <title>Quiz</title>
 </head>
 <body>
-    <img src="/svg/png/tagarela-branco2.png" alt="" id="tagarela">
+    <main>
+    <p class="tagarela">Tagarela</p>
     <div class="levels">
         <div class="nivel"><img src="/svg/png/img-check.png" alt=""></div>
         <div class="nivel">2</div>
@@ -43,6 +45,7 @@
                 <img src="/svg/png/banana.png" alt="">
             </button>
         </div>
+    </main>
         <%- include('partials/footer', { jsList: ["alimentos"] }) -%>
     </div>
 </body>

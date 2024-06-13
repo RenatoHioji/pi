@@ -1,14 +1,16 @@
-
+html{
+    width: 100%;
+    height: 100%;
+}
 main{
     background-image: none;
     background-color: #A2D443;
-    height: 100%;
+    height: 90%;
     width: 100%;
-
+    justify-content: unset;
 }
 .tagarela {
     width: 40%;
-    height: 40%;
     margin-top: 3%;
     font-size: 40px;
     font-family: ribeye;
@@ -18,7 +20,8 @@ main{
 
 .levels {
     width: 100%;
-    height: 10vh;
+    max-width: 800px;
+
     display: flex;
     justify-content: center;
     margin-top: 3%;
@@ -26,7 +29,7 @@ main{
 
 .nivel {
     width: 10%;
-    height: 50%;
+    height: 100%;
     border-radius: 50%;
     border: 3px solid #6D9522;
     display: flex;
@@ -37,26 +40,38 @@ main{
     color: #ffffff;
     margin: 0% 3%;  
 }
+.nivel > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .audio {
+    max-width: max-content;
+    margin-top: 5vw;
     width: 100%;
+    height: 20vw;
+    min-height: 225px;
     display: flex;
     justify-content: center;
+
 }
 
 .cards {
     width: 100%;
-    height: 40vh;
+    height: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
 .card {
-    width: 40%;
-    height: 60%;
+    min-width: 150px;
+    max-height: 200px;
+    min-height: 100px;
+    width: 15%;
+    height: 100%;
     background-color: #FFD73D;
-    margin: 0% 3%;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -119,4 +134,75 @@ main{
         transform: scale(1);
         animation-play-state: paused;
     }
+}
+
+
+@media(max-width: 799px){
+    .tagarela {
+        font-size: 40px;
+        font-family: ribeye;
+    }
+    
+    .levels {
+        width: 100%;
+        max-width: 800px;
+    
+        display: flex;
+        justify-content: center;
+        margin-top: 3%;
+    }
+    
+    .nivel {
+        width: 10%;
+        height: 100%;
+        border-radius: 50%;
+        border: 3px solid #6D9522;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-family: montserrat-bold;
+        color: #ffffff;
+        margin: 0% 3%;  
+    }
+    
+    .cards {
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    
+    .card {
+        max-width: 300px;
+        max-height: 140px;
+        width: 35%;
+        height: 55%;
+        background-color: #FFD73D;
+        margin: 0% 3%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: wrong 2s paused infinite;
+    }
+    
+    .button {
+        width: 100%;
+        height: 100%;
+    
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .button > img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+    }
+    
 }
