@@ -1,4 +1,3 @@
-
 let div_newCard = document.querySelector('.newCard')
 let div_newCard2 = document.querySelector('.newCard2')
 let input_imagem = document.querySelector('#img_card')

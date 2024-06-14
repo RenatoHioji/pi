@@ -22,6 +22,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    overflow-y: scroll;
     padding-top: 20%;
 }
 
@@ -59,9 +60,9 @@ input[type="text"]::placeholder {
     margin-bottom: 25%;
 }
 
-a {
+.button {
     margin-top: 0%;
-    margin-bottom: 25%;
+    margin-bottom: 20%;
     padding: 10px 50px;
     justify-content: center;
     align-items: center;
@@ -75,27 +76,6 @@ a {
     font-size: 20px;
 }
 
-
-
-.foto > img {
-    margin-right: 20px;
-}
-
-.addCard {
-    margin-bottom: 25%;
-    padding: 10px 10px;
-    justify-content: center;
-    align-items: center;
-    background-color: #8ECE16;
-    color: #FFFFFF;
-    border-radius: 20px;
-    display: flex;
-    font-family: montserrat-bold;
-    align-items: center;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.addCard > img {
+.button > img {
     margin-right: 20px;
 }

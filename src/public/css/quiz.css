@@ -76,7 +76,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: wrong 2s paused infinite;
+    animation: wrong 2s paused;
 }
 
 .button {
@@ -100,7 +100,7 @@ main{
 }
 
 #correto {
-    animation: correct 2s paused infinite;
+    animation: correct 2s paused;
 }
 
 #correto:has(:not(#err)):has(:focus) {
@@ -185,7 +185,7 @@ main{
         display: flex;
         justify-content: center;
         align-items: center;
-        animation: wrong 2s paused infinite;
+        animation: wrong 2s paused;
     }
     
     .button {
