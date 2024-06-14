@@ -1,45 +1,40 @@
-<%- include("partials/header.ejs", { cssList: ["style", "addList" ], title: "ADICIONAR" }) -%>
-    <form action="">
-    <div class="container">
-    <div class="btns-horario">
-      <div class="horario">
-         <input type="time" name="" id="tempo" value=12:30>
+<%- include('partials/header',{cssList: ['style','addCards'], title: "Adicionar Cartões" }) -%>
+
+  <main>
+    <form action="/pessoa/666786e29778e28ad6119add/item" method = "POST" enctype="multipart/form-data">
+      <div class="newCard" id="first-card">
+        <img src="/svg/png/upload.png" alt="">
+        <img src="" alt="">
+        <input type="file" accept="image/*" id="img_card" title="formato incorreto" name="imagem" required hidden>
       </div>
-      
-    </div>
-    <input type="text" id="tarefa" placeholder="TAREFA">
-    <div class="dias_da_semana">
-      <div class="op">
-      <label for="segunda">SEGUNDA-FEIRA</label>
-     <input type="checkbox" value="segunda" id="segunda" placeholder="Segunda">
-    </div>
-    <div class="op">
-     <label for="terca">TERÇA-FEIRA</label>
-     <input type="checkbox" value="terca" id="terca" placeholder="Terça">
-    </div>
-    <div class="op">
-     <label for="quarta">QUARTA-FEIRA</label>
-     <input type="checkbox" value="quarta" id="quarta" placeholder="Quarta">
-    </div>
-    <div class="op">
-     <label for="quinta">QUINTA-FEIRA</label>
-     <input type="checkbox" value="quinta" id="quinta" placeholder="Quinta">
-    </div>
-    <div class="op">
-     <label for="sexta">SEXTA-FEIRA</label>
-     <input type="checkbox" value="sexta" id="sexta" placeholder="Sexta">
-    </div>
-    <div class="op">
-     <label for="sabado">SÁBADO</label>
-     <input type="checkbox" value="sabado" id="sabado" placeholder="Sábado">
-    </div>
-    <div class="op">
-     <label for="domingo">DOMINGO</label>
-     <input type="checkbox" value="domingo" id="domingo" placeholder="Domingo">
-    </div>
-    </div>
-    <input type="submit" id="pronto"></input>
-  </div>
-</form>
-<script src="/js/addList.js"></script>
-  <%- include('partials/footer', { jsList: undefined }) -%>
+      <input 
+        type="file" 
+        accept="image/*" 
+        id="img_card" 
+        title="Por favor utilize apenas formatos de Imagens" 
+        required hidden
+      />
+      <a class="foto">ESCOLHER FOTO</a>
+
+      <input type="text" name= "nome" id="title" pattern="[a-zA-Z]+" title="Somente letras" required placeholder="TÍTULO">
+      <input type="text" name="divisaoSilabica" id="silabas" title="Somente letras" required placeholder="SÍLABAS">
+
+      <div class="card">
+        <img src="/svg/png/upload.png" alt="">
+        </div>
+        <input type="file" id="video_card" accept="image/*" title="formato incorreto" required hidden>
+        <a class="foto">ESCOLHER VÍDEO</a>
+
+      <a class="foto">ESCOLHER VÍDEO</a>
+      <input type="file" name="audio" id="audio">
+      <a class="addCard">
+        <img src="/svg/png/add.png" alt="">ADICIONAR CARD
+        <input type="submit" id="enviar" hidden>
+      </a>
+
+    </form>
+
+
+  </main>
+  <script src="/js/addCards.js"></script>
+  <%- include('partials/footer', { jsList: ["addCards"] }) -%>

@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs", { cssList: ["style", "addAlarme" ], title: "ADICIONAR" }) -%>
+<main>
+    <form action="">
+    <div class="btns-horario">
+      <div class="horario">
+         <input type="time" name="" id="tempo" value=12:30>
+      </div>
+    </div>
+    <input type="text" id="tarefa" placeholder="TAREFA">
+    <div class="dias_da_semana">
+      <div class="op">
+      <label for="segunda">SEGUNDA-FEIRA</label>
+     <input type="checkbox" value="segunda" id="segunda" placeholder="Segunda">
+    </div>
+    <div class="op">
+     <label for="terca">TERÇA-FEIRA</label>
+     <input type="checkbox" value="terca" id="terca" placeholder="Terça">
+    </div>
+    <div class="op">
+     <label for="quarta">QUARTA-FEIRA</label>
+     <input type="checkbox" value="quarta" id="quarta" placeholder="Quarta">
+    </div>
+    <div class="op">
+     <label for="quinta">QUINTA-FEIRA</label>
+     <input type="checkbox" value="quinta" id="quinta" placeholder="Quinta">
+    </div>
+    <div class="op">
+     <label for="sexta">SEXTA-FEIRA</label>
+     <input type="checkbox" value="sexta" id="sexta" placeholder="Sexta">
+    </div>
+    <div class="op">
+     <label for="sabado">SÁBADO</label>
+     <input type="checkbox" value="sabado" id="sabado" placeholder="Sábado">
+    </div>
+    <div class="op">
+     <label for="domingo">DOMINGO</label>
+     <input type="checkbox" value="domingo" id="domingo" placeholder="Domingo">
+    </div>
+    </div>
+    <input type="submit" id="pronto"></input>
+</form>
+</main>
+<%- include('partials/footer', { jsList: undefined }) -%>
+
+</div>
+<script src="/js/addList.js"></script>

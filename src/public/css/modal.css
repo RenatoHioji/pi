@@ -49,7 +49,7 @@
     
     #modal {
         width: 100vw;
-        max-height: 580px;
+        max-height: 350px;
         border-radius: 20px 20px 0px 0px;
         background-color: #ffffff;
         transform: translateY(100%);
