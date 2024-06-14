@@ -60,8 +60,8 @@ app.get("/listas_fimDeSemana", (req, res) => {
     res.render("listas_fimDeSemana")
 })
 
-app.get("/addList", (req, res) => {
-    res.render("addList")
+app.get("/addAlarme", (req, res) => {
+    res.render("addAlarme")
 })
 
 app.get("/dias_da_semana", (req, res) => {

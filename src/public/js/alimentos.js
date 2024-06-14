@@ -4,6 +4,7 @@ function showVideo(nome, divSilabica, caminhoVideo){
     let container = document.querySelector('#modal-container')
     let modal = document.querySelector('#modal')
     let video = document.createElement('video')
+    video.classList.add('video');
     video.controls = true
     //fonte do vídeo
     let sourceVideo = document.createElement('source')
@@ -20,8 +21,7 @@ function showVideo(nome, divSilabica, caminhoVideo){
     sound.src = '../svg/png/sound.png'
     let done = document.createElement('button')
     done.textContent = 'PRONTO'
-    video.style.marginTop = '18%'
-    video.style.width = '80%'
+
     video.style.borderRadius = '7%'
     titulo.style.color = '#F15562'
     titulo.style.fontWeight = 'bold'
@@ -39,6 +39,7 @@ function showVideo(nome, divSilabica, caminhoVideo){
     done.style.fontSize ='20px'
     done.style.border = 'none'
     done.style.borderRadius = '20px'
+    done.style.marginBottom= "5%"
 
     modal.appendChild(video)
     modal.appendChild(titulo)

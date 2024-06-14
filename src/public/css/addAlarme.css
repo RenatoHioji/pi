@@ -1,45 +1,16 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    border: 0;
-}
-
-@font-face {
-    font-family: montserrat-bold;
-    src: url(../fonts/Montserrat-Bold.ttf);
-}
-@font-face {
-    font-family: montserrat-black;
-    src: url(../fonts/Montserrat-Black.ttf);
-}
-@font-face {
-    font-family: montserrat-semiBold;
-    src: url(../fonts/Montserrat-SemiBold.ttf);
-}
-@font-face {
-    font-family: montserrat-medium;
-    src: url(../fonts/Montserrat-Medium.ttf);
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    background-color: #C5EEFF;
+form{
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 87vh;
     align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 #tempo {
+    padding-top: 5%;
     border: none;
     outline: none;
-    margin-top: 25%;
-    margin-left: 1%;
     font-size: 64px;
     font-family: montserrat-semiBold;
     background-color: #C5EEFF;
@@ -63,47 +34,9 @@ body {
     background-color: #ffffff;
 }
 
-.note {
-    width: 100%;
-    height: 15%;
-    background-color: #ffffff;
-    flex: 1;
-    display: flex;
-    position: fixed;
-    border-radius: 0px 0px 40px 40px;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.img-tagarela {
-    margin-top: 14%;
-}
-
-main {
-    width: 100vw;
-    flex: 4;
-    background-image: url("../svg/background-main.svg");
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 10%;
-}
-
-.title {
+.title{
     background-color: #F15562;
-    text-align: center;
-    width: 45%;
-    padding: 10px;
-    position: fixed;
-    border-radius: 80px;
-    color: white;
-    font-weight: bold;
-    font-size: 28px;
-    font-family: montserrat-bold;
-    margin-top: 25%;
 }
-
 #tarefa {
     width: 65%;
     height: 7%;
@@ -111,7 +44,6 @@ main {
     border-style: none none solid none;
     border-color: #5E890F;
     background-color: #C5EEFF;
-    margin-top: 20%;
 }
 
 #tarefa::placeholder {
@@ -131,14 +63,7 @@ main {
     align-items: center;
 }
 
-#mais {
-    margin-top: 40%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 .horario {
-    margin-top: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,15 +77,14 @@ main {
 }
 
 .dias_da_semana {
+    background-color: #B0F1B3;
+    max-width: 950px;
     width: 65%;
     height: 50%;
-    border-style: none none solid none;
-    background-color: #C5EEFF;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10%;
 }
 
 .op{
@@ -171,6 +95,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #5E890F;
+
 }
 
 .op > input {
@@ -193,8 +119,7 @@ main {
 #pronto {
     width: 40%;
     height: 10%;
-    background-color: #FFD73D;
-    margin-top: 10%;
+    background-color:#8ECE16;
     display: flex;
     border-radius: 60px;
     color: #ffffff;
@@ -202,6 +127,11 @@ main {
     font-family: montserrat-semiBold;
     justify-content: center;
     align-items: center;
+    border: 0px;
+     box-shadow: 0 4px 4px 0 #0000007f;
+    &:hover{
+        filter: brightness(90%);
+    }
 }
 
 .addList {

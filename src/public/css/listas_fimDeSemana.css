@@ -1,79 +1,7 @@
-* {
-    box-sizing: border-box;
-}
 
-@font-face {
-    font-family: montserrat-bold;
-    src: url(../fonts/Montserrat-Bold.ttf);
-}
-@font-face {
-    font-family: montserrat-black;
-    src: url(../fonts/Montserrat-Black.ttf);
-}
-@font-face {
-    font-family: montserrat-semiBold;
-    src: url(../fonts/Montserrat-SemiBold.ttf);
-}
-@font-face {
-    font-family: montserrat-medium;
-    src: url(../fonts/Montserrat-Medium.ttf);
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    background-color: #C5EEFF;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-}
-
-.note {
-    width: 100%;
-    height: 15%;
-    background-color: #ffffff;
-    flex: 1;
-    display: flex;
-    position: fixed;
-    border-radius: 0px 0px 40px 40px;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.img-tagarela {
-    margin-top: 14%;
-}
-
-main {
-    width: 100vw;
-    flex: 4;
-    background-image: url("../svg/background-main.svg");
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 10%;
-}
-
-.title {
+.title{
     background-color: #F15562;
-    text-align: center;
-    width: 45%;
-    padding: 10px;
-    position: fixed;
-    border-radius: 80px;
-    color: white;
-    font-weight: bold;
-    font-size: 28px;
-    font-family: montserrat-bold;
-    margin-top: 25%;
 }
-
 .addList {
     background-color: #8ECE16;
     color: #ffffff;
@@ -84,11 +12,25 @@ main {
     display: flex;
     justify-content: center;
     text-decoration: none;
-    margin-bottom: 7%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     font-size: 22px;
     align-items: center;
+    &:hover{
+        filter:brightness(90%)
+    }
 }
-
+.alarmes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.addList > img{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
 .list {
     width: 100%;
     height: 6%;
@@ -102,13 +44,17 @@ main {
     align-items: center;
     justify-content: flex-end;
     color: #ffffff;
+
 }
 
-.list > p {
+.list > p { 
     margin: 0% 4%;
 }
 
 .lists {
+    &:hover{
+        filter:brightness(90%)
+    }
     width: 100%;
     height: 10%;
     background-color: #b5ff70;
@@ -122,10 +68,6 @@ main {
     color: #ffffff;
 }
 
-#first-card {
-    margin-top: 40%;
-    margin-left: 70%;
-}
 
 .lists > p {
     margin: 0% 4%;
@@ -134,18 +76,4 @@ main {
 .img-card {
     width: 50%;
     height: 50%;
-}
-
-.footer{
-    width: 100%;
-    background-color: #ffffff;
-    height: 10%;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.menu{
-    border: none;
-    background: none;
 }
