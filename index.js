@@ -2,7 +2,6 @@ import 'dotenv/config'
 import express from "express"
 import moongoose from "mongoose"
 import cors from "cors"
-import multer from 'multer'
 import session from 'express-session'
 import AlarmeController from "./src/controllers/AlarmeController.js"
 import PessoaController from './src/controllers/PessoaController.js'
@@ -11,6 +10,7 @@ import JogoController from "./src/controllers/JogoController.js"
 import CategoriaController from "./src/controllers/CategoriaController.js"
 import SubcategoriaController from "./src/controllers/SubcategoriaController.js"
 import ItemController from "./src/controllers/ItemController.js"
+import { Pessoa } from './src/models/Pessoa.js'
 const PORT = process.env.PORT || 3001
 const MONGO_DB_URL = process.env.MONGO_DB_URL
 
@@ -18,7 +18,20 @@ const app = express()
 app.use(express.json());
 app.use(cors({ origin: `http://localhost:${PORT}` }))
 app.use(express.static('src/public'))
-
+app.use(session({
+    secret: 'tagarela',
+    resave: false,
+    saveUninitialized: true,
+  }))
+  async function sessionInitializer(req, res, next) {
+    if (!req.session.userId) {
+        const pessoa = await Pessoa.findOne()
+        const id = pessoa.id
+        req.session.userId = id
+    }
+    next()
+  }
+app.use(sessionInitializer)
 app.set("views", "./src/views/")
 app.set("view engine", "ejs")
 
@@ -42,10 +55,6 @@ app.get("/necessidades", (req, res) => {
 
 app.get("/alimentos", (req, res) => {
     res.render("alimentos")
-})
-
-app.get("/meusCards", (req, res) => {
-    res.render("meusCards")
 })
 
 app.get("/addCards", (req, res) => {
@@ -109,8 +118,12 @@ app.use("/", ItemController)
 
 app.listen(PORT, err => {
     try {
-        console.log(`Server litening on http://localhost:${PORT}`)
+        console.log("Iniciado: ")
     } catch(err){
         console.log(err)
     }
 })
+
+
+
+  

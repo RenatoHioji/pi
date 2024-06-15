@@ -11,12 +11,13 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         let uploadPath
         if (file.fieldname === 'imagem') {
-            uploadPath = path.join('public', 'uploads', 'imagens')
+            uploadPath = path.join('src', 'public', 'uploads', 'imagens')
         } else if (file.fieldname === 'audio') {
-            uploadPath = path.join('public', 'uploads', 'audios')
+            uploadPath = path.join('src', 'public', 'uploads', 'audios')
         } else if (file.fieldname === 'video') {
-            uploadPath = path.join('public', 'uploads', 'videos')
+            uploadPath = path.join('src','public', 'uploads', 'videos')
         }
+        uploadPath = uploadPath.replace(/\\/g, '/');        
         cb(null, uploadPath)
     },
     filename: function (req, file, cb) {
@@ -46,7 +47,6 @@ router.post("/categoria/:idCategoria/subcategoria/:idSubcategoria/item", upload.
     res.status(201).send(response) 
 })
 
-// TELA DOS ITEMS
 
 router.get("/categoria/subcategoria/:idSubcategoria/item", async(req, res) => {
     try{
@@ -58,7 +58,6 @@ router.get("/categoria/subcategoria/:idSubcategoria/item", async(req, res) => {
 })
 
 
-// TELA DO ITEM
 
 router.get("/categoria/subcategoria/item/:idItem", async(req, res) =>{
     try{
@@ -68,25 +67,26 @@ router.get("/categoria/subcategoria/item/:idItem", async(req, res) =>{
         console.log(`Não foi possível buscar o item de id: ${req.params.idItem}`)
     }
 })
-router.get("/pessoa/:idPessoa/item", async (req, res) => {
+router.get("/pessoa/item", async (req, res) => {
     try {
-        const response = await ItemService.findByPessoaId(req.params.idPessoa);
-        res.status(200).send(response);
+        const response = await ItemService.findByPessoaId(req.session.userId)
+        console.log(response)
+        res.status(200).render("meusCards", {
+            cards: response
+        })
     } catch (err) {
         return res.status(500).send("Não foi possível buscar os items dessa pessoa: " + err);
     }
 });
 
 
-router.post("/pessoa/:idPessoa/item",upload.fields([{name: "imagem"}, {name: "audio"}, {name:"video"}]), async (req, res) => {
-    console.log(req.files)
-    console.log(req.body)
+router.post("/pessoa/item",upload.fields([{name: "imagem"}, {name: "audio"}, {name:"video"}]), async (req, res) => {
     const nome = req.body.nome
     const classificacao = req.body.classificacao
     const divisaoSilabica = req.body.divisaoSilabica
-    const imagens = req.files ? path.join('imagens', req.files.imagem[0].originalname) : null
-    const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname) : null
-    const video = req.files.video ? path.join('videos', req.files.video[0].originalname) : null
+    const imagens = req.files.imagem ? path.join('imagens', req.files.imagem[0].originalname).replace(/\\/g, '/') : null
+    const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname).replace(/\\/g, '/') : null
+    const video = req.files.video ? path.join('videos', req.files.video[0].originalname).replace(/\\/g, '/') : null
     console.log(imagens)
     console.log(video)
     console.log(audio)
@@ -97,7 +97,7 @@ router.post("/pessoa/:idPessoa/item",upload.fields([{name: "imagem"}, {name: "au
         audio,
         video
       })
-      const response = await ItemService.createItemToPessoa(req.params.idPessoa, item, imagens)
+      const response = await ItemService.createItemToPessoa(req.session.userId, item, imagens)
       res.status(200).send(response)
 })
 

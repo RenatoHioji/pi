@@ -6,7 +6,6 @@ function showVideo(nome, divSilabica, caminhoVideo){
     let video = document.createElement('video')
     video.classList.add('video');
     video.controls = true
-    //fonte do vídeo
     let sourceVideo = document.createElement('source')
     sourceVideo.src = caminhoVideo
     sourceVideo.type = 'video/mp4'

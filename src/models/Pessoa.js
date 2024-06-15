@@ -14,7 +14,7 @@ const pessoa = new mongoose.Schema({
     items: [item]
 });
 
-const Pessoa = mongoose.model("pessoa", pessoa)
+const Pessoa = mongoose.model("pessoas", pessoa)
 
 
 export  {pessoa, Pessoa}

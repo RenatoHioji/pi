@@ -17,6 +17,7 @@ router.post("/pessoa/:pessoaId/lista/:idLista/alarme", async (req, res) => {
 })
 
 router.delete("/pessoa/:idPessoa/lista/:idLista/alarme/:idAlarme", async(req, res) =>{
+    
     AlarmeService.DeleteById(req.params.idPessoa, req.params.idLista, req.params.idAlarme)
     res.status(204).send()
 })

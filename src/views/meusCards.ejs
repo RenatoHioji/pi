@@ -1,26 +1,23 @@
 <%- include("partials/header", { cssList: ["style", "meusCards", "modal"], title: "MEUS CARDS" } ) -%>
     <main>
       <div class="cards">
-      <%- include("components/cards", { cardList: [{
-        nome : 'SOLZI',
-        divisaoSilabica: 'SOL-ZI',
-        imagens: '/svg/png/solzi.png'
-      }]}) -%>
-
-      <%- include("components/cards", { cardList: [{
-        nome : 'SOLZI',
-        divisaoSilabica: 'SOL-ZI',
-        imagens: '/svg/png/solzi.png'
-      }]}) -%>
-
-
-      <a class="addCard" href="addCards"><img src="/svg/png/add.png" alt="">ADICIONAR CARD</a>
-
+        <% if(cards) { %>
+          <% cards.forEach(card => { %>
+            <%- include("components/videoMeusCards", { cardList: [{
+              nome: card.nome,
+              divisaoSilabica: card.divisaoSilabica,
+              imagens: card.imagens[0].url,
+              video: card.video,
+              audio: card.audio
+            }]}) %>
+          <% }) %>
+        <% } %>
+      <a class="addCard" href="../addCards"><img src="/svg/png/add.png" alt="">ADICIONAR CARD</a>
     </div>
     
         
     </main>
-    <%- include('partials/footer', { jsList: ["alimentos"] }) -%>
+    <%- include('partials/footer', { jsList: ["meusCards"] }) -%>
     
     <div id="modal-container" onclick="hideVideo()">
       <div id="modal"></div>
