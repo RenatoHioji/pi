@@ -1,0 +1,40 @@
+import cv2
+import numpy as np
+
+def Simples(rotacao_image,angulo):
+    #Extrai a altura e a largura da imagem
+    altura,largura = rotacao_image.shape[0], rotacao_image.shape[1]
+    #calcula as coordenadas do ponto central da imagem
+    Y,X = altura /2 , largura /2
+    #cria a matriz da rotação com base no ângulo fornecido e no ponto central da imagem
+    rotacao_matriz = cv2.getRotationMatrix2D((Y,X), angulo , 1.0)
+    #aplica a transformação de rotação a imagem usando a matriz de rotação criada 
+    rotatingimage = cv2.warpAffine(rotacao_image, rotacao_matriz, (largura, altura))
+    return rotatingimage
+
+def complexo(rotacao_image, angulo):
+    #Extrai a altura e a largura da imagem
+    altura,largura = rotacao_image.shape[0], rotacao_image.shape[1]
+    #calcula as coordenadas do ponto central da imagem
+    Y,X = altura /2 , largura /2
+    #cria a matriz da rotação com base no ângulo fornecido e no ponto central da imagem
+    rotacao_matriz = cv2.getRotationMatrix2D((Y,X), angulo , 1.0)
+    coseno = np.abs(rotacao_matriz[0][0])
+    seno = np.abs(rotacao_matriz[0][1])
+    nova_altura = int((altura * seno) + (largura * coseno))
+    nova_largura = int((altura * coseno) + (largura * seno ))
+    rotacao_matriz[0][2] += (nova_largura/2) - X
+    rotacao_matriz[1][2] += (nova_altura/2) - Y
+    rotatingimage = cv2.warpAffine(
+        rotacao_image, rotacao_matriz, (nova_largura, nova_altura)        
+    )
+    return rotatingimage
+
+imagem = cv2.imread("mario.jpg",1)
+Normal = Simples(imagem, 40)
+Rotacao_Complexa = complexo(imagem, 40)
+cv2.imshow("Imagem", imagem)
+cv2.imshow("Simples", Normal)
+cv2.imshow("Complexa", Rotacao_Complexa)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
