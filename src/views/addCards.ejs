@@ -5,15 +5,12 @@
       <input type="text" name="nome" id="title" pattern="[a-zA-Z]+" title="Somente letras" required
         placeholder="PALAVRA">
       <input type="text" name="divisaoSilabica" id="silabas" title="Somente letras" required placeholder="SÍLABAS">
-
-      <img class="card" id="img" src="/svg/upload.svg" alt="seta para cima indicando upload de arquivos">
-      <input type="file" accept="image/*" id="img" title="Por favor utilize apenas formatos de Imagens" required
-        hidden />
+      <img class="card" src="/svg/upload.svg" alt="seta para cima indicando upload de arquivos">
+      <input type="file" accept="image/*" title="Por favor utilize apenas formatos de Imagens" required hidden />
       <a class="button">ESCOLHER FOTO</a>
-
-
       <div class="card" id="video">
-        <img src="/svg/png/upload.png" alt="seta para cima indicando upload de arquivos">
+        <img src="/svg/png/upload.png" id="imagemRotacao" alt="seta para cima indicando upload de arquivos">
+        <input type="hidden" name="rotacao" id="rotacao" value="0">
       </div>
       <input type="file" accept="video/*" title="Por Favor utilize apenas formatos de Vídeo" required hidden>
       <a class="button">ESCOLHER VÍDEO</a>
@@ -34,4 +31,17 @@
 
   </main>
   <script src="/js/addCards.js"></script>
-  <%- include('partials/footer', { jsList: ["addCards"] }) -%>
+  <script>
+    const img = document.getElementById('imagemRotacao')
+    const rotacao = document.getElementById("rotacao")
+    let rotationDegrees = 0;
+    img.addEventListener("click", function () {
+      rotationDegrees += 60;
+      img.style.transform = `rotate(${rotationDegrees}deg)`;
+      rotacao.value = rotationDegrees % 360;
+      console.log(rotacao.value % 360)
+    });
+
+
+  </script>
+  <%- include('partials/footer', { jsList: undefined }) -%>
