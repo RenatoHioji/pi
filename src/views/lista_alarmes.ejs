@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs", { cssList: ["style", "listas_fimDeSemana"], title: "ROTINA" }) -%>
+<main>
+  <% if (lista) { %>
+    <a class="addList" href="/addAlarme?id=<%= lista.id %>" id="first-card">
+      <img src="/svg/png/plus.png" alt="" class="img-card">
+    </a>
+    <div class="alarmes">
+      <div class="list" id="firstList">
+        <p><%= lista.nome %></p>
+      </div>
+      <% lista.alarmes.forEach(alarme => { %>
+        <a href="/lista/<%= lista.id %>/alarme/<%= alarme.id %>" class="lists" >
+          <p><%= alarme.horario %></p>
+          <p><%= alarme.acao %></p> 
+
+        </a>
+      <% }); %>
+    </div>
+  <% } %>
+</main>
+<%- include('partials/footer', { jsList: undefined }) -%>

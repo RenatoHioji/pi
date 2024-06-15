@@ -13,49 +13,51 @@
 </dialog>
 <%- include("partials/header.ejs", { cssList: ["style", "addAlarme" ], title: "ADICIONAR" }) -%>
 <main>
-    <form action="">
+    <form action="/pessoa/lista/<%= id %>/alarme" method="POST">
     <div class="btns-horario">
       <div class="horario">
         <img src="/svg/png/plus.png" id="btn-aumentar-horas" alt="">
-         <input type="time" name="" id="tempo">
+         <input type="time" name="horario" id="tempo" value="00:00">
          <img src="/svg/png/plus.png" id="btn-aumentar-minutos" alt="">
       </div>
     </div>
-    <input type="text" id="tarefa" placeholder="TAREFA">
+    <input type="text" id="tarefa" name="acao"placeholder="TAREFA">
     <div class="dias_da_semana">
       <div class="op">
-      <label for="segunda">SEGUNDA-FEIRA</label>
-     <input type="checkbox" value="segunda" id="segunda" placeholder="Segunda">
-    </div>
-    <div class="op">
-     <label for="terca">TERÇA-FEIRA</label>
-     <input type="checkbox" value="terca" id="terca" placeholder="Terça">
-    </div>
-    <div class="op">
-     <label for="quarta">QUARTA-FEIRA</label>
-     <input type="checkbox" value="quarta" id="quarta" placeholder="Quarta">
-    </div>
-    <div class="op">
-     <label for="quinta">QUINTA-FEIRA</label>
-     <input type="checkbox" value="quinta" id="quinta" placeholder="Quinta">
-    </div>
-    <div class="op">
-     <label for="sexta">SEXTA-FEIRA</label>
-     <input type="checkbox" value="sexta" id="sexta" placeholder="Sexta">
-    </div>
-    <div class="op">
-     <label for="sabado">SÁBADO</label>
-     <input type="checkbox" value="sabado" id="sabado" placeholder="Sábado">
-    </div>
-    <div class="op">
-     <label for="domingo">DOMINGO</label>
-     <input type="checkbox" value="domingo" id="domingo" placeholder="Domingo">
-    </div>
-    </div>
+          <label for="segunda">SEGUNDA-FEIRA</label>
+          <input type="checkbox" name="dias[]" value="0" id="segunda">
+      </div>
+      <div class="op">
+          <label for="terca">TERÇA-FEIRA</label>
+          <input type="checkbox" name="dias[]" value="1" id="terca">
+      </div>
+      <div class="op">
+          <label for="quarta">QUARTA-FEIRA</label>
+          <input type="checkbox" name="dias[]" value="2" id="quarta">
+      </div>
+      <div class="op">
+          <label for="quinta">QUINTA-FEIRA</label>
+          <input type="checkbox" name="dias[]" value="3" id="quinta">
+      </div>
+      <div class="op">
+          <label for="sexta">SEXTA-FEIRA</label>
+          <input type="checkbox" name="dias[]" value="4" id="sexta">
+      </div>
+      <div class="op">
+          <label for="sabado">SÁBADO</label>
+          <input type="checkbox" name="dias[]" value="5" id="sabado">
+      </div>
+      <div class="op">
+          <label for="domingo">DOMINGO</label>
+          <input type="checkbox" name="dias[]" value="6" id="domingo">
+      </div>
+  </div>
+  <input type="file" name="som" id="som">
+
     <input type="submit" id="pronto"></input>
 </form>
 <button id="done">clique</button>
 </main>
-<%- include('partials/footer', { jsList: undefined }) -%>
+<%- include('partials/footer', { jsList: ["changeTime"] }) -%>
 </div>
 <script src="/js/addAlarme.js"></script>

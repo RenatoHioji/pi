@@ -1,7 +1,7 @@
 <%- include('partials/header', {cssList: ['style','addCards'], title: "Adicionar Cartões" }) -%>
 
   <main>
-    <form action="/pessoa/666786e29778e28ad6119add/item" method="POST" enctype="multipart/form-data">
+    <form action="/item" method="POST" enctype="multipart/form-data">
       <input type="text" name="nome" id="title" pattern="[a-zA-Z]+" title="Somente letras" required
         placeholder="PALAVRA">
       <input type="text" name="divisaoSilabica" id="silabas" title="Somente letras" required placeholder="SÍLABAS">

@@ -13,12 +13,12 @@ class ListaService{
         return lista
     }
     async update(pessoaId, listaId, nome) {
-            const pessoa = await PessoaRepository.findById(pessoaId);
-            const listaAtualizada = await ListaRepository.update(listaId, nome);
+            const pessoa = await PessoaRepository.findById(pessoaId)
+            const listaAtualizada = await ListaRepository.update(listaId, nome)
             const lista = pessoa.lista.id(listaId)
             lista.nome = nome
-            await pessoa.save();
-            return listaAtualizada;
+            await pessoa.save()
+            return listaAtualizada
     } 
     
     async delete(pessoaId, listaId){

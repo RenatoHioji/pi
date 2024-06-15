@@ -1,49 +1,52 @@
-<%- include("partials/header.ejs", { cssList: ["style", "editar_alarme" ], title: "EDITAR" }) -%>
+<%- include("partials/header.ejs", { cssList: ["style", "addAlarme" ], title: "EDITAR" }) -%>
   <main>
-    <form action="">
-    <div class="btns-horario">
-      <div class="horario">
-          <input type="time" name="" id="tempo" value=12:30>
+    <form action="/pessoa/lista/<%= listaId%>/alarme/<%= alarme.id %>/update" method="post">
+      <div class="btns-horario">
+        <div class="horario">
+          <img src="/svg/png/plus.png" id="btn-aumentar-horas" alt="">
+           <input type="time" name="horario" id="tempo" value="<%= alarme.horario %>">
+           <img src="/svg/png/plus.png" id="btn-aumentar-minutos" alt="">
         </div>
-    </div>
-    <input type="text" id="tarefa" placeholder="TAREFA">
+      </div>
+    <input type="text" id="tarefa"  name="acao" value="<%= alarme.acao %>">
     <div class="dias_da_semana">
       <div class="op">
       <label for="segunda">SEGUNDA-FEIRA</label>
-     <input type="checkbox" value="segunda" id="segunda" placeholder="Segunda">
+     <input type="checkbox" value="0" name="dias[]" id="segunda" placeholder="Segunda" <% if (alarme.diaDaSemana.includes(0)) { %> checked <% } %>>
     </div>
     <div class="op">
-     <label for="terca">TERÇA-FEIRA</label>
-     <input type="checkbox" value="terca" id="terca" placeholder="Terça">
-    </div>
-    <div class="op">
-     <label for="quarta">QUARTA-FEIRA</label>
-     <input type="checkbox" value="quarta" id="quarta" placeholder="Quarta">
-    </div>
-    <div class="op">
-     <label for="quinta">QUINTA-FEIRA</label>
-     <input type="checkbox" value="quinta" id="quinta" placeholder="Quinta">
-    </div>
-    <div class="op">
-     <label for="sexta">SEXTA-FEIRA</label>
-     <input type="checkbox" value="sexta" id="sexta" placeholder="Sexta">
-    </div>
-    <div class="op">
-     <label for="sabado">SÁBADO</label>
-     <input type="checkbox" value="sabado" id="sabado" placeholder="Sábado">
-    </div>
-    <div class="op" id="op-ultimo">
-     <label for="domingo">DOMINGO</label>
-     <input type="checkbox" value="domingo" id="domingo" placeholder="Domingo">
-    </div>
-    </div>
-    <div class="btns">
-    <input type="submit" id="pronto" value="Editar"></input>
-    <input type="submit" id="deletar" value="Deletar"></input>
-    </div>
+      <label for="terca">TERÇA-FEIRA</label>
+      <input type="checkbox" name="dias[]" value="1" id="terca" <% if (alarme.diaDaSemana.includes(1)) { %> checked <% } %>>
   </div>
+  <div class="op">
+      <label for="quarta">QUARTA-FEIRA</label>
+      <input type="checkbox" name="dias[]" value="2" id="quarta" <% if (alarme.diaDaSemana.includes(2)) { %> checked <% } %>>
+  </div>
+  <div class="op">
+      <label for="quinta">QUINTA-FEIRA</label>
+      <input type="checkbox" name="dias[]" value="3" id="quinta" <% if (alarme.diaDaSemana.includes(3)) { %> checked <% } %>>
+  </div>
+  <div class="op">
+      <label for="sexta">SEXTA-FEIRA</label>
+      <input type="checkbox" name="dias[]" value="4" id="sexta" <% if (alarme.diaDaSemana.includes(4)) { %> checked <% } %>>
+  </div>
+  <div class="op">
+      <label for="sabado">SÁBADO</label>
+      <input type="checkbox" name="dias[]" value="5" id="sabado" <% if (alarme.diaDaSemana.includes(5)) { %> checked <% } %>>
+  </div>
+  <div class="op">
+      <label for="domingo">DOMINGO</label>
+      <input type="checkbox" name="dias[]" value="6" id="domingo" <% if (alarme.diaDaSemana.includes(6)) { %> checked <% } %>>
+  </div>
+    </div>
+  <input type="file" name="som" id="som">
+
+    <div class="btns">
+    <input type="submit" id="editar" value="Editar"></input>
+    <a href="/pessoa/lista/<%= listaId%>/alarme/<%= alarme.id %>/delete" id="deletar">Deletar</a>
+    </div>
 </form>
 </main>
-<script src="/js/addList.js"></script>
-  <%- include('partials/footer', { jsList: undefined }) -%>
+<%- include('partials/footer', { jsList: ["changeTime"] }) -%>
+</div>
 

@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 3001
 const MONGO_DB_URL = process.env.MONGO_DB_URL
 
 const app = express()
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(cors({ origin: `http://localhost:${PORT}` }))
 app.use(express.static('src/public'))
@@ -23,6 +25,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
   }))
+  
   async function sessionInitializer(req, res, next) {
     if (!req.session.userId) {
         const pessoa = await Pessoa.findOne()
@@ -61,20 +64,11 @@ app.get("/addCards", (req, res) => {
     res.render("addCards")
 })
 
-app.get("/listas", (req, res) => {
-    res.render("listas")
-})
-
-app.get("/listas_fimDeSemana", (req, res) => {
-    res.render("listas_fimDeSemana")
-})
-
-app.get("/addAlarme", (req, res) => {
-    res.render("addAlarme")
-})
-
-app.get("/dias_da_semana", (req, res) => {
-    res.render("dias_da_semana")
+app.get("/addAlarme/:id?", (req, res) => {
+    console.log( req.query.id)
+    res.render("addAlarme", {
+        id: req.query.id
+    })
 })
 
 app.get("/praticar", (req, res) => {
@@ -102,11 +96,6 @@ app.get("/parabens", (req, res) => {
 app.get("/emocoes", (req, res) => {
     res.render("emocoes")
 })
-
-app.get("/editar_alarme", (req, res) => {
-    res.render("editar_alarme")
-})
-
 
 app.use("/", PessoaController)
 app.use("/", AlarmeController)

@@ -59,9 +59,10 @@ import PessoaRepository from "../repository/PessoaRepository.js"
     }
 
     async update(idPessoa, idLista, idAlarme, acao, horario, diaDaSemana, som){
-        const alarmeNovo = new Alarme({acao: acao, horario: horario, diaDaSemana: diaDaSemana})
+        
+        const alarmeNovo = new Alarme({acao: acao, horario: horario, diaDaSemana: diaDaSemana, som: som})
         const pessoa = await PessoaRepository.findById(idPessoa)
-
+        
         const lista = await ListaRepository.findById(idLista)
 
         const alarmeAntigo = lista.alarmes.id(idAlarme)
@@ -72,6 +73,8 @@ import PessoaRepository from "../repository/PessoaRepository.js"
         alarmeAntigo.som = som
 
         const listaAtualizada = await lista.save()
+
+        console.log(listaAtualizada)
 
         const listaAntiga = pessoa.lista.id(idLista)
 
