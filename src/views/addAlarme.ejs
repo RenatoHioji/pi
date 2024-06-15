@@ -1,9 +1,24 @@
+<dialog id="modal-notificacao">
+  <div class="container_modal">
+    <img src="/svg/png/img_solzi.png" alt="Solzi">
+    <div class="content">
+     <h1>TAGARELA</h1>
+     <h2>TAREFA</h2>
+    </div>
+    <h2>12:30</h2>
+    <audio id="audio-alarme">
+      <source src="/audios/som_alarme.mp3" type="audio/mpeg">
+  </audio>
+  </div>
+</dialog>
 <%- include("partials/header.ejs", { cssList: ["style", "addAlarme" ], title: "ADICIONAR" }) -%>
 <main>
     <form action="">
     <div class="btns-horario">
       <div class="horario">
-         <input type="time" name="" id="tempo" value=12:30>
+        <img src="/svg/png/plus.png" id="btn-aumentar-horas" alt="">
+         <input type="time" name="" id="tempo">
+         <img src="/svg/png/plus.png" id="btn-aumentar-minutos" alt="">
       </div>
     </div>
     <input type="text" id="tarefa" placeholder="TAREFA">
@@ -39,8 +54,8 @@
     </div>
     <input type="submit" id="pronto"></input>
 </form>
+<button id="done">clique</button>
 </main>
 <%- include('partials/footer', { jsList: undefined }) -%>
-
 </div>
-<script src="/js/addList.js"></script>
+<script src="/js/addAlarme.js"></script>
