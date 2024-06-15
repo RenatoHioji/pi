@@ -4,7 +4,7 @@ const alarme = new mongoose.Schema({
   acao: String,
   horario: String,
   diaDaSemana: [Number],
-  som: Number
+  som: String
 })
  
 const Alarme = mongoose.model("Alarme", alarme)

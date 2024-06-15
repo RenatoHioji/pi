@@ -26,7 +26,8 @@ form {
     padding-top: 20%;
 }
 
-div.card {
+.card {
+    display: block;
     border-radius: 18px;
     border: 4px dashed #8ECE16;
     width: 70%;
@@ -78,4 +79,16 @@ input[type="text"]::placeholder {
 
 .button > img {
     margin-right: 20px;
+}
+
+.mic {
+    aspect-ratio: 1;
+    width: 50%;
+    background-color: yellow;
+    border-radius: 20px;
+    margin-bottom: 20%;
+}
+
+.mic > img {
+    width: 100%;
 }
