@@ -12,6 +12,25 @@ form {
     padding-top: 20%;
 }
 
+.geral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-imagem{
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+
+
+
 .card {
     display: block;
     border-radius: 18px;
