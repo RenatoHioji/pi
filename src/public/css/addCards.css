@@ -23,10 +23,10 @@ form {
     align-items: center;
     justify-content: center;
     margin-bottom: 5%;
-}
-
-.card-img {
-    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 9999;
 }
 
 input[type="text"] {

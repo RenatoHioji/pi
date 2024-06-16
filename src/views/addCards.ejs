@@ -7,13 +7,13 @@
       <input type="text" name="divisaoSilabica" id="silabas" title="Somente letras" required placeholder="SÍLABAS">
 
       <div class="card" id="imagem">
-        <img src="/svg/png/upload.png" id="imagemRotacao" alt="seta para cima indicando upload de arquivos">
+        <img src="/svg/png/upload.png" id="img-upload" alt="seta para cima indicando upload de arquivos">
         <input type="hidden" name="rotacao" id="rotacao" value="0">
       <input type="file" id="input-img" title="Por favor utilize apenas formatos de Imagens" required hidden />
     </div>
       <a class="button">ESCOLHER FOTO</a>
       <div class="card" id="video">
-        <img src="/svg/png/upload.png" id="imagemRotacao" alt="seta para cima indicando upload de arquivos">
+        <img src="/svg/png/upload.png" id="" alt="seta para cima indicando upload de arquivos">
         <input type="hidden" name="rotacao" id="rotacao" value="0">
       </div>
       <input type="file"id="input-video" title="Por Favor utilize apenas formatos de Vídeo" required hidden>
@@ -37,7 +37,7 @@
   </main>
   <script src="/js/addCards.js"></script>
   <script>
-    const img = document.getElementById('imagemRotacao')
+    const img = document.getElementById('img-upload')
     const rotacao = document.getElementById("rotacao")
     let rotationDegrees = 0;
     img.addEventListener("click", function () {
