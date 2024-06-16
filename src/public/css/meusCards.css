@@ -6,6 +6,8 @@ main{
 
 }
 .card{
+    max-width: 400px;
+    max-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +24,10 @@ main{
     font-weight: bold;
     color: #F15562;
 }
-
+.card > img{
+    max-width: 400px;
+    max-height: 400px;
+}
 .addCard {
     display: flex;
     justify-content: center;

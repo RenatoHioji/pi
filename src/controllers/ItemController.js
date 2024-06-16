@@ -100,17 +100,15 @@ router.post("/pessoa/item", upload.fields([{ name: "imagem" }, { name: "audio" }
 
     if (imagens) {
         try {
-            const rotatedImageDir = path.dirname(rotatedImagePath);
+            const rotatedImageDir = path.dirname(rotatedImagePath)
             if (!fs.existsSync(rotatedImageDir)) {
-                fs.mkdirSync(rotatedImageDir, { recursive: true });
+                fs.mkdirSync(rotatedImageDir, { recursive: true })
             }
-
             await sharp(imagens)
                 .rotate(angulo, { background: { r: 0, g: 0, b: 0, alpha: 0 } })
-                .toFile(rotatedImagePath);
+                .toFile(rotatedImagePath)
         } catch (error) {
-            console.error('Error rotating the image:', error);
-            return res.status(500).send('Error rotating the image');
+            console.error( error)
         }
     }
 
