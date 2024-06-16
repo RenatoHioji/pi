@@ -30,7 +30,6 @@ class PessoaRepository{
     }
     async findById(id){
         const pessoa = await Pessoa.findById(id)
-        console.log(id)
         return pessoa
     }
 

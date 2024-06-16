@@ -17,7 +17,9 @@
 
 
       <div class="mic">
-        <img src="/svg/mic.svg" alt="icone de microfone">
+        <img src="/svg/mic.svg" alt="icone de microfone" id = "teste">
+        <input type="file" id="audio-input" name="audio" style="display: none;">
+        <div id="status"></div>
       </div>
 
       <input type="file" name="audio" id="audio">
@@ -44,4 +46,4 @@
 
 
   </script>
-  <%- include('partials/footer', { jsList: undefined }) -%>
+  <%- include('partials/footer', { jsList: ["microfone"] }) -%>

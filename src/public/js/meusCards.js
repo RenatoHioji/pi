@@ -1,11 +1,12 @@
 
-function showVideo(nome, divSilabica, caminhoVideo){
+function showVideo(nome, divSilabica, caminhoVideo, caminhoAudio){
     
     let container = document.querySelector('#modal-container')
     let modal = document.querySelector('#modal')
     let video = document.createElement('video')
     video.classList.add('video');
     video.controls = true
+    video.muted = true
     let sourceVideo = document.createElement('source')
     sourceVideo.src = `/uploads/${caminhoVideo}` 
     sourceVideo.type = 'video/mp4'
@@ -39,7 +40,14 @@ function showVideo(nome, divSilabica, caminhoVideo){
     done.style.border = 'none'
     done.style.borderRadius = '20px'
     done.style.marginBottom= "5%"
-
+    let audio = new Audio(`/uploads/${caminhoAudio}`)
+    video.addEventListener('play', () => {
+        audio.play()
+    })
+    video.addEventListener('ended', () => {
+        audio.pause()
+        audio.currentTime = 0 
+    })
     modal.appendChild(video)
     modal.appendChild(titulo)
     modal.appendChild(silabas)
