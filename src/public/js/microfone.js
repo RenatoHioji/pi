@@ -17,8 +17,8 @@ document.getElementById('teste').addEventListener('click', () => {
                     const audioUrl = URL.createObjectURL(audioBlob);
                     const audio = new Audio(audioUrl);
                     audio.play();
-
-                    const file = new File([audioBlob], "recorded-audio.wav", { type: 'audio/wav' });
+                    let nome = Math.random()
+                    const file = new File([audioBlob], `recorded-audio${nome}.wav`, { type: 'audio/wav' });
                     const dataTransfer = new DataTransfer();
                     dataTransfer.items.add(file);
                     audioInput.files = dataTransfer.files;

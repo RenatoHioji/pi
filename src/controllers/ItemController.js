@@ -86,29 +86,41 @@ router.get("/pessoa/item", async (req, res) => {
 
 
 router.post("/pessoa/item", upload.fields([{ name: "imagem" }, { name: "audio" }, { name: "video" }]), async (req, res) => {
-    const nome = req.body.nome
-    const angulo =parseInt(req.body.rotacao)
-    const classificacao = req.body.classificacao
-    const divisaoSilabica = req.body.divisaoSilabica
-    const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname).replace(/\\/g, '/') : null
-    const video = req.files.video ? path.join('videos', req.files.video[0].originalname).replace(/\\/g, '/') : null
-    const imagens = req.files.imagem ? path.join('imagens', req.files.imagem[0].originalname).replace(/\\/g, '/') : null
-    const rotatedImagePath = imagens.replace(/imagens/, 'rotated')
-    const originalFileName = path.basename(imagens)
-    await sharp(imagens)
-                .rotate(angulo) 
-                .toFile(rotatedImagePath);
+    const nome = req.body.nome;
+    const angulo = parseInt(req.body.rotacao);
+    const classificacao = req.body.classificacao;
+    const divisaoSilabica = req.body.divisaoSilabica;
+    const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname).replace(/\\/g, '/') : null;
+    const video = req.files.video ? path.join('videos', req.files.video[0].originalname).replace(/\\/g, '/') : null;
+    const imagens = req.files.imagem ? path.join('src', 'public', 'uploads', 'imagens', req.files.imagem[0].originalname).replace(/\\/g, '/') : null;
     
-    // rotateAndSave(imagePath, angulo, rotatedImagePath, originalFileName)
+    const originalFileName = req.files.imagem[0].originalname;
+    const rotatedImagePath = path.join('src', 'public', 'uploads', 'rotated', originalFileName).replace(/\\/g, '/');
+    const relativeRotatedImagePath = path.join('rotated', originalFileName).replace(/\\/g, '/');
+
+    if (imagens) {
+        try {
+            const rotatedImageDir = path.dirname(rotatedImagePath)
+            if (!fs.existsSync(rotatedImageDir)) {
+                fs.mkdirSync(rotatedImageDir, { recursive: true })
+            }
+            await sharp(imagens)
+                .rotate(angulo, { background: { r: 0, g: 0, b: 0, alpha: 0 } })
+                .toFile(rotatedImagePath)
+        } catch (error) {
+            console.error( error)
+        }
+    }
+
     const item = new Item({
         nome,
         classificacao,
         divisaoSilabica,
         audio,
-        video,
-    })
-    const response = await ItemService.createItemToPessoa(req.session.userId, item, imagens)
-    res.status(200).send(response)
+        video
+    });
+    const response = await ItemService.createItemToPessoa(req.session.userId, item, relativeRotatedImagePath )
+    res.status(200).redirect("/pessoa/item")
 })
 
 async function rotateAndSave(imagePath, rotationAngle, outputFolderPath, outputFileName) {
