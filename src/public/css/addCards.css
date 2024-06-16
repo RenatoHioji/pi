@@ -25,6 +25,10 @@ form {
     margin-bottom: 5%;
 }
 
+.card-img {
+    
+}
+
 input[type="text"] {
     width: 65%;
     margin: 8px;
@@ -36,6 +40,7 @@ input[type="text"] {
     font-family: montserrat-medium;
     background-color: transparent;
     color: #8ECE16;
+    outline: none;
     font-size: 28px;
 }
 
@@ -55,7 +60,7 @@ input[type="text"]::placeholder {
     padding: 10px 50px;
     justify-content: center;
     align-items: center;
-    background-color: #3DC3FA;
+    background-color: #8ECE16;
     color: #FFFFFF;
     border-radius: 20px;
     display: flex;
@@ -71,12 +76,14 @@ input[type="text"]::placeholder {
 
 .mic {
     aspect-ratio: 1;
-    width: 50%;
-    background-color: yellow;
+    background-color: #FFD73D;
     border-radius: 20px;
     margin-bottom: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mic > img {
-    width: 100%;
+    padding: 30px;
 }

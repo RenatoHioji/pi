@@ -93,12 +93,13 @@ router.post("/pessoa/item", upload.fields([{ name: "imagem" }, { name: "audio" }
     const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname).replace(/\\/g, '/') : null
     const video = req.files.video ? path.join('videos', req.files.video[0].originalname).replace(/\\/g, '/') : null
     const imagens = req.files.imagem ? path.join('imagens', req.files.imagem[0].originalname).replace(/\\/g, '/') : null
-    const imagePath = req.files.imagem[0].path;
-    const rotatedImagePath = imagePath.replace(/imagens/, 'rotated')
-    const originalFileName = path.basename(imagePath)
-    console.log(angulo)
+    const rotatedImagePath = imagens.replace(/imagens/, 'rotated')
+    const originalFileName = path.basename(imagens)
+    await sharp(imagens)
+                .rotate(angulo) 
+                .toFile(rotatedImagePath);
     
-    rotateAndSave(imagePath, angulo, rotatedImagePath, originalFileName)
+    // rotateAndSave(imagePath, angulo, rotatedImagePath, originalFileName)
     const item = new Item({
         nome,
         classificacao,

@@ -12,10 +12,10 @@ correto.addEventListener('click', () => {
     setTimeout(() => {
         check.innerHTML= ''
        check.appendChild(img_check)
-    }, 2000)
+    }, 1000)
     setTimeout(() => {
         window.location.href = '/quiz3'
-     }, 2500)
+     }, 1500)
 })
 
 let audio = document.querySelector('#audio-banana')

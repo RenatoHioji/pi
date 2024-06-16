@@ -1,11 +1,9 @@
 document.getElementById('teste').addEventListener('click', () => {
-    const statusElement = document.getElementById('status');
     const audioInput = document.getElementById('audio-input');
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ audio: true })
             .then(stream => {
                 console.log('Microphone access granted');
-                statusElement.textContent = 'Microphone access granted';
 
                 const mediaRecorder = new MediaRecorder(stream);
                 const audioChunks = [];
@@ -34,16 +32,13 @@ document.getElementById('teste').addEventListener('click', () => {
                 setTimeout(() => {
                     mediaRecorder.stop();
                     console.log('Recording stopped');
-                    statusElement.textContent = 'Recording stopped, playing audio...';
                 }, 5000); 
             })
             .catch(error => {
                 console.error('Microphone access denied:', error);
-                statusElement.textContent = 'Microphone access denied';
             });
     } else {
         console.error('getUserMedia not supported on your browser!');
-        statusElement.textContent = 'getUserMedia not supported on your browser!';
     }
 });
 
