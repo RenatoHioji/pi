@@ -5,7 +5,9 @@ import { Item } from "./../models/Item.js"
 import multer from 'multer'
 import fs from "fs"
 import sharp from "sharp"
+
 import path from "path"
+import { createCanvas, loadImage } from 'canvas'; 
 const router = express.Router()
 
 const storage = multer.diskStorage({
@@ -93,67 +95,40 @@ router.post("/pessoa/item", upload.fields([{ name: "imagem" }, { name: "audio" }
     const audio = req.files.audio ? path.join('audios', req.files.audio[0].originalname).replace(/\\/g, '/') : null;
     const video = req.files.video ? path.join('videos', req.files.video[0].originalname).replace(/\\/g, '/') : null;
     const imagens = req.files.imagem ? path.join('src', 'public', 'uploads', 'imagens', req.files.imagem[0].originalname).replace(/\\/g, '/') : null;
-    
     const originalFileName = req.files.imagem[0].originalname;
     const rotatedImagePath = path.join('src', 'public', 'uploads', 'rotated', originalFileName).replace(/\\/g, '/');
     const relativeRotatedImagePath = path.join('rotated', originalFileName).replace(/\\/g, '/');
-
-    if (imagens) {
-        try {
-            const rotatedImageDir = path.dirname(rotatedImagePath)
-            if (!fs.existsSync(rotatedImageDir)) {
-                fs.mkdirSync(rotatedImageDir, { recursive: true })
-            }
-            await sharp(imagens)
-                .rotate(angulo, { background: { r: 0, g: 0, b: 0, alpha: 0 } })
-                .toFile(rotatedImagePath)
-        } catch (error) {
-            console.error( error)
-        }
-    }
-
-    const item = new Item({
-        nome,
-        classificacao,
-        divisaoSilabica,
-        audio,
-        video
-    });
-    const response = await ItemService.createItemToPessoa(req.session.userId, item, relativeRotatedImagePath )
-    res.status(200).redirect("/pessoa/item")
-})
-
-async function rotateAndSave(imagePath, rotationAngle, outputFolderPath, outputFileName) {
     try {
-        const image = sharp(imagePath);
+        await rotateAndSaveImage(imagens, rotatedImagePath, angulo);
+        const item = new Item({
+            nome,
+            classificacao,
+            divisaoSilabica,
+            audio,
+            video
+        });
 
-        const metadata = await image.metadata();
-        const width = metadata.width;
-        const height = metadata.height;
-
-        const centerX = width / 2;
-        const centerY = height / 2;
-
-        const rotationMatrix = [
-            Math.cos(rotationAngle * Math.PI / 180),
-            Math.sin(rotationAngle * Math.PI / 180),
-            -Math.sin(rotationAngle * Math.PI / 180),
-            Math.cos(rotationAngle * Math.PI / 180)
-        ];
-
-        const rotatedImageBuffer = await image
-            .rotate(rotationMatrix, {
-                center: { x: centerX, y: centerY },
-                background: { r: 0, g: 0, b: 0, alpha: 0 }
-            })
-            .toBuffer();
-
-        const outputFile = path.join(outputFolderPath, outputFileName);
-        await fs.promises.writeFile(outputFile, rotatedImageBuffer);
-        console.log(`Rotated image saved to: ${outputFile}`);
-    } catch (error) {
-        console.error('Error rotating and saving image:', error);
-        throw error;
+        const response = await ItemService.createItemToPessoa(req.session.userId, item, relativeRotatedImagePath);
+        res.status(200).redirect("/pessoa/item");
+    } catch (err) {
+        console.error(`Error processing item: ${err}`);
+        res.status(500).send("Internal server error");
+    }
+})
+async function rotateAndSaveImage(imagens, rotatedImagePath, angulo) {
+    try {
+        const img = await loadImage(imagens);
+        const canvas = createCanvas(img.width, img.height);
+        const ctx = canvas.getContext('2d');
+        ctx.translate(img.width / 2, img.height / 2);
+        ctx.rotate((angulo * Math.PI) / 180);
+        ctx.drawImage(img, -img.width / 2, -img.height / 2);
+        const buffer = canvas.toBuffer('image/png');
+        await fs.promises.writeFile(rotatedImagePath, buffer);
+        console.log('Image rotated and saved successfully');
+    } catch (err) {
+        console.error('Error rotating and saving image:', err);
+        throw err;
     }
 }
 
