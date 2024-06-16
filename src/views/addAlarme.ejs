@@ -3,9 +3,9 @@
     <img src="/svg/png/img_solzi.png" alt="Solzi">
     <div class="content">
      <h1>TAGARELA</h1>
-     <h2>TAREFA</h2>
+     <h2 id="tarefa-modal"></h2>
     </div>
-    <h2>12:30</h2>
+    <h2 id="horario-modal"></h2>
     <audio id="audio-alarme">
       <source src="/audios/som_alarme.mp3" type="audio/mpeg">
   </audio>
@@ -21,7 +21,7 @@
          <img src="/svg/png/plus.png" id="btn-aumentar-minutos" alt="">
       </div>
     </div>
-    <input type="text" id="tarefa" name="acao"placeholder="TAREFA">
+    <input type="text" id="tarefa" name="acao" style="text-transform: uppercase;" placeholder="TAREFA">
     <div class="dias_da_semana">
       <div class="op">
           <label for="segunda">SEGUNDA-FEIRA</label>
@@ -52,11 +52,10 @@
           <input type="checkbox" name="dias[]" value="6" id="domingo">
       </div>
   </div>
-  <input type="file" name="som" id="som">
-
-    <input type="submit" id="pronto"></input>
+  <div class="pronto">PRONTO
+    <input type="submit" id="pronto-input" hidden></input>
+  </div>
 </form>
-<button id="done">clique</button>
 </main>
 <%- include('partials/footer', { jsList: ["changeTime"] }) -%>
 </div>

@@ -17,7 +17,7 @@
   </main>
   <%- include('partials/footer', { jsList: ["main"] }) -%>
   <dialog id="modal-listas">
-    <form action="/pessoa/lista" method="POST">
+    <form action="/pessoa/lista" method="POST" id="form-listas">
       <h1>Adicionar Lista</h1>
       <input type="text" id="nome_lista" name="nome" placeholder="Nome da Lista" required >
       <div class="enc">
