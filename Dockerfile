@@ -13,7 +13,7 @@ RUN apk add --update --no-cache \
 
 # Install Node.js
 RUN curl -sL https://deb.nodesource.com/setup_$(apk info nodejs --query-format "%v") | ash
-RUN apk add --update --no-cache nodejs
+RUN apk add --update --no-cache nodejs npm
 
 # Clean up
 RUN rm -rf /var/cache/apk/*
@@ -22,13 +22,9 @@ RUN rm -rf /var/cache/apk/*
 RUN node --version
 RUN python3 --version
 
-COPY package.json .
-COPY package-lock.json .
-COPY .env .
-COPY index.js .
-COPY .gitignore .
-COPY src ./src
+COPY ./package.json /app/
+COPY ./package-lock.json /app/
 
-RUN npm i --omit-dev
+RUN npm i
 
-ENTRYPOINT [ "npm", "run", "start_production" ]
+ENTRYPOINT [ "npm", "start" ]

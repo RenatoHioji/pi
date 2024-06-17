@@ -1,6 +1,7 @@
-.title{
+.title {
     font-size: 24px;
 }
+
 form {
     width: 100%;
     height: 100%;
@@ -23,6 +24,11 @@ form {
     align-items: center;
     justify-content: center;
     margin-bottom: 5%;
+}
+
+.card>img {
+    aspect-ratio: 1;
+    width: 25%;
 }
 
 input[type="text"] {
@@ -65,18 +71,30 @@ input[type="text"]::placeholder {
     font-size: 20px;
 }
 
-.button > img {
+.button>img {
     margin-right: 20px;
 }
 
-.mic {
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     aspect-ratio: 1;
+    margin: 8px;
     width: 50%;
     background-color: yellow;
     border-radius: 20px;
     margin-bottom: 20%;
 }
 
-.mic > img {
-    width: 100%;
+.controls:nth-child(3) {
+    background-color: #8ECE16;
+}
+
+.controls:disabled {
+    background-color: #40ff19[];
+}
+
+.controls>img {
+    width: 80%;
 }

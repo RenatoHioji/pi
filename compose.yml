@@ -7,9 +7,11 @@ services:
       - "8000:8000"
     depends_on:
       - mongodb
+    volumes:
+      - /home/saulo/fatec/pi/:/app
 
   mongodb:
-    image: mongo:latest
+    image: mongodb/mongodb-community-server:4.4-ubuntu2004
     ports:
       - "27017:27017"
     volumes:

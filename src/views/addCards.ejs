@@ -5,20 +5,37 @@
       <input type="text" name="nome" id="title" pattern="[a-zA-Z]+" title="Somente letras" required
         placeholder="PALAVRA">
       <input type="text" name="divisaoSilabica" id="silabas" title="Somente letras" required placeholder="SÍLABAS">
-      <img class="card" src="/svg/upload.svg" alt="seta para cima indicando upload de arquivos">
+      <div class="card image">
+        <img src="/svg/upload.svg" alt="seta para cima indicando upload de arquivos">
+      </div>
+
+      <img class="card target" src="#" style="display: none;">
       <input type="file" accept="image/*" title="Por favor utilize apenas formatos de Imagens" required hidden />
-      <a class="button">ESCOLHER FOTO</a>
-      <div class="card" id="video">
-        <img src="/svg/png/upload.png" id="imagemRotacao" alt="seta para cima indicando upload de arquivos">
-        <input type="hidden" name="rotacao" id="rotacao" value="0">
+      <a class="button image" id="image">ESCOLHER FOTO</a>
+
+      <div class="card video">
+        <video id="video" style="display: none;" src="#"></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <img src="/svg/upload.svg" id="imagemRotacao" alt="seta para cima indicando upload de arquivos">
       </div>
+      <img class="card target" src="#" style="display: none;">
+
+      <input type="hidden" name="rotacao" id="rotacao" value="0">
       <input type="file" accept="video/*" title="Por Favor utilize apenas formatos de Vídeo" required hidden>
-      <a class="button">ESCOLHER VÍDEO</a>
+      <a class="button video">ESCOLHER VÍDEO</a>
 
-
-      <div class="mic">
-        <img src="/svg/mic.svg" alt="icone de microfone">
+      <div style="display: flex; flex-direction: row; width: 75%;">
+        <div class="controls" id="startRecording" onclick="initRecord()">
+          <img src="/svg/mic.svg" alt="icone de microfone">
+        </div>
+        <div class="controls" id="stopRecording" style="display: none;">
+          <img src="/svg/stop.svg" style="width: 116px;" alt="icone de parar gravação">
+        </div>
+        <button class="controls" id="playRecording" disabled style=" border: none;">
+          <img src="/svg/play.svg" alt="icon de inicar">
+        </button>
       </div>
+      <input type="file" accept="audio/*" id="audioInput">
 
       <input type="file" name="audio" id="audio">
       <a class="button" style="background-color: #8ECE16;">
@@ -28,9 +45,9 @@
       </a>
     </form>
 
-
   </main>
-  <script src="/js/addCards.js"></script>
+  <script defer src="/js/addCards.js"></script>
+  <script defer src="/js/audiorecorder.js"></script>
   <script>
     const img = document.getElementById('imagemRotacao')
     const rotacao = document.getElementById("rotacao")
