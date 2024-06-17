@@ -1,9 +1,5 @@
-*{
-    box-sizing: unset;
-}
-main{
+main {
         box-sizing: border-box;
-
 }
 .card{
     max-width: 400px;

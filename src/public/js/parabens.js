@@ -3,4 +3,4 @@ audio.play()
 
 setTimeout(() => {
     window.location.href = '/praticar'
-}, 2500)
+}, 2900)

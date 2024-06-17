@@ -7,6 +7,7 @@ let btnFechar = document.querySelector('#fechar')
 let form = document.querySelector('#form-listas')
 let input_lista = document.querySelector('#nome_lista')
 
+
 btnModal.addEventListener('click', () => {
     modal.showModal()
     modal.classList.add('translate')
@@ -16,7 +17,8 @@ form.addEventListener('submit', function() {
     input_lista.value = input_lista.value.toUpperCase()
 })
 
-btnFechar.addEventListener('click', () => {
+btnFechar.addEventListener('click', (e) => {
+    e.preventDefault()
     modal.classList.remove('translate')
     modal.close()
 })

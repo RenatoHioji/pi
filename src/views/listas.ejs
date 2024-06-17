@@ -1,4 +1,4 @@
-<%- include("partials/header.ejs", {cssList: ["style", "listas" ], title: "Listas" }) -%>
+<%- include("partials/header.ejs", {cssList: ["style", "listas" ], title: "LISTAS" }) -%>
   <main>
     <div class="listas">
       <a class="addList" id="first-card">
@@ -9,7 +9,7 @@
           <% listas.forEach(lista => { %>
             <a class="lists" href="/pessoa/lista/<%= lista.id %>">
               <img src="/svg/png/arrowGreen.png" alt="" class="img-card">
-              <p><%= lista.nome %></p>
+              <p id="nome-lista"><%= lista.nome %></p>
             </a>
           <% }); %>
         <% } %>
@@ -21,7 +21,8 @@
       <h1>Adicionar Lista</h1>
       <input type="text" id="nome_lista" name="nome" placeholder="Nome da Lista" required >
       <div class="enc">
-      <input type="submit" id="enviar"><button id="fechar">Fechar</button>
+      <input type="submit" id="enviar">
+      <button id="fechar">Fechar</button>
     </div>
     </form>
   </dialog>
